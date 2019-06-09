@@ -1,0 +1,57 @@
+.products{
+	background-color: $primary-text-color;
+		
+	.carousel {
+		display: block;
+		margin: 0 auto;
+		max-width: 992px;
+	}
+
+	&__text{
+		font-size: rem(16px);
+		
+		&:last-child{
+			margin-bottom: rem(50px);
+		}
+	}
+
+	.carousel-item{
+		
+		&::before{
+			position: absolute;
+			content: '';
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			background-color: $secondary-text-color;
+			z-index: 1;
+			opacity: .4;
+		}
+	}
+
+	.carousel-item img{
+		display: block;
+		width: 100%;
+	}
+
+	.carousel-caption{
+		z-index: 2;
+	}
+	
+	&__carousel{
+		&--item.active{
+			background-color: $primary-text-color!important;
+			opacity: 1;
+		}
+
+		&--item{
+			background-color: $primary-text-color!important;
+			opacity: .3;
+		}
+	}
+	.carousel-caption{
+		background-color: rgba($primary-color-text, .7);
+		color: $primary-text-color;
+	}
+}

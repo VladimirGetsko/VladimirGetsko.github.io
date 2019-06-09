@@ -1,0 +1,86 @@
+.contacts{
+	background-image: linear-gradient(rgba(0, 0, 0, 0.5),rgba(0,0,0,.5)),
+	 url($img-path + 'engine_repair.jpg');
+	background-position: center center;
+	background-size: cover;
+	background-repeat: no-repeat;
+	position: relative;
+
+	&__title{
+		margin-bottom: rem(30px);
+	}
+
+	&__text{
+		font-size: rem(18px);
+		text-align: center;
+		margin-bottom: rem(50px);
+	}
+
+	.form-control{
+		font-size: 1.25rem;
+		color: $primary-color-text;
+		border: none;
+		border-bottom: 2px solid rgba($primary-color-text, .3);
+		height: rem(50px);
+		border-radius: 0;
+		background-color: rgba($primary-text-color, .5);
+		transition: all .3s ease;
+	}
+
+	.form-control:hover,
+	.form-control:focus{
+		border: none;
+		border-bottom: 2px solid rgba($primary-color-text, 1);
+		background-color: rgba($primary-text-color, 1);
+		box-shadow: none;
+	}
+
+	label{
+		color: $primary-color;
+		font-size: rem(18px);
+	}
+
+	&__textarea{
+		min-height: rem(100px);
+	}
+
+	&__btn{
+		margin-top: rem(30px);
+		background-color: $primary-color;
+		transition: all .3s ease;
+
+		&:hover{
+			background-color: $primary-color-dark;
+		}
+	}
+
+	&__success{
+		display: none;
+		position: absolute;
+		color: $accent-color;
+		font-size: rem(20px);
+		background-color: rgba($primary-color-text, .3);
+		top: 0;
+		right: 0;
+		bottom: 0;
+		left: 0;
+		font-weight: $weight-bold;
+		text-transform: uppercase;
+		z-index: 10;
+
+		span{
+			margin: auto;
+		}
+
+		& ~ * {
+			transition: all .5s ease;
+		}
+
+		&.active{
+			& ~ * {
+				opacity: .5;
+				filter: blur(3px);
+			}
+		}
+	}
+}

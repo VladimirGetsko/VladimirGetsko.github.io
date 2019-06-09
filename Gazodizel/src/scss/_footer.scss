@@ -1,0 +1,45 @@
+.main-footer{
+	padding-top: rem(20px);
+  padding-bottom: rem(20px);
+	background-color: $bg-collapse-color;
+
+	@include max575{
+		text-align: center;
+	}
+
+	&__logo{
+
+		&--link{
+			font-size: rem(20px);
+
+			@include max575{
+				text-align: center;
+				margin-bottom: 7px;
+			}
+		}
+	}
+
+	&__icons{
+		justify-content: center;
+		margin: 0;
+		padding: 0;
+
+		@include max575{
+			margin-bottom: 7px;
+		}
+
+		&--item{
+			margin-right: rem(20px);
+		}
+	}
+
+	&__copy{
+		display: block;
+		text-align: right;
+		font-size: rem(14px);
+
+		@include max575{
+			text-align: center;
+		}
+	}
+}

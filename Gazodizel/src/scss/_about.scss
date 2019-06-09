@@ -1,0 +1,36 @@
+.about{
+	background-color: $bg-color-light;
+	color: $primary-text-color;
+
+	&__title{
+		color: $primary-text-color;
+	}
+
+	&__text{
+		&:last-child{
+			margin-bottom: 0;
+		}
+	}
+
+	&__img{
+		display: block;
+		margin: 0 auto;
+		max-width: rem(400px);
+		width: 100%;
+		border-radius: rem(7px);
+		transition: all .3s ease-in-out;
+		box-shadow:
+   		0 1px 4px rgba(0, 0, 0, .3),
+   		-23px 0 20px -23px rgba(0, 0, 0, .8),
+   		23px 0 20px -23px rgba(0, 0, 0, .8),
+			 0 0 40px rgba(0, 0, 0, .1) inset;
+			 
+			 @include max767{
+				margin: 0 auto rem(30px);
+			}
+
+		&:hover{
+			transform: scale(1.03);
+		}
+	}
+}

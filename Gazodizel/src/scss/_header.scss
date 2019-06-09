@@ -1,0 +1,123 @@
+.first-screen{
+	min-height: 100vh;
+	background-image:linear-gradient(rgba(0,0,0,.7),rgba(0,0,0,.7)),
+	 url($img-path + 'main_bg.jpg');
+	background-position: 0 0;
+	background-size: cover;
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	position: relative;
+
+	.top-nav-collapse{
+		background-color: $bg-collapse-color;
+	}
+
+	&__item{
+		margin: 0 auto;
+
+		&--link{
+			color: $primary-color-text!important;
+			transition: all .3s ease;
+
+			&:hover{
+				color: $accent-color!important;
+			}
+		}
+	}
+
+	&__icons{
+		flex-direction: row;
+	}
+
+	&__content{
+		min-height: 100vh;
+		display: flex;
+		padding: rem(70px) 0;
+		align-items: center;
+		text-align: center;
+
+		&--title{
+			color: darken($primary-color, 5%);
+			letter-spacing: 5px;
+			font-size: rem(65px);
+			font-weight: 700;
+			margin-bottom: rem(30px);
+
+			@include max575{
+				font-size: rem(45px);
+				letter-spacing: 0;
+			}
+		}
+
+		&--caption{
+			color: lighten($primary-color, 15%);
+			font-size: rem(35px);
+			font-weight: 700;
+			margin-bottom: rem(30px);
+
+			@include max575{
+				font-size: rem(30px);
+			}
+		}
+
+		&--slogan{
+			color: $primary-color-text;
+			font-size: rem(23px);
+			margin-bottom: rem(25px);
+			line-height: $baze-line;
+		}
+
+		&--text{
+			font-size: rem(16px);
+			line-height: $baze-line;
+			margin-bottom: rem(35px);
+		}
+
+		&--icon{
+			width: 100%;
+
+			.fab{
+				font-size: rem(50px);
+				color: $accent-color;
+			}
+		}
+	}
+
+	&__scroll{
+		position: absolute;
+		width: rem(24px);
+		height: rem(40px);
+		border: 2px solid $primary-color-text;
+		border-radius: 10px;
+		bottom: 5%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+
+		&::before{
+			position: absolute;
+			content: '';
+			width: 5px;
+			height: 7px;
+			border-radius: 3px;
+			top: 20%;
+			left: 50%;
+			background-color: $primary-color-text;
+			transform: translate(-50%, -50%);
+		}
+
+		&--link{
+			display: block;
+			width: 100%;
+			height: 100%;
+			cursor: pointer;
+		}
+
+		@include max991{
+			display: none;
+		}
+	}
+	.navbar-dark .navbar-nav .active,
+	.navbar-dark .navbar-nav .active>.nav-link:hover{
+		color: $accent-color!important;
+	}
+}
