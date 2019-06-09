@@ -1,0 +1,41 @@
+.section-house{
+	width: 100%;
+	min-height: 700px;
+	background: url($img-path + "house.jpg") no-repeat 50% 50%;
+	background-size: cover;
+	display: flex;
+	margin: auto;
+	align-items: center;
+	color: $main-color;
+	
+	&__contant{
+		background-color: rgba(0,0,0, .7);
+		padding: 40px 30px 50px;
+		font-family: $secondary-font;
+		margin-right: 30px;
+	}
+
+	&__service{
+		display: block;
+		font-size: 20px;
+		letter-spacing: 2px;
+		font-weight: 300;
+		color: $light-color;
+		margin-bottom: 25px;
+	}
+
+	&__title{
+		font-size: 20px;
+		text-transform: uppercase;
+		margin-bottom: 30px;
+	}
+
+	&__text{
+		font-weight: 300;
+		font-size: $font-size;
+		font-family: $secondary-font;
+		color: $light-color;
+		line-height: 1.6;
+		margin-bottom: 45px;
+	}
+}

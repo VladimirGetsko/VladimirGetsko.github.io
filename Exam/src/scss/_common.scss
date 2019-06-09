@@ -1,0 +1,24 @@
+body{
+	box-sizing: border-box;
+	margin: 15px;
+}
+.position-flex{
+	display: flex;
+}
+.section__btn{
+	width: 100%;
+	max-width: 225px;
+	text-transform: uppercase;
+	color: $main-color;
+	font-family: $main-font;
+	border: none;
+	letter-spacing: 1px;
+	padding: 20px 0;
+	cursor: pointer;
+	background: rgba(73, 106, 254, 1);
+	background: linear-gradient(
+	45deg, rgba(73,106,254,1) 0%,
+	rgba(73,106,254,1) 40%,
+	rgba(84,115,253,1) 41%,
+	rgba(84,115,253,1) 100%);
+}

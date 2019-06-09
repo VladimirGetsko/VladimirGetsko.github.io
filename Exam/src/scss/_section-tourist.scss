@@ -1,0 +1,61 @@
+.section-tourist{
+	width: 100%;
+	min-height: 730px;
+	background: url($img-path + "testimonials-bg.jpg") no-repeat 50% 50%;
+	background-size: cover;
+	padding-top: 110px;
+	
+	&__title{
+		font-size: 36px;
+		font-family: $main-font;
+		color: $white-color;
+		text-transform: capitalize;
+		text-align: center;
+		margin-bottom: 90px;
+	}
+
+	&__says{
+		background-color: $light-grey-color;
+	}
+
+	&__says-img{
+		display: flex;
+		align-items: center;
+	}
+
+	&__says-text{
+		padding: 45px 45px 45px 60px;
+	}
+
+	&__says-name{
+		display: block;
+		font-size: 20px;
+		text-transform: uppercase;
+		color: #fefefe;
+		font-family: $secondary-font;
+		margin-bottom: 35px;
+	}
+
+	&__says-user-text{
+		font-size: $font-size;
+		font-family: $secondary-font;
+		font-weight: 300;
+		line-height: 1.6;
+		text-indent: 30px;
+		color: $light-color;
+		position: relative;
+
+		&::before {
+			content: '';
+			display: block;
+			position: absolute;
+			$size: 20px;
+			width: $size;
+			height: $size;
+			background: url($img-path+'double-quotes.svg') no-repeat;
+			background-size: 100%;
+			transform: rotate(180deg) translateY(50%);
+		}
+	}
+}
+
