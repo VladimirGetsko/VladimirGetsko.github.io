@@ -1,0 +1,17 @@
+html, body, header, #intro{
+	height: 100vh;
+}
+#intro{
+	background: url('../img/architecture.jpg') no-repeat fixed;
+	-webkit-background-size: cover;
+	background-size: cover;
+	background-position: center center;
+}
+.top-nav-collapse{
+	background-color: #24355c;
+}
+@media (max-width: 768px){
+	.navbar:not(.top-nav-collapse){
+		background-color: #24355c;
+	}
+}
