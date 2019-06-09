@@ -1,0 +1,33 @@
+$dark-color: #262626;
+$white-color: #fff;
+
+$main_color: $dark-color;
+$secondary_color: $white-color;
+
+$main_font: 'Raleway', sans-serif;
+ 
+
+$heading_size_h1: 50px;
+$heading_size_h2: 60px;
+$heading_size_h3: 90px;
+$heading_size_h4: 40px;
+$heading_size_h5: 20px;
+
+$heading_weight: 900;
+$head_weight: 700;
+$text_weight: 300;
+
+$text_lg: 20px;
+$text_md: 17px;
+$text_sm: 16px;
+
+$img_path: '../img/';
+
+$sections: (
+	main-header: #f9f8fb,
+	section_1: #00b1b1,
+	section_2: #70bfff,
+	gallery: #ffe92f,
+	subscribe: #ffffff,
+	blog: #b07cf7
+);
