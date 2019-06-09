@@ -1,0 +1,156 @@
+.main-footer{
+	background-color: #242424;
+	color: $white-color;
+	font-size: rem(15px);
+
+	&__column{
+		margin: rem(15px) 0;
+	}
+
+	&__logo-link{
+		display: block;
+		text-align: center;
+		
+	}
+	&__logo{
+		width: rem(125px);
+		height: auto;
+		margin-bottom: rem(15px);
+		text-align: center;
+	}
+
+	&__text{
+		color: $gray-color;
+		padding: 0;
+		margin-bottom: rem(50px);
+		text-align: center;
+	}
+
+	&__social{
+		display: flex;
+				
+		.soc{
+			margin: auto;
+						
+			&__list, &__item{
+				margin: 0;
+				padding: 0;
+				list-style-type: none;
+				display: flex;
+			}
+
+			&__item{
+				margin-right: rem(10px);
+
+				&:last-child{
+					margin-right: 0;
+				}
+			}
+
+			&__link{
+				display: block;
+				color: $soc-color;
+				font-size: 16px;
+				background-color: rgba($white-color, .2);
+				height: rem(38px);
+				width: rem(38px);
+				line-height: rem(38px);
+				text-align: center;
+				border-radius: 50%;
+				transition: all .25s ease;
+
+				&:hover{
+					background-color: rgba($white-color, .6);
+					color: $accent-color;
+				}
+			}
+		}
+	}
+
+	&__menu{
+
+		&-list{
+			padding: 0;
+			margin: 0 0 0 rem(20px);
+			list-style: none;
+
+			@include media-breakpoint-down(xs) {
+				padding-left: rem(25px);
+			}
+		}
+
+		&-link{
+			color: $soc-color;
+			transform: color .25s ease;
+			display: inline-block;
+			padding: 2px 0;
+			padding-left: rem(20px);
+			position: relative;
+			text-decoration: underline;
+
+			&:hover, &:focus{
+				color: $accent-color;
+				&::before{
+					color: $accent-color;
+				}
+			}
+
+			&::before{
+				position: absolute;
+				content: '\f085';
+				font-family: "FontAwesome";
+				left: 0;
+				text-decoration: none;
+				color: rgba($yellow-color, .8);
+				font-size: 12px;
+				transition: color .25s ease;
+				top: 5px;
+			}
+		}
+	}
+
+	&__addr,
+	&__time,
+	&__phone{
+		position: relative;
+		font-size: 15px;
+		padding-left: rem(24px);
+		margin-left: rem(24px);
+						
+		.fas, .far{
+			position: absolute;
+			left: 0;
+			top: 5px;
+			font-size: rem(18px);
+			color: $gray-color;
+		}
+	}
+
+	&__addr,
+	&__time{
+		margin-bottom: rem(25px);
+	}
+
+	&__phone{
+		font-size: rem(26px);
+		white-space: nowrap;
+
+		&-link{
+			color: $white-color;
+
+			&:hover{
+				color: $white-color;
+				text-decoration: none;
+			}
+		}
+		
+		@include media-breakpoint-down(lg) {
+			font-size: rem(20px);
+		}
+
+		.fas{
+			top: 13px;
+			left: 2px;
+		}
+	}
+}

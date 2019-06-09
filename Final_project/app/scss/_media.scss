@@ -1,0 +1,120 @@
+@import "vars";
+
+
+/*==========  Desktop First  ==========*/
+
+// ≥1200px
+@include media-breakpoint-down(lg) {
+	.site-header{
+	
+		&__welcome-title{
+			font-size: 55px;
+		}
+	
+		&__composition-text{
+			font-size: 14px;
+		}
+
+		&__contacts{
+			font-size: 14px;
+			text-align: center;
+		}
+	}
+
+	.services{
+		&-carousel{
+			&__item{
+				flex-direction: column;
+			}
+		}
+	}
+
+	.gallery, .timeline, .review, .partners{
+		padding: 8% 0;
+	}
+}
+
+// ≥992px
+@include media-breakpoint-down(md) {
+	.site-header{
+		&__welcome{
+			margin-bottom: 20px;
+
+			&-title{
+				font-size: 42px;
+			}
+		}
+
+		&__phone{
+			font-size: 16px;
+			top: 49px;
+		}
+	}
+
+	.gallery{
+		&__title{
+			text-align: center;
+		}
+	}
+}
+
+// ≥768px
+@include media-breakpoint-down(sm) {
+	.button{
+		padding: 10px 30px;
+	}
+}
+
+// ≥576px
+@include media-breakpoint-down(xs) {
+	.site-header{
+	
+		&__welcome{
+			
+			&-head{
+				font-size: 9px;
+			}
+
+			&-title{
+				font-size: 24px;
+				margin-bottom: 15px;
+			}
+
+			&-city{
+				font-size: 13px;
+			}
+		}
+
+		&__composition-text{
+			font-size: 13px;
+			margin-bottom: 15px;
+		}
+
+		&__social{
+			padding: 0 10px;
+		}
+	}
+}
+
+
+/*==========  Mobile First  ==========*/
+
+// ≤576px
+@include media-breakpoint-up(sm) {
+
+}
+
+// ≤768px
+@include media-breakpoint-up(md) {
+
+}
+
+// ≤992px
+@include media-breakpoint-up(lg) {
+
+}
+
+// ≤1200px
+@include media-breakpoint-up(xl) {
+	
+}

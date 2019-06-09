@@ -1,0 +1,28 @@
+$img-path: '../img/';
+
+$default-font: 'raleway', sans-serif;
+$firasans-font: 'FiraSansRegular', sans-serif;
+
+$baze-line: 1.75;
+
+$base-size: 16px;
+
+$accent-color: #025289;
+$yellow-color: #ffef00;
+$yellow-dark-color: #f9c869;
+$blue-color: #66c7cd;
+$red-color: #f86868;
+$dark-color: #1a1a1a;
+$over-color: #3d3c3c;
+$white-color: #fff;
+$border-color: #e3e3e3;
+$gray-color: #555;
+$soc-color: #ababab;
+
+// Customization Bootstrap vars from "app/libs/bootstrap/scss/_variables.scss"
+$grid-gutter-width: 30px;
+$grid-columns: 12;
+$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px);
+$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1140px);
+
+$gutter: $grid-gutter-width;

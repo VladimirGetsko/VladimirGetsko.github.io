@@ -1,0 +1,148 @@
+.call{
+	background-image: url($img-path + 'bg-3.jpg');
+	
+	&::before{
+		content: '';
+		position: absolute;
+		width: 100%;
+		right: 0;
+		height: 100%;
+		background-color: rgba($accent-color, .7);
+	}
+
+	&__back{
+		padding: 10% 0;
+		position: relative;
+
+		::-webkit-input-placeholder{
+			color: #fff;
+			opacity: 1;
+		}
+		::-moz-placeholder{
+			color: #fff;
+			opacity: 1;
+		}
+		::-ms-input-placeholder{
+			color: #fff;
+		}
+
+		&-logo{
+			& > *{
+				width: rem(100px);
+				height: auto;
+			}
+		}
+
+		input, textarea, select,
+		.selectize-control .selectize-input,
+		.selectize-control.single .selectize-input.input-active{
+			color: #fff;
+			width: 100%;
+			margin-bottom: rem(20px);
+		}
+	}
+
+	input, textarea, select,
+	.selectize-control .selectize-input,
+	.selectize-control.single .selectize-input.input-active{
+		background-color: transparent;
+		border: 1px solid $yellow-color;
+		border-bottom: 2px solid $yellow-color;
+		border-radius: 2px;
+		padding: rem(8px) rem(22px);
+		outline: none;
+		display: inline-block;
+		font-size: rem(16px);
+	}
+
+	.selectize-control.single .selectize-input{
+		box-shadow: none;
+		overflow: inherit;
+		line-height: inherit;
+		text-align-last: left;
+
+		input{
+			font-size: 16px;
+		}
+		&.dropdown-active::before{
+			background-color:transparent;
+		}
+	}
+
+	.selectize-control.single{
+		.selectize-input, &.dropdown-active{
+			&::after{
+				border: none;
+				content: '\f107';
+				position: absolute;
+				font-family: fontawesome;
+				color: $yellow-color;
+				right: rem(30px);
+				top: rem(12px);
+				cursor: pointer;
+			}
+
+			&.dropdown-active::after{
+				content: '\f106';
+			}
+		}
+	}
+
+	.selectize-dropdown{
+		font-size: 15px;
+		border: none;
+		border-radius: none;
+		text-align-last: left;
+
+		&-content{
+			.option{
+				padding: 10px 22px;
+
+				&.active{
+					background-color: lighten($accent-color, 50);
+				}
+			}
+		}
+	}
+
+	option{
+		color: $dark-color;
+	}
+
+	&__success{
+		display: none;
+		position: absolute;
+		top: 0;
+		left: 0;
+		bottom: 0;
+		right: 0;
+		text-transform: uppercase;
+		font-weight: 600;
+		z-index: 10;
+
+		&-text {
+			margin: auto;
+		}
+
+		& ~ *{
+			transition: all .5s ease;
+		}
+
+		&.active{
+			& ~ *{
+				opacity: .5;
+				filter: blur(10px);
+			}
+		}
+	}
+
+	.formhead{
+		font-size: rem(30px);
+		color: $yellow-color;
+		font-weight: 800;
+
+		& > *{
+			color: $white-color;
+		}
+	}
+}

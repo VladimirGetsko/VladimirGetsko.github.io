@@ -1,0 +1,20 @@
+.main-map{
+	background: url($img-path + 'bg-6.jpg');
+	
+	&__title{
+		text-align: center;
+		font-size: rem(30px);
+		text-align: center;
+		font-weight: 800;
+		margin-bottom: rem(30px);
+		color: $accent-color;
+	}
+	
+	.map{
+		// width: 100%;
+		// max-width: 700px;
+		height: 400px;
+		margin: auto;
+		border: 3px solid $soc-color;
+	}
+}

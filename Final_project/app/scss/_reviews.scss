@@ -1,0 +1,97 @@
+.reviews{
+	background-image: url(../img/bg-4.jpg);
+	
+	&__title{
+		text-align: center;
+		margin-bottom: rem(20px);
+	}
+
+	&-carousel{
+		text-align: center;
+	}
+
+	.review{
+		&__header{
+			font-family: 'Times New Roman', serif;
+			font-style: italic;
+			font-size: rem(30px);
+			font-weight: 600;
+			margin-bottom: 5px;
+		}
+
+		&__date{
+			font-family: 'Times New Roman', serif;
+			font-style: italic;
+			font-size: rem(15px);
+			color: #888;
+			margin-bottom: rem(15px);
+		}
+
+		&__stars{
+			margin-bottom: rem(30px);
+			font-size: 14px;
+			color: $yellow-color;
+			.fa{
+				margin: 0 3px;
+			}
+		}
+
+		&__text{
+			color: #95989a;
+		}
+	}
+
+	.quotes{
+		position: absolute;
+		width: 100%;
+
+		@include media-breakpoint-down(xs) {
+			display: none;
+		}
+
+		&::before, &::after{
+			content: ',,';
+			position: absolute;
+			display: block;
+			font-size: rem(56px);
+			color: $yellow-color;
+			font-family: 'Times New Roman', serif;
+			font-weight: 600;
+			line-height: 0;
+			transform: rotate(180deg);
+			top: rem(182px);
+		}
+
+		&::before{
+			top: rem(220px);
+			left: rem(-60px);
+		}
+
+		&::after{
+			right: rem(-60px);
+			transform: rotate(0);
+		}
+	}
+
+	.owl-dots{
+		width: 100%;
+		text-align: center;
+		margin-top: 30px;
+			
+		.owl-dot{
+			width: 8px;
+			height: 8px;
+			background-color: $white-color;
+			border-radius: 50%;
+			display: inline-block;
+			margin: 5px;
+			transition: background-color .5s ease, 
+									transform .5s ease;
+
+			&.active{
+				background-color: $yellow-color;
+				transform: scale(1.3);
+			}
+		}
+	}
+}

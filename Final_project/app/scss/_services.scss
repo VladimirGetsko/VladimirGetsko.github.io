@@ -1,0 +1,154 @@
+.services{
+
+	&-carousel{
+		background-color: $dark-color;
+		
+		&__item{
+			color: $white-color;
+			font-size: rem(14px);
+			font-weight: 300;
+			position: relative;
+			display: flex;
+			flex-direction: column-reverse;
+
+			&-content{
+				padding: 35px 10%;
+			}
+
+			&-composition{
+				width: 100%;
+				text-align: center;
+			}
+
+			&-logo{
+				text-align: center;
+			}
+
+			&-pic {
+				// принудительно перебиваем классы owlcarousel
+				width: 100px!important;
+				display: inline-block!important;
+				margin-bottom: 10px;
+			}
+
+			&-title{
+				font-weight: 800;
+				font-size: rem(25px);
+			}
+
+			&-list{
+				color: $dark-color;
+				list-style: none;
+				margin: 0 0 rem(25px) 0;
+				padding: 0;
+								
+				& > * {
+					padding: 3px;
+					border-bottom: 1px solid rgba(#000, .12);
+					margin: 0;
+
+					&:last-child{
+						border-bottom: none;
+					}
+				}
+			}
+
+			&-image1{
+				background-image: url($img-path + 'auto_service_1.jpg');
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: center center;
+				opacity: .7;
+				transition: opacity .5s ease;
+	
+				&:hover{
+					opacity: 1;
+				}
+			}
+
+			&-image2{
+				background-image: url($img-path + 'auto_service_2.jpg');
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: center center;
+				opacity: .7;
+				transition: opacity .5s ease;
+	
+				&:hover{
+					opacity: 1;
+				}
+			}
+
+			&-image3{
+				background-image: url($img-path + 'auto_service_3.jpg');
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: center center;
+				opacity: .7;
+				transition: opacity .5s ease;
+	
+				&:hover{
+					opacity: 1;
+				}
+			}
+
+			&-image4{
+				background-image: url($img-path + 'auto_service_4.jpg');
+				background-repeat: no-repeat;
+				background-size: cover;
+				background-position: center center;
+				opacity: .7;
+				transition: opacity .5s ease;
+	
+				&:hover{
+					opacity: 1;
+				}
+			}
+		}
+	}
+
+	.owl-item{
+		&:nth-child(2n+2){
+			.services-carousel__item{
+				flex-direction: column;
+			}
+		}
+	}
+
+	.owl-nav{
+		position: absolute;
+		top: 0;
+		width: 100%;
+
+		& > div{
+			width: rem(64px);
+			height: rem(64px);
+			background-color: $white-color;
+			color: $dark-color;
+			position: absolute;
+			text-align: center;
+			line-height: rem(64px);
+			font-size: rem(26px);
+		}
+
+		.owl-prev{
+			left: 0;
+		}
+		.owl-next{
+			right: 0;
+		}
+	}
+}
+
+///// цикл задания background-color 
+//// items карусели сервисов
+
+$colors:  $blue-color,
+					$red-color,
+					$yellow-dark-color;
+@for $i from 1 through length($colors){
+	.services-carousel .owl-item:nth-child(#{length($colors)}n+#{$i}){
+		background-color: nth($colors, $i);
+	}
+}
+    
