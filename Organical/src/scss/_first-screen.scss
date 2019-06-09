@@ -1,0 +1,440 @@
+.first-screen{
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 0 0;
+	padding-top: rem(23px);
+	position: relative;
+	background-image:
+	 linear-gradient(to top, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, .76) 100%),
+	url($img-path + 'bg-top.jpg');
+	
+	&__logo{
+		display: flex;
+		width: 100%;
+		min-width: 165px;
+
+		@include max575{
+			justify-content: center;
+			margin-bottom: rem(20px);
+		}
+
+		&-title{
+			font-size: rem(20px);
+			font-family: $bold-font;
+			text-transform: capitalize;
+			margin-bottom: 0;
+		}
+	}
+
+	&__link{
+		display: block;
+		display: flex;
+		align-items: center;
+	}
+
+	&__img{
+		display: block;
+		width: 53px;
+		height: auto;
+		margin-right: rem(10px);
+	}
+
+	&__support{
+		text-align: right;
+
+		@include max575{
+			text-align: center;
+		}
+
+		&-link{
+			display: block;
+			font-size: $base-size;
+			color: $title-color;
+			text-transform: capitalize;
+
+			&:hover{
+				color: $title-color;
+				text-decoration: underline;
+			}
+		}
+	}
+
+	&__call{
+		text-align: center;
+		font-size: rem(50px);
+		color: $title-color;
+		padding: 0 rem(45px);
+		font-family: $light-font;
+		margin-bottom: 0;
+		position: relative;
+		
+		@include max575{
+			font-size: rem(40px);
+			padding: 0;
+		}
+					
+		& > *{
+			font-family: $bold-font;
+			white-space: nowrap;
+		}
+		
+		@include min576{
+			&::before{
+				content: '';
+				position: absolute;
+				width: 33px;
+				height: 35px;
+				background: url($img-path +'sheet_1.svg') no-repeat;
+				transform: translate(-150%, 1.2rem );
+			}
+		}
+	}
+
+	&__advantages{
+		display: flex;
+		justify-content: center;
+
+		&-item{
+			margin-right: 7px;
+			display: flex;
+			align-items: center;
+
+			&:last-child{
+				margin-right: 0;
+			}
+		}
+
+		&-decor{
+			display: block;
+			height: 4px;
+			width: 4px;
+			border-radius: 50%;
+			background-color: $orange-color;
+		}
+
+		&-link{
+			display: block;
+			text-transform: uppercase;
+			letter-spacing: 1px;
+			font-family: $bold-font;
+			color: $orange-color;
+
+			&:hover{
+				color: $orange-color;
+			}
+		}
+	}
+
+	&__products{
+
+		@include max991{
+			display: none;
+		}
+		
+		&-img{
+			max-width: 570px;
+			width: 100%;
+		}
+	}
+
+	&__form{
+		max-width: 500px;
+		width: 100%;
+		margin: auto;
+		background-color: rgba($white-color, .8);
+		border: 1px solid #e1e1e1;
+		padding: rem(15px) 10px;
+
+		@include max575{
+
+		}
+
+		@include min576{
+			padding: rem(40px) rem(10px) rem(15px) rem(10px);
+		}
+
+		@include min1200{
+			margin-left: 55px;
+		}
+		
+		&-header{
+			text-align: center;
+		}
+
+		&-call{
+			font-size: rem(31px);
+			color: $dark-green-color;
+			font-family: $bold-font;
+			margin-bottom: 5px;
+
+			& > *{
+				text-transform: uppercase;
+			}
+		}
+
+		&-move{
+			color: $black-color;
+			margin-bottom: rem(40px);
+			
+			& > *{
+				font-family: $bold-font;
+			}
+		}
+
+		////// START max575 ///////////
+
+		&-login{
+			text-align: center;
+		}
+
+		&-email{
+			margin-bottom: rem(15px);
+		}
+
+		.email__input,
+		.pass__input{
+			width: 100%;
+			width: 268px;
+			height: rem(50px);
+			padding: 0 rem(16px);
+			border: 1px solid $gray-color;
+			outline:none;
+		}
+
+		.email__label,
+		.pass__label{
+			display: block;
+			position: relative;
+			font-size: rem(14px);
+			margin: 0;
+			top: -75px;
+		}
+
+		.email__input:focus,
+		.pass__input:focus{
+
+			border: 1px solid $bord-color;
+			background: url('../img/pencil.svg') no-repeat;
+			background-position: 94% 48%;
+			background-color: $white-color;
+
+			+ .email__label,
+			{
+				color: $bord-color;
+			}
+			+ .pass__label{
+				color: $bord-color;
+			}
+		}
+		
+
+		/////// END max575 ////////////
+
+		/////// START min576 //////////
+		@include min576{
+			&-login{
+				padding: 0 rem(35px) 0 rem(65px);
+			}
+	
+			&-email{
+				text-align: center;
+				position: relative;
+			}
+	
+			&-pass{
+				text-align: center;
+				margin-bottom: rem(15px);
+			}
+	
+			.email__label,
+			.pass__label{
+				display: inline-block;
+				position: relative;
+				font-size: rem(14px);
+				margin: 0;
+				top: -62px;
+			}
+	
+			.email__label{
+				left: -50px;
+	
+				&::before{
+					content: '';
+					position: absolute;
+					transform: translate(-14px, 10px);
+					border: 1px solid $gray-color;
+					border-width: 1px 0 0;
+					width: 5%;
+				}
+	
+				&::after{
+					content: '';
+					position: absolute;
+					transform: translate(6px, 10px);
+					border: 1px solid $gray-color;
+					border-width: 1px 0 0;
+					width: 58%;
+				}
+			}
+	
+			.pass__label{
+				left: -65px;
+	
+				&::before{
+					content: '';
+					position: absolute;
+					transform: translate(-16px, 10px);
+					border: 1px solid $gray-color;
+					border-width: 1px 0 0;
+					width: 5%;
+				}
+	
+				&::after{
+					content: '';
+					position: absolute;
+					transform: translate(7px, 10px);
+					border: 1px solid $gray-color;
+					border-width: 1px 0 0;
+					width: 90%;
+				}
+			}
+	
+			.email__input,
+			.pass__input {
+				position: relative;
+				display: inline-block;
+				max-width: rem(318px);
+				width: 100%;
+				height: rem(50px);
+				padding: 0 rem(16px);
+				border-top: 1px solid transparent;
+				border-right: 1px solid $gray-color;
+				border-bottom: 1px solid $gray-color;
+				border-left: 1px solid $gray-color;
+				outline:none;
+			}
+	
+			.email__input:focus,
+			.pass__input:focus{
+	
+				border-top: 1px solid transparent;
+				border-right: 1px solid $bord-color;
+				border-bottom: 1px solid $bord-color;
+				border-left: 1px solid $bord-color;
+				background: url('../img/pencil.svg') no-repeat;
+				background-position: 94% 48%;
+				background-color: $white-color;
+	
+				+ .email__label{
+					color: $bord-color;
+				}
+				+ .pass__label{
+					color: $bord-color;
+				}
+				+ .email__label::before{
+					border: 1px solid $bord-color;
+					border-width: 1px 0 0;
+				}
+				+ .email__label::after{
+					border: 1px solid $bord-color;
+					border-width: 1px 0 0;
+				}
+				+ .pass__label::before{
+					border: 1px solid $bord-color;
+					border-width: 1px 0 0;
+				}
+				+ .pass__label::after{
+					border: 1px solid $bord-color;
+					border-width: 1px 0 0;
+				}
+			}
+		}
+
+		//////////// END min576 ////////////////
+		
+		&-link{
+			display: block;
+			color: #222222;
+			font-size: rem(14px);
+			text-decoration: underline;
+			margin-bottom: rem(15px);
+			text-align: left;
+
+			@include max575{
+				text-align: center;
+			}
+
+			&:hover{
+				color: #222222;
+				text-decoration: underline;
+			}
+		}
+
+		&-sub-wrap{
+			text-align: center;
+
+			@include min576{
+				text-align: right;
+			}
+
+			label[for="submit"]{
+				position: relative;
+
+				&::before{
+					content: '';
+					position: absolute;
+					width: 1px;
+					height: 30px;
+					background-color: rgba($white-color, .3);
+					right: 50px;
+					top: -12px;
+					cursor: pointer;
+				}
+
+				&::after{
+					content: '';
+					position: absolute;
+					width: 17px;
+					height: 15px;
+					background: url($img-path + 'arrow.svg') no-repeat;
+					right: rem(20px);
+					top: -4px;
+					cursor: pointer;
+				}
+			}
+		}
+
+		&-sub{
+			color: $white-color;
+			font-size: rem(18px);
+			padding: rem(12px) rem(60px) rem(12px) rem(30px);
+			text-transform: capitalize;
+			border: none;
+			border-radius: rem(30px);
+			background-color: $dark-green-color;
+			margin-bottom: rem(35px);
+			cursor: pointer;
+		}
+
+		&-footer{
+			font-size: rem(14px);
+			color: $gray-color;
+			padding: 0 rem(15px);
+			line-height: 1.43;
+
+			@include min576{
+				padding: 0 rem(35px) 0 rem(65px);
+			}
+
+			& > * {
+				color: $dark-green-color;
+				text-decoration: underline;
+
+				&:hover{
+					color: $dark-green-color;
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+}
