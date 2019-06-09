@@ -1,0 +1,44 @@
+.owl-slider{
+
+	.slider__item{
+		padding-top: 60vh;
+		background-position: center center;
+		background-repeat: no-repeat;
+		background-size: cover;
+		border: 3px solid $grey-color;
+	}
+
+	// стилизуем items самого слайдера (кружочки)
+	.slider{
+		.owl-dot span{
+			display: block;
+			background-color: $white-color;
+			border: 1px solid $dark-grey-color;
+			width: 1rem;
+			height: 1rem;
+			border-radius: 50%;
+		}
+
+		.owl-dot.active span,
+		.owl-dot:hover span{
+			background-color: $link-color;
+			border-color: $link-color;
+		}
+
+		.owl-dot{
+			display: inline-block;
+			margin-right: rem(14px);
+
+			&:last-child{
+				margin-right: 0;
+			}
+		}
+		.owl-dots{
+			position: absolute;
+			bottom: .75rem;
+			left: 0;
+			right: 0;
+			text-align: center;
+		}
+	}
+}

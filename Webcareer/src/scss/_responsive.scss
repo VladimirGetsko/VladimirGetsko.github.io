@@ -1,0 +1,61 @@
+@media screen and (max-width: 991px) {
+	html{
+		font-size: 90%;
+	}
+}
+
+@media screen and (max-width: 767px) {
+	html{
+		font-size: 85%;
+	}
+		
+	.header{
+		&__logo,
+		&__contact{
+			text-align: center;
+		}
+		.nav__btn{
+		display: block;
+		display: flex;
+		width: 100%;
+		}
+
+		&__nav-list{
+			display: none;
+		}
+
+		&__nav-list--open{
+		display: block;
+		}
+		&__nav-link{
+			padding: .5rem;
+			display: flex;
+			justify-content: flex-end;
+
+			&:hover{
+				background-color: rgba($grey-color, .3);
+			}
+		}
+
+		.pos-flex{
+			padding-bottom: 0;
+		}
+	}
+	
+}
+
+@media screen and (max-width: 575px) {
+	.header{
+		
+		&__logo,
+		&__contact{
+			text-align: center;
+		}
+	}
+	.about{
+		.grid-indent{
+		margin-bottom: 0;
+		}
+	}
+
+}
