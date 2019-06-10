@@ -1,0 +1,31 @@
+.news_sheet{
+	background-color: $bg-color-light;
+	min-height: 100vh;
+
+	.top-nav-collapse{
+		background-color: $bg-collapse-color;
+	}
+
+	&__item{
+		margin: 0 auto;
+
+		&--link{
+			color: $primary-color-text!important;
+			transition: all .3s ease;
+
+			&:hover{
+				color: $accent-color!important;
+			}
+		}
+	}
+
+	&__icons{
+		flex-direction: row;
+	}
+
+
+	.navbar-dark .navbar-nav .active,
+	.navbar-dark .navbar-nav .active>.nav-link:hover{
+		color: $accent-color!important;
+	}
+}
