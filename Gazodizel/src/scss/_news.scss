@@ -2,33 +2,9 @@
 	background-color: $bg-color-light;
 	color: $primary-text-color;
 	
-	&__title{
-
-		@include max991 {
-			margin-top: rem(70px);
-
-			&::before{
-				position: absolute;
-				content: '';
-				width: 40px;
-				height: 40px;
-				background-image: url($img-path + 'clipboard-check-solid.svg');
-				background-repeat: no-repeat;
-				left: 50%;
-				top: -20%;
-				transform: translate(-50%, -50%);
-			}
-		}
-	}
-
 	&__text{
-		font-size: rem(22px);
-		text-align: center;
+		color: darken($primary-color-dark, 10%);
 		margin-bottom: rem(35px);
-
-		&--link{
-			margin-left: 20px;
-		}
 	}
 	
 	&__box{
@@ -48,21 +24,33 @@
 			transform: scale(1.03);
 		}
 
+		@include max991 {
+			border-bottom: 1px solid $divider-color;
+			box-shadow: none;
+			border-radius: 0;
+
+			&:hover{
+				transform: none;
+			}
+		}
+
 		&--img{
-			margin-bottom: rem(20px);
+			max-width: rem(270px);
+			margin: 0 auto rem(20px) auto;
 			background-color: $divider-color;
+
+			@include max991 {
+				border: 3px solid $divider-color;
+				border-radius: rem(5px);
+			}
 		}
 
 		.news__img {
 			display: block;
 			width: 100%;
-
-			@include max991 {
-				display: none;
-			}
 		}
 		
-		&--contant{
+		&--content{
 			text-align: center;
 			position: relative;
 		}

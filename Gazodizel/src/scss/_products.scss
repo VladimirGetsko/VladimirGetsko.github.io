@@ -1,6 +1,37 @@
 .products{
 	background-color: $primary-text-color;
 		
+	&__content{
+		margin-bottom: rem(70px);
+
+		&--img{
+			display: block;
+			margin: 0 auto;
+			width: 100%;
+			max-width: rem(400px);
+			border-radius: rem(5px);
+			transition: all .3s ease-in-out;
+			position: relative;
+			border: 3px solid $divider-color;
+
+			@include max767{
+				margin: 0 auto rem(30px);
+			}
+	
+			&:hover{
+				transform: scale(1.03);
+			}
+		}
+
+		&--text{
+			padding-left: rem(15px);
+
+			&:last-child{
+				margin-bottom: 0;
+			}
+		}
+	}
+
 	.carousel {
 		display: block;
 		margin: 0 auto;
