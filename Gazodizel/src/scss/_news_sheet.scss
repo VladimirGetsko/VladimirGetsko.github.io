@@ -28,11 +28,15 @@
 }
 
 .news-sheet{
-	min-height: 96vh;
-	padding: rem(140px) 0;
+	min-height: 100vh;
+	padding: rem(80px) 0;
 	background-color: $bg-color-light;
 	color: $primary-text-color;
 	position: relative;
+
+	@include max575{
+		padding: rem(80px) 0 rem(30px) 0;
+	}
 	
 	&__boxs{
 		width: 100%;
