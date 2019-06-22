@@ -32,6 +32,7 @@
 	padding: rem(140px) 0;
 	background-color: $bg-color-light;
 	color: $primary-text-color;
+	position: relative;
 	
 	&__boxs{
 		width: 100%;
@@ -123,3 +124,4 @@
 		background-color: $divider-color;
 	}
 }
+

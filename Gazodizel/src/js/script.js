@@ -57,78 +57,78 @@ Array.prototype.forEach.call(newsTexts, (el, idx) => {
 
 /////   Pagination   /////
 
-var numberOfItems = $('#page .news-sheet__box').length; // Получить общее количество элементов, которые должны быть разбиты на страницы
-var limitPerPage = 3; // Лимит элементов на каждой странице
-$('#page .news-sheet__box:gt(' + (limitPerPage - 1) + ')').hide(); // Скрыть все элементы за пределами страницы (например, 5-й элемент, 6-й элемент и т. д.)
-var totalPages = Math.round(numberOfItems / limitPerPage); // Получить количество страниц
-$(".pagination").append("<li class='page-item active'><a class='page-link' href='javascript:void(0)'>" + 1 + "</a></li>"); // Добавить маркер первой страницы
+var numberOfItems = $('#page .news-sheet__box').length; // Get total number of the items that should be paginated
+var limitPerPage = 1; // Limit of items per each page
+$('#page .news-sheet__box:gt(' + (limitPerPage - 1) + ')').hide(); // Hide all items over page limits (e.g., 5th item, 6th item, etc.)
+var totalPages = Math.round(numberOfItems / limitPerPage); // Get number of pages
+$(".pagination").append("<li class='current-page page-item active'><a class='page-link' href='javascript:void(0)'>" + 1 + "</a></li>"); // Add first page marker
 
-// Цикл для вставки номера страницы для каждого набора элементов, равного пределу страницы (например, ограничение 4 с общим количеством элементов 20 = вставка 5 страниц)
+// Loop to insert page number for each sets of items equal to page limit (e.g., limit of 4 with 20 total items = insert 5 pages)
 for (var i = 2; i <= totalPages; i++) {
-  $(".pagination").append("<li class='page-item'><a class='page-link' href='javascript:void(0)'>" + i + "</a></li>"); // Вставьте номер страницы в закладки
+  $(".pagination").append("<li class='current-page page-item'><a class='page-link' href='javascript:void(0)'>" + i + "</a></li>"); // Insert page number into pagination tabs
 }
 
-// Добавить следующую кнопку после всех номеров страниц  
+// Add next button after all the page numbers  
 $(".pagination").append("<li class='page-item' id='next-page'><a class='page-link' href='javascript:void(0)' aria-label=Next><span aria-hidden=true>&raquo;</span></a></li>");
 
-// Функция, которая отображает новые элементы в зависимости от номера страницы, по которой щелкнули
-$(".pagination li.page-item").on("click", function() {
-  // Проверьте, является ли номер страницы, на который вы нажали, текущая страница, которая отображается
+// Function that displays new items based on page number that was clicked
+$(".pagination li.current-page").on("click", function() {
+  // Check if page number that was clicked on is the current page that is being displayed
   if ($(this).hasClass('active')) {
-    return false; // Вернуть false (т.е. Ничего не делать, так как пользователь нажал на номер страницы, которая уже отображается)
+    return false; // Return false (i.e., nothing to do, since user clicked on the page number that is already being displayed)
   } else {
-    var currentPage = $(this).index(); // Получить номер текущей страницы
-    $(".pagination li").removeClass('active'); // Удалить статус 'active' класс со страницы, которая отображается в данный момент
-    $(this).addClass('active'); // Добавьте статус 'active' класс на страницу, на которую вы нажали
-    $("#page .news-sheet__box").hide(); // Скрыть все элементы в цикле, в этом случае все группы списка
-    var grandTotal = limitPerPage * currentPage; // Получить общее количество элементов до номера страницы, по которой был выполнен клик
+    var currentPage = $(this).index(); // Get the current page number
+    $(".pagination li").removeClass('active'); // Remove the 'active' class status from the page that is currently being displayed
+    $(this).addClass('active'); // Add the 'active' class status to the page that was clicked on
+    $("#page .news-sheet__box").hide(); // Hide all items in loop, this case, all the list groups
+    var grandTotal = limitPerPage * currentPage; // Get the total number of items up to the page number that was clicked on
 
-    // Переберите все элементы, выбрав новый набор элементов на основе номера страницы
+    // Loop through total items, selecting a new set of items based on page number
     for (var i = grandTotal - limitPerPage; i < grandTotal; i++) {
-      $("#page .news-sheet__box:eq(" + i + ")").show(); // Показать элементы с новой выбранной страницы
+      $("#page .news-sheet__box:eq(" + i + ")").show(); // Show items from the new page that was selected
     }
   }
 
 });
 
-// Функция для перехода на следующую страницу, когда пользователи нажимают на идентификатор следующей страницы (кнопка следующей страницы)
+// Function to navigate to the next page when users click on the next-page id (next page button)
 $("#next-page").on("click", function() {
-  var currentPage = $(".pagination li.active").index(); // Определить текущую активную страницу
-  // Убедитесь, что переход на следующую страницу не будет превышать общее количество страниц
+  var currentPage = $(".pagination li.active").index(); // Identify the current active page
+  // Check to make sure that navigating to the next page will not exceed the total number of pages
   if (currentPage === totalPages) {
-    return false; // Возвратить false (то есть, больше не можете перемещаться, так как это превысило бы максимальное количество страниц)
+    return false; // Return false (i.e., cannot navigate any further, since it would exceed the maximum number of pages)
   } else {
-    currentPage++; // Увеличить страницу на один
-    $(".pagination li").removeClass('active'); // Удалить статус 'active' класс с текущей страницы
-    $("#page .news-sheet__box").hide(); // Скрыть все элементы в петле нумерации страниц
-    var grandTotal = limitPerPage * currentPage; // Получить общее количество элементов до выбранной страницы
+    currentPage++; // Increment the page by one
+    $(".pagination li").removeClass('active'); // Remove the 'active' class status from the current page
+    $("#page .news-sheet__box").hide(); // Hide all items in the pagination loop
+    var grandTotal = limitPerPage * currentPage; // Get the total number of items up to the page that was selected
 
-    // Переберите все элементы, выбрав новый набор элементов на основе номера страницы
+    // Loop through total items, selecting a new set of items based on page number
     for (var i = grandTotal - limitPerPage; i < grandTotal; i++) {
-      $("#page .news-sheet__box:eq(" + i + ")").show(); // Показать элементы с новой выбранной страницы
+      $("#page .news-sheet__box:eq(" + i + ")").show(); // Show items from the new page that was selected
     }
 
-    $(".pagination li.page-item:eq(" + (currentPage - 1) + ")").addClass('active'); // Сделать новый номер страницы 'active' страница
+    $(".pagination li.current-page:eq(" + (currentPage - 1) + ")").addClass('active'); // Make new page number the 'active' page
   }
 });
 
-// Функция для перехода на предыдущую страницу, когда пользователи нажимают на идентификатор предыдущей страницы (кнопка предыдущей страницы)
+// Function to navigate to the previous page when users click on the previous-page id (previous page button)
 $("#previous-page").on("click", function() {
-  var currentPage = $(".pagination li.active").index(); // Определить текущую активную страницу
-  // Убедитесь, что пользователи не находятся на странице 1 и пытаются перейти на предыдущую страницу.
+  var currentPage = $(".pagination li.active").index(); // Identify the current active page
+  // Check to make sure that users is not on page 1 and attempting to navigating to a previous page
   if (currentPage === 1) {
-    return false; // Вернуть false (т.е. не может перейти на предыдущую страницу, потому что текущая страница - страница 1)
+    return false; // Return false (i.e., cannot navigate to a previous page because the current page is page 1)
   } else {
-    currentPage--; // Декримент страницы по одному
-    $(".pagination li").removeClass('active'); // Удалить статус статуса 'active' с номера предыдущей активной страницы
-    $("#page .news-sheet__box").hide(); // Скрыть все элементы в петле нумерации страниц
-    var grandTotal = limitPerPage * currentPage; // Получить общее количество элементов до выбранной страницы
+    currentPage--; // Decrement page by one
+    $(".pagination li").removeClass('active'); // Remove the 'activate' status class from the previous active page number
+    $("#page .news-sheet__box").hide(); // Hide all items in the pagination loop
+    var grandTotal = limitPerPage * currentPage; // Get the total number of items up to the page that was selected
 
-    // Переберите все элементы, выбрав новый набор элементов на основе номера страницы
+    // Loop through total items, selecting a new set of items based on page number
     for (var i = grandTotal - limitPerPage; i < grandTotal; i++) {
-      $("#page .news-sheet__box:eq(" + i + ")").show(); // Показать элементы с новой выбранной страницы
+      $("#page .news-sheet__box:eq(" + i + ")").show(); // Show items from the new page that was selected
     }
 
-    $(".pagination li.page-item:eq(" + (currentPage - 1) + ")").addClass('active'); // Сделать новый номер страницы 'active' страница
+    $(".pagination li.current-page:eq(" + (currentPage - 1) + ")").addClass('active'); // Make new page number the 'active' page
   }
 });
