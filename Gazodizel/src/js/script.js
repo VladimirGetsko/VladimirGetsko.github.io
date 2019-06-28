@@ -58,7 +58,7 @@ Array.prototype.forEach.call(newsTexts, (el, idx) => {
 /////   Pagination   /////
 
 var numberOfItems = $('#page .news-sheet__box').length; // Get total number of the items that should be paginated
-var limitPerPage = 1; // Limit of items per each page
+var limitPerPage = 5; // Limit of items per each page
 $('#page .news-sheet__box:gt(' + (limitPerPage - 1) + ')').hide(); // Hide all items over page limits (e.g., 5th item, 6th item, etc.)
 var totalPages = Math.round(numberOfItems / limitPerPage); // Get number of pages
 $(".pagination").append("<li class='current-page page-item active'><a class='page-link' href='javascript:void(0)'>" + 1 + "</a></li>"); // Add first page marker

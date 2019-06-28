@@ -26,6 +26,10 @@
 			margin-bottom: rem(10px);
 			font-weight: $weight-bold;
 		}
+
+		&--heading{
+			margin-top: rem(20px);
+		}
 		
 		&--img{
 			margin: 0 auto;
@@ -49,6 +53,7 @@
 		&--text{
 			font-size: rem(16px);
 			line-height: 1.7;
+			margin-bottom: rem(10px);
 
 			&:last-child{
 				margin-bottom: 0;
