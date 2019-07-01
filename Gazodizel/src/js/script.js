@@ -132,3 +132,14 @@ $("#previous-page").on("click", function() {
     $(".pagination li.current-page:eq(" + (currentPage - 1) + ")").addClass('active'); // Make new page number the 'active' page
   }
 });
+
+///   Magnific Popup    /////
+
+$('.news-item__gallery--item').magnificPopup({
+  type:'image',
+  gallery: {
+    enabled: true
+  },
+  removalDelay: 300,
+  mainClass: 'mfp-fade'
+});

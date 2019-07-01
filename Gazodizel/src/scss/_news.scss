@@ -34,6 +34,15 @@
 			}
 		}
 
+		&--link{
+			color: $primary-text-color;
+
+			&:hover{
+				color: $primary-text-color;
+				text-decoration: none;
+			}
+		}
+
 		&--img{
 			max-width: rem(270px);
 			margin: 0 auto rem(20px) auto;
