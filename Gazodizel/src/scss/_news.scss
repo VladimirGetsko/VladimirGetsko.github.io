@@ -14,19 +14,17 @@
 		transition: all .4s ease;
 		border-radius: 5px;
 		position: relative;
-		box-shadow:
-   		0 1px 4px rgba(0, 0, 0, .3),
-   		-23px 0 20px -23px rgba(0, 0, 0, .8),
-   		23px 0 20px -23px rgba(0, 0, 0, .8),
-			0 0 40px rgba(0, 0, 0, .1) inset;
-		
+		border: 1px solid $divider-color;
+		background-color: darken($bg-color-light, 2%);
+				
 		&:hover{
 			transform: scale(1.03);
 		}
 
 		@include max991 {
+			border:none;
 			border-bottom: 1px solid $divider-color;
-			box-shadow: none;
+			background-color: $bg-color-light;
 			border-radius: 0;
 
 			&:hover{
@@ -49,8 +47,8 @@
 			background-color: $divider-color;
 
 			@include max991 {
-				border: 3px solid $divider-color;
-				border-radius: rem(5px);
+				border: 1px solid $divider-color;
+				border-radius: rem(3px);
 			}
 		}
 

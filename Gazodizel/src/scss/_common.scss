@@ -125,7 +125,7 @@ section{
 	padding: rem(7px) rem(20px);
 	background-color: $bg-collapse-color;
 	color: $primary-color-text;
-	border-radius: rem(30px);
+	border-radius: 5px;
 	
 	&:hover{
 		color: darken($primary-color-light, 5%);

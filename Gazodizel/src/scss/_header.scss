@@ -35,6 +35,21 @@
 		padding: rem(70px) 0;
 		align-items: center;
 		text-align: center;
+		position: relative;
+		
+		&--wrap {
+			margin: auto;
+
+			/* Для IE10 IE11 стили*/
+			@media screen and (-ms-high-contrast: active),
+			(-ms-high-contrast: none) and (min-width : 1367px) {
+				position: absolute;
+				max-width: rem(760px);
+				top: 50%;
+				left: 50%;
+				transform: translate(-50%, -50%);
+			}
+		}
 
 		&--title{
 			color: darken($primary-color, 5%);
@@ -71,14 +86,22 @@
 			font-size: rem(16px);
 			line-height: $baze-line;
 			margin-bottom: rem(30px);
+
+			@include max1366{
+				margin-bottom: rem(18px);
+			}
 		}
 
 		&--icon{
 			width: 100%;
 
 			.fab{
-				font-size: rem(50px);
+				font-size: rem(45px);
 				color: $accent-color;
+
+				@include max991{
+					font-size: rem(30px);
+				}
 			}
 		}
 	}
@@ -93,6 +116,16 @@
 		left: 50%;
 		transform: translate(-50%, -50%);
 
+		@include max991 {
+			width: rem(18px);
+			height: rem(30px);
+			border: 1px solid $primary-color-text;
+			border-radius: 7px;
+			bottom: 2%;
+			left: 50%;
+			transform: translate(-50%, -50%);
+		}
+
 		&::before{
 			position: absolute;
 			content: '';
@@ -103,6 +136,12 @@
 			left: 50%;
 			background-color: $primary-color-text;
 			transform: translate(-50%, -50%);
+
+			@include max991{
+				width: 3px;
+				height: 5px;
+				border-radius: 1px;
+			}
 		}
 
 		&--link{
@@ -112,7 +151,7 @@
 			cursor: pointer;
 		}
 
-		@include max575{
+		@include max767{
 			display: none;
 		}
 	}
