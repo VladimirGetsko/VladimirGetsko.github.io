@@ -47,6 +47,7 @@ section{
 /////  Positioning blocks and text  /////
 
 .center-blocks{
+	display: flex;
 	justify-content: center;
 	align-items: center;
 }
@@ -59,18 +60,6 @@ section{
 	text-align: center;
 }
 
-.news-footer{
-	position: fixed;
-	bottom: 0;
-	right: 0;
-	left: 0;
-	z-index: 1;
-
-	@include max575{
-		position: initial;
-	}
-}
-
 .hr-yellow{
 	margin-bottom: rem(50px);
 	border-top: 1px solid rgba($accent-color, .7);
@@ -80,7 +69,7 @@ section{
 
 	&-link{
 		color: $primary-color!important;
-		display: block;
+		display: inline-block;
 	
 		&:hover{
 			color: $primary-color;
@@ -242,12 +231,37 @@ section{
 	}
 }
 
-// header,
-// .blog,
-// .products,
-// .about,
-// .contacts,
-// footer
-// {
-// 	display: none;
-// }
+@keyframes lists{
+	0% {
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+	3% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	11% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+	13% {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+	30% {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+	35% {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+	40% {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+	100% {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+}

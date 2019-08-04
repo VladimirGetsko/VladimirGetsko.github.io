@@ -33,6 +33,7 @@
 		}
 
 		&--link{
+			display: block;
 			color: $primary-text-color;
 
 			&:hover{
@@ -42,22 +43,41 @@
 		}
 
 		&--img{
+			position: absolute;
+			display: flex;
+			justify-content: center;
 			max-width: rem(270px);
+			max-height: rem(270px);
+			height: 100%;
+			width: 100%;
+			overflow: hidden;
 			margin: 0 auto rem(20px) auto;
 			background-color: $divider-color;
+			left: 50%;
+			top: 0;
+			transform: translate(-50%, 5%);
 
 			@include max991 {
 				border: 1px solid $divider-color;
-				border-radius: rem(3px);
+				border-radius: 3px;
 			}
 		}
 
 		.news__img {
 			display: block;
+			object-fit: cover;
+			height: 100%;
 			width: 100%;
+						
+			/* Для IE10 IE11 стили*/
+			@media screen and (-ms-high-contrast: active),
+			(-ms-high-contrast: none) {
+				width: auto;
+			}
 		}
 		
 		&--content{
+			padding-top: rem(290px);
 			text-align: center;
 			position: relative;
 		}

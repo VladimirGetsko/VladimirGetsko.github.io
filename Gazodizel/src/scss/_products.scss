@@ -12,7 +12,7 @@
 			border-radius: rem(3px);
 			transition: all .3s ease-in-out;
 			position: relative;
-			border: 2px solid $divider-color;
+			border: 1px solid $divider-color;
 
 			@include max991{
 				margin: 0 auto rem(30px);
@@ -30,6 +30,10 @@
 				margin-bottom: 0;
 			}
 		}
+	}
+
+	.bd-example{
+		margin-bottom: 30px;
 	}
 
 	.carousel {
@@ -84,5 +88,107 @@
 	.carousel-caption{
 		background-color: rgba($primary-color-text, .7);
 		color: $primary-text-color;
+	}
+
+	&__list {
+		background-image: linear-gradient(rgba($primary-text-color, .8), rgba($primary-text-color, .8)),
+			url($img-path + 'cars_bg.jpg');
+		background-position: center center;
+		background-size: cover;
+		background-repeat: no-repeat;
+		min-height: 520px;
+		width: 100%;
+		padding: rem(40px) rem(15px);
+		position: relative;
+
+		@include max575{
+			min-height: 300px;
+			padding: rem(20px) rem(15px);
+		}
+
+		&--wrap{
+			position: absolute;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			left: 0;
+			display: flex;
+			text-align: center;
+			align-items: center;
+		}
+
+		&--title {
+			display: flex;
+			justify-content: center;
+			line-height: 2.3;
+			letter-spacing: 3px;
+			margin-top: -120px;
+			color: $primary-color-text;
+			font-weight: $weight-bold;
+			width: 100%;
+
+			@include max575{
+				line-height: $baze-line;
+				letter-spacing: 2px;
+				font-size: rem(16px);
+			}
+		}
+
+		&--items{
+			font-size: rem(70px);
+			color: $primary-color;
+			font-weight: $weight-bold;
+			position: absolute;
+			text-align: center;
+			width: 100%;
+			left: 0;
+			top: 50%;
+
+			@include max575{
+				font-size: rem(35px);
+			}
+		}
+
+		&--items span{
+			display: block;
+			padding-top: rem(35px);
+			position: absolute;
+			width: 100%;
+			overflow: hidden;
+			animation: lists 16s linear infinite;
+			opacity: 0;
+
+			&:nth-child(1){
+				animation-delay: 0s;
+			}
+			
+			&:nth-child(2){
+				animation-delay: 2s;
+			}
+
+			&:nth-child(3){
+				animation-delay: 4s;
+			}
+
+			&:nth-child(4){
+				animation-delay: 6s;
+			}
+
+			&:nth-child(5){
+				animation-delay: 8s;
+			}
+
+			&:nth-child(6){
+				animation-delay: 10s;
+			}
+
+			&:nth-child(7){
+				animation-delay: 12s;
+			}
+
+			&:nth-child(8){
+				animation-delay: 14s;
+			}
+		}
 	}
 }

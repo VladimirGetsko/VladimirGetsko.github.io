@@ -57,9 +57,9 @@
 	&__success{
 		display: none;
 		position: absolute;
-		color: $accent-color;
+		color: $primary-color-dark;
 		font-size: rem(20px);
-		background-color: rgba($primary-color-text, .3);
+		background-color: rgba($primary-color-text, .5);
 		top: 0;
 		right: 0;
 		bottom: 0;
