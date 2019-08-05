@@ -1,3 +1,8 @@
+@function rem($target, $context: $base-size) {
+	@if $target == 0 { @return 0 }
+	@return $target / $context + 0rem;
+}
+
 @mixin min1367 {
 	@media all and (min-width: 1367px) {
 		@content;
