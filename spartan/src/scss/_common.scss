@@ -11,3 +11,27 @@ body {
 a:hover{
 	text-decoration: none;
 }
+
+///// header_nav
+@keyframes animationFade{
+	from{
+		opacity: 0;
+		transform: translate3d(0, -100%, 0);
+	}
+
+	to{
+		opacity: 1;
+		transform: none;
+	}
+}
+
+///// header vidBtn
+@keyframes shadow-pulse{
+	0%{
+		box-shadow: 0 0 0 0px rgba(0,0,0, .2);
+
+	}
+	100%{
+		box-shadow: 0 0 0 20px rgba(0,0,0, .2);
+	}
+}

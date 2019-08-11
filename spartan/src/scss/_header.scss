@@ -8,7 +8,8 @@
 	&_nav{
 		display: flex;
 		justify-content: center;
-		padding: rem(20px) rem(30px);
+		padding-top: rem(15px);
+		padding-bottom: 3px;
 		position: absolute;
 		transition: all .3s;
 		background-color: $white-color;
@@ -32,8 +33,34 @@
 			font-size: 1.1em;
 			color: $dark-grey-color;
 			padding: 0.25rem 0;
-			margin: 0 1.5rem;
+			margin: 10px 1.5rem;
 			text-transform: uppercase;
+		}
+
+		&.sticky{
+			width: 100%;
+			position: fixed;
+			background-color: $white-color;
+			box-shadow: 0 10px 10px -10px rgba($black-color, .35);
+			animation-name: animationFade;
+			animation-duration: 1s;
+			animation-fill-mode: both;
+			
+			.header_nav-link{
+				color: $dark-blue-color;
+			}
+
+			.header_logo-white{
+				display: none;
+			}
+
+			.header_logo-black{
+				display: inline-block;
+			}
+
+			.nav-icon span{
+				background-color: $dark-blue-color;
+			}
 		}
 	}
 
@@ -48,39 +75,39 @@
 			display: none;
 		}
 	}
-}
 
-.nav-icon{
-	position: absolute;
-	top: rem(27px);
-	right: rem(30px);
-	padding: 5px;
-	width: rem(40px);
-	z-index: 1;
-	cursor: pointer;
-
-	span{
-		display: block;
-		background-color: $dark-grey-color;
-		width: rem(30px);
-		height: 1px;
-		transition: all .3s linear;
-
-		&:nth-child(1),
-		&:nth-child(3){
-			width: rem(20px);
-			margin: 0 auto;
+	.nav-icon{
+		position: absolute;
+		top: rem(27px);
+		right: rem(30px);
+		padding: 5px;
+		width: rem(40px);
+		z-index: 1;
+		cursor: pointer;
+	
+		span{
+			display: block;
+			background-color: $dark-grey-color;
+			width: rem(30px);
+			height: 1px;
+			transition: all .3s linear;
+	
+			&:nth-child(1),
+			&:nth-child(3){
+				width: rem(20px);
+				margin: 0 auto;
+			}
+	
+			&:nth-child(2){
+				margin: 5px 0;
+				width: rem(32px);
+			}
 		}
-
-		&:nth-child(2){
-			margin: 5px 0;
-			width: rem(32px);
+	
+		&:hover span:nth-child(1),
+		&:hover span:nth-child(3){
+			width: rem(30px);
 		}
-	}
-
-	&:hover span:nth-child(1),
-	&:hover span:nth-child(3){
-		width: rem(30px);
 	}
 }
 
@@ -89,7 +116,7 @@
 	color: $dark-blue-color;
 	position: fixed;
 	left: 0;
-	top: 96px;
+	top: 0;
 	height: 100%;
 	width: 100%;
 	padding: 3.75rem;
@@ -111,7 +138,7 @@
 	&_logo{
 		display: flex;
 		justify-content: center;
-		padding: 6rem;
+		padding: 4rem;
 		color: $black-color;
 	}
 }
@@ -234,4 +261,97 @@
 			transform: rotate(-45deg);
 		}
 	}
+}
+
+video#herovideo{
+	width: 100%;
+}
+
+.vidContent_social-icons_link{
+	color: $white-color;
+	border: 1px solid $white-color;
+	width: 40px;
+	height: 40px;
+	font-size: 20px;
+	direction: inherit;
+	text-align: center;
+	padding-top: 5px;
+	transition: all 1s ease;
+	background-color: $black-color;
+	border-radius: 0px;
+}
+
+.vidContent_social-icons_link i{
+	position: relative;
+	bottom: 7px;
+}
+
+.vidContent{
+	position: absolute;
+	top: 290px;
+	color: #f1f1f1;
+	width: 100%;
+	padding: 10px;
+	text-align: left;
+
+	h1{
+		text-transform: uppercase;
+		font-family: 'Oswald-Bold', sans-serif;
+		font-size: 5em;
+		font-weight: $weight-bold;
+		letter-spacing: 2px;
+	}
+}
+
+#vidBtn{
+	font-family: $main-font;
+	font-weight: $weight-regular;
+	text-transform: uppercase;
+	display: inline-block;
+	font-size: 16px;
+	padding: 15px 40px;
+	border: none;
+	background-color: $white-color;
+	color: #333333;
+	cursor: pointer;
+	margin-top: 18px;
+	border-radius: 50px;
+	animation: shadow-pulse 2s infinite;
+
+	&:hover{
+		background-color: $white-color;
+		color: $black-color;
+		animation: none;
+		text-decoration: none;
+	}
+}
+
+.vidContent_social-icons.list-inline{
+	text-align: center;
+	margin-top: 22px;
+}
+
+.vidContent_social-icons_item{
+	display: inline-block;
+	padding-right: 5px;
+	padding-left: 5px;
+}
+
+.vidContent_social-icons_link{
+	color: #333333!important;
+	border: 4px solid $white-color;
+	width: 50px;
+	height: 50px;
+	line-height: 40px;
+	font-size: 20px;
+	direction: inherit;
+	text-align: center;
+	border-radius: 50%;
+	transition: all 1s ease;
+	margin-top: 40px;
+	background-color: $white-color!important;
+}
+
+.bxslider{
+	padding: 0;
 }
