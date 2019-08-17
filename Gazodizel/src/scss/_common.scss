@@ -35,6 +35,10 @@ section{
 	}
 }
 
+.title_hidden{
+	display: none;
+}
+
 .heading{
 	font-size: rem(22px);
 	font-weight: $weight-bold;
