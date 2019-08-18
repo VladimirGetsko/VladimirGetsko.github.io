@@ -5,7 +5,7 @@
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Title page</title>
+	<title>Title page - Vladimir Getsko</title>
 	<link rel="icon" href="img/favicon.png">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
 	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
@@ -14,11 +14,11 @@
 
 <body>
 
-	<header>
+	<!-- <header>
 		<div class="container">
 			<div class="row">
 				<div class="col-12">
-					<!---Navbar --->
+					
 					<nav class="mb-1 navbar navbar-expand-lg navbar-dark fixed-top scrolling-navbar">
 						<a class="navbar-brand" href="#">Vladimir Getsko</a>
 						<button class="navbar-toggler" type="button" data-toggle="collapse"
@@ -86,7 +86,7 @@
 							</ul>
 						</div>
 					</nav>
-					<!--/.Navbar -->
+					
 				</div>
 			</div>
 		</div>
@@ -122,9 +122,78 @@
 			</div>
 		</div>
 
-	</header>
+	</header> -->
 
-	<script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+	<nav class="menu">
+		<header>Menu <span>×</span></header>
+		<ol>
+			<li class="menu-item"><a href="Summary/index.html">Summary</a></li>
+			<li class="menu-item">
+				<a href="#0">Educational workshop</a>
+				<ol class="sub-menu">
+					<li class="menu-item"><a href="Webcareer/app/index.html">Webcareer</a></li>
+					<li class="menu-item"><a href="Timeline/app/index.html">Timeline</a></li>
+					<li class="menu-item"><a href="Organical/app/index.html">Organical</a></li>
+					<li class="menu-item"><a href="MDB project/index.html">MDB project</a></li>
+				</ol>
+			</li>
+			<li class="menu-item">
+				<a href="#0">Work projects</a>
+				<ol class="sub-menu">
+					<li class="menu-item"><a href="Gazodizel/app/index.html">Gazodizel</a></li>
+					<li class="menu-item"><a href="Final_project/app/index.html">Final project</a></li>
+					<li class="menu-item"><a href="Creato/app/index.html">Creato</a></li>
+					<li class="menu-item"><a href="Exam/app/index.html">Exam</a></li>
+				</ol>
+			</li>
+			<li class="menu-item">
+				<a href="#0">Different</a>
+				<ol class="sub-menu">
+					<li class="menu-item"><a href="Form/index.html">Form</a></li>
+				</ol>
+			</li>
+		</ol>
+		<footer><button aria-label="Toggle Menu">Toggle</button></footer>
+	</nav>
+
+	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
+
+	<script>
+		var $els = $('.menu a, .menu header');
+		var count = $els.length;
+		var grouplength = Math.ceil(count / 3);
+		var groupNumber = 0;
+		var i = 1;
+		$('.menu').css('--count', count + '');
+		$els.each(function (j) {
+			if (i > grouplength) {
+				groupNumber++;
+				i = 1;
+			}
+			$(this).attr('data-group', groupNumber);
+			i++;
+		});
+
+		$('.menu footer button').on('click', function (e) {
+			e.preventDefault();
+			$els.each(function (j) {
+				$(this).css('--top', $(this)[0].getBoundingClientRect().top + ($(this).attr('data-group') * -15) - 20);
+				$(this).css('--delay-in', j * .1 + 's');
+				$(this).css('--delay-out', (count - j) * .1 + 's');
+			});
+			$('.menu').toggleClass('closed');
+			e.stopPropagation();
+		});
+
+		// run animation once at beginning for demo
+		setTimeout(function () {
+			$('.menu footer button').click();
+			setTimeout(function () {
+				$('.menu footer button').click();
+			}, (count * 100) + 500);
+		}, 1000);
+	</script>
+
 </body>
 
 </html>
