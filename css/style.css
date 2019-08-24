@@ -30,8 +30,9 @@ body {
 	background-image: url("../img/bg_header.jpeg");
 	background-repeat: no-repeat;
 	background-size: cover;
+	background-position: center center;
 	opacity: .5;
-	animation: anim 25s linear infinite;
+	animation: anim 35s linear infinite;
 }
 
 @keyframes anim{
