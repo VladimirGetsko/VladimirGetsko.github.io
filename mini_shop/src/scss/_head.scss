@@ -1,0 +1,107 @@
+.head {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 35% 0;
+	height: calc(100vh - 60px);
+
+	@include min576 {
+		background-position: 15% 0;
+	}
+
+	@include min768 {
+		height: calc(100vh - 83px);
+		background-position: 0 0;
+	}
+
+	&__box {
+		position: relative;
+		width: 100%;
+		height: calc(100vh - 60px);
+
+		@include min768 {
+			height: calc(100vh - 83px);
+		}
+	}
+	
+	&__inner {
+		position: absolute;
+		max-width: 480px;
+		width: 100%;
+		padding: 40px 0;
+		right: 0;
+		bottom: 0;
+		text-align: center;
+
+		@include min576 {
+			padding: 50px 10px;
+		}
+
+		@include min768 {
+			padding: 60px 15px;
+			text-align: left;
+		}
+		
+		@include min1367 {
+			padding: 100px 15px;
+		}
+	}
+
+	&__subtitle {
+		font-size: 16px;
+		@extend %PoppinsMedium;
+
+		@include min768 {
+			font-size: 18px;
+			line-height: 27px;
+		}
+	}
+
+	&__title {
+		@extend %PoppinsBold;
+		font-size: 45px;
+
+		@include min768 {
+			font-size: 60px;
+		}
+
+		@include min992 {
+			font-size: 80px;
+		}
+	}
+
+	&__text {
+		font-size: 16px;
+		margin-bottom: 27px;
+
+		@include min768 {
+			font-size: 18px;
+			line-height: 27px;
+		}
+	}
+
+	&__wrap-btns {
+		display: flex;
+		justify-content: center;
+
+		@include min768 {
+			justify-content: left;
+		}
+	}
+
+	&__btn {
+		background-color: $black-color;
+		width: 120px;
+
+		&:first-child{
+			margin-right: 20px;
+
+			@include min768 {
+				margin-right: 35px;
+			}
+		}
+
+		@include min768 {
+			width: 147px;
+		}
+	}
+}

@@ -1,0 +1,146 @@
+.avone {
+	padding: 25px 0 60px;
+	text-align: center;
+
+	@include min992 {
+		padding: 55px 0 121px;
+	}
+
+	&__title {
+		font-size: 18px;
+		line-height: 27px;
+		margin-bottom: 15px;
+		@extend %PoppinsBold;
+
+		@include min768 {
+			font-size: 20px;
+			line-height: 30px;
+		}
+	}
+
+	&__text{
+		font-size: 14px;
+		line-height: 20px;
+		margin-bottom: 30px;
+
+		@include min768 {
+			font-size: 15px;
+			line-height: 22px;
+			margin-bottom: 147px;
+		}
+	}
+
+	&__box {
+		@include min576 {
+			display: flex;
+		}
+	}
+
+	&__item-inner {
+		position: relative;
+		
+		&:first-child {
+			margin-bottom: 15px;
+		}
+
+		@include min576 {
+			display: flex;
+			width: 50%;
+
+			&:first-child {
+				margin-bottom: 0;
+				margin-right: 15px;
+			}
+		}
+
+		@include min768 {
+			&:first-child {
+				margin-right: 30px;
+			}
+		}
+	}
+
+	&__item-second{
+		width: 100%;
+
+		@include min768 {
+			padding-right: 38px;
+			margin-top: -87px;
+			
+		}
+	}
+
+	&__item-wrap {
+
+		@include min576 {
+		position: absolute;
+		left: 0;
+		right: 0;
+		bottom: 0;
+		display: flex;
+		justify-content: space-between;
+		align-items: flex-end;
+		}
+	}
+
+	&__item-prev {
+		
+		@include min576 {
+		max-width: 252px;
+		width: 40%;
+		border-top: 10px solid $white-color;
+		border-left: 10px solid $white-color;
+		}
+
+		@include min768 {
+		width: 50%;
+		border-top: 22px solid $white-color;
+		border-left: 25px solid $white-color;
+		}
+	}
+
+	&__item-link {
+		margin: 15px 0;
+				
+		a {
+			position: relative;
+			font-size: 12px;
+			text-transform: uppercase;
+			padding-bottom: 5px;
+			border-bottom: 1px solid transparent;
+			transition: all .35 ease;
+			cursor: pointer;
+
+			&::before {
+				position: absolute;
+				content: '';
+				width: 0%;
+				height: 2px;
+				background-color: $black-color;
+				bottom: -2px;
+				transition: all 0.35s ease;
+				opacity: 0;
+			}
+
+			&:hover {
+				&::before {
+					width: 100%;
+					opacity: 1;
+				}
+			}
+
+			@include min768 {
+				font-size: 15px;
+				line-height: 22px;
+			}
+		}
+
+		@include min576 {
+			margin: 15px 0 15px auto;
+		}
+
+		@include min768 {
+			margin: 0 0 36px auto;
+		}
+	}
+}

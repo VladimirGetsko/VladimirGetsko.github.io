@@ -1,0 +1,141 @@
+.fashion{
+	padding: 25px 0;
+	text-align: center;
+
+	@include min992 {
+		padding: 55px 0;
+	}
+
+	&__title {
+		font-size: 18px;
+		line-height: 27px;
+		margin-bottom: 15px;
+		@extend %PoppinsBold;
+
+		@include min768 {
+			font-size: 20px;
+			line-height: 30px;
+		}
+	}
+
+	&__text{
+		font-size: 14px;
+		line-height: 20px;
+		margin-bottom: 30px;
+
+		@include min768 {
+			font-size: 15px;
+			line-height: 22px;
+			margin-bottom: 65px;
+		}
+	}
+
+	&__items {
+		@include min576 {
+			display: flex;
+			flex-wrap: wrap;
+			align-items: stretch;
+			justify-content: center;
+		}
+
+		@include min768 {
+			flex-wrap: nowrap;
+		}
+	}
+
+	&__items-wrap {
+		margin-bottom: 25px;
+		width: 100%;
+		
+		&:last-child {
+			margin-bottom: 0;
+		}
+
+		@include min576 {
+			display: flex;
+			align-items: stretch;
+			justify-content: center;
+		}
+
+		@include min768 {
+			width: 50%;
+			margin-bottom: 0;
+
+			&:first-child {
+				margin-right: 22px;
+			}
+		}
+	}
+
+	&__item {
+		text-align: left;
+		
+		&:first-child {
+			margin-bottom: 25px;
+		}
+
+		@include min576 {
+			width: 50%;
+
+			&:first-child {
+				margin-bottom: 0;
+			}
+
+			&:nth-child(odd) {
+				margin-right: 22px;
+			}
+		}
+
+		img {
+			margin-bottom: 17px;
+
+			@include min576 {
+				margin-bottom: 38px;
+			}
+		}
+	}
+
+	&__subtitle {
+		text-transform: uppercase;
+		font-size: 15px;
+		line-height: 22px;
+		@extend %PoppinsLight;
+		margin-bottom: 3px;
+	}
+
+	&__description{
+		text-transform: uppercase;
+		font-size: 15px;
+		line-height: 22px;
+		@extend %PoppinsMedium;
+		margin-bottom: 3px;
+	}
+
+	&__price {
+		max-width: 145px;
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		span{
+			font-size: 15px;
+			line-height: 22px;
+		}
+	}
+
+	&__price-new {
+		display: none;
+		color: #CF2929;
+	}
+	
+}
+
+.fashion__item.stock {
+	.fashion__price-old {
+		text-decoration: line-through;
+	}
+
+	.fashion__price-new {
+		display: block;
+	}
+}

@@ -1,0 +1,12 @@
+.footer {
+	background-color: $bg-color;
+	min-height: 93px;
+	text-align: center;
+	display: flex;
+	align-items: center;
+
+	&__text{
+		font-size: 15px;
+		line-height: 22px;
+	}
+}

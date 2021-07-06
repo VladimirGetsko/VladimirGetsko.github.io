@@ -1,0 +1,65 @@
+.collection {
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: 90% 0;
+	height: 70vh;
+
+	&__box {
+		position: relative;
+		width: 100%;
+		height: 70vh;
+	}
+
+	&__inner {
+		position: absolute;
+		max-width: 480px;
+		width: 100%;
+		padding: 40px 0;
+		left: 0;
+		bottom: 0;
+		text-align: center;
+
+		@include min576 {
+			padding: 50px 10px 50px 0;
+		}
+
+		@include min768 {
+			padding: 60px 15px 60px 0;
+			text-align: left;
+		}
+		
+		@include min1367 {
+			padding: 129px 15px 129px 0;
+		}
+	}
+
+	&__subtitle {
+		font-size: 16px;
+		@extend %PoppinsMedium;
+		margin-bottom: 5px;
+
+		@include min768 {
+			font-size: 18px;
+			line-height: 27px;
+		}
+	}
+
+	&__title {
+		@extend %PoppinsBold;
+		font-size: 45px;
+		margin-bottom: 5px;
+
+		@include min768 {
+			font-size: 60px;
+		}
+
+		@include min992 {
+			font-size: 80px;
+		}
+	}
+
+	&__btn {
+		background-color: $black-color;
+		max-width: 214px;
+	}
+}
