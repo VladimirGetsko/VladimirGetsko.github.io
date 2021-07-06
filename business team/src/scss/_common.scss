@@ -1,0 +1,150 @@
+*,
+*::before,
+*::after{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html{
+	@include min834{
+		scroll-behavior: smooth;
+	}
+}
+
+
+body {
+	font-family: $main-font;
+	font-size: $base-size;
+	color: $text-color;
+	line-height: $baze-line;
+	background-color: $white-color;
+}
+
+section{
+	margin-bottom: 60px;
+
+	@include min834{
+		margin-bottom: 80px;
+	}
+
+	@include min1200{
+		margin-bottom: 150px;
+	}
+}
+
+.container{
+	width: 100%;
+	max-width: 1180px;
+	margin: 0 auto;
+	padding: 0 30px;
+
+	@include min834{
+		padding: 0 67px;
+	}
+
+	@include min1200{
+		padding: 0 10px;
+	}
+}
+
+.title{
+	font-size: 36px;
+	margin: 0 0 50px;
+	line-height: 1.1;
+	text-align: center;
+	font-family: $display-medium-font;
+
+	@include min834{
+		font-size: 48px;
+	}
+}
+
+.btn{
+	display: inline-block;
+	padding: 17px 0;
+	font-size: 14px;
+	line-height: 150%;
+	letter-spacing: 0.2em;
+	color: $white-color;
+	font-family: $display-bold-font;
+	text-transform: uppercase;
+	background-color: $accent-color;
+	border: 2px solid $accent-color;
+	border-radius: 3px;
+	transition: all .35s;
+	cursor: pointer;
+
+	&:hover{
+		background-color: transparent;
+		color: $text-color;
+	}
+}
+
+.btn_plan{
+	display: block;
+	padding: 18px 0;
+	font-size: 16px;
+	line-height: 150%;
+	color: $text-color;
+	font-family: $main-font;
+	background-color: none;
+	border: 1px solid $text-color;
+	transition: all .35s;
+	cursor: pointer;
+}
+
+.show_background{
+	transform: translateX(0);
+}
+
+.hide_background{
+	transform: translateX(100%);
+}
+
+.fade{
+	animation-name: fade;
+	animation-duration: 2s;
+}
+
+@keyframes fade {
+  from {
+    opacity: 0.1;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+.animated {
+	animation-duration: 1s;
+	animation-fill-mode: both;
+}
+
+.slideInRight {
+	animation-name: slideInRight;
+}
+
+@keyframes slideInRight{
+	0% {
+		transform: translate3d(100%,0,0);
+		visibility: visible;
+	}
+	100% {
+    transform: translate3d(0,0,0);
+	}
+}
+
+.slideInLeft {
+	animation-name: slideInLeft;
+}
+
+@keyframes slideInLeft{
+	0% {
+    transform: translate3d(-100%,0,0);
+    visibility: visible;
+	}
+	100% {
+    transform: translate3d(0,0,0);
+	}
+}

@@ -1,0 +1,117 @@
+.about{
+	font-size: 14px;
+
+	&_wrapper{
+		display: flex;
+		flex-direction: column;
+	}
+
+	p{
+		margin-bottom: 30px;
+	}
+
+	&_skills{
+		max-width: 560px;
+		width: 100%;
+
+		&-item{
+			margin-bottom: 10px;
+			display: flex;
+			align-items: center;
+		}
+
+		&-subtitle{
+			display: block;
+			min-width: 70px;
+		}
+
+		&-bar{
+			background-color: rgba(#000000, 0.1);
+			display: block;
+			margin: 0 10px;
+			height: 6px;
+			width: 100%;
+			border-radius: 6px;
+			overflow: hidden;
+
+			span{
+				height: 6px;
+				float: left;
+				border-radius: 6px;
+				background-color: $accent-color;
+			}
+		}
+	}
+
+	.design-width{
+		width: 90%;
+		animation: design 2s;
+	}
+	
+	.branding-width{
+		width: 75%;
+		animation: branding 2s;
+	}
+
+	.illustration-width{
+		width: 65%;
+		animation: illustration 2s;
+	}
+
+	@include min834 {
+		font-size: 16px;
+
+		p{
+			margin-bottom: 50px;
+		}
+
+		&_skills{
+			&-subtitle{
+				min-width: 80px;
+			}
+		}
+	}
+
+	@include min1200{
+
+		p{
+			margin: 0;
+		}
+
+		&_wrapper{
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		&_text{
+			max-width: 530px;
+		}
+	}
+}
+
+@keyframes design {
+	0%{
+		width: 0%;
+	}
+	100%{
+		width: 90%;
+	}
+}
+@keyframes branding {
+	0%{
+		width: 0%;
+	}
+	100%{
+		width: 75%;
+	}
+}
+@keyframes illustration {
+	0%{
+		width: 0%;
+	}
+	100%{
+		width: 65%;
+	}
+}

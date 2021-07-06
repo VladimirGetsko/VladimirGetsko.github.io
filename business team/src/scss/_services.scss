@@ -1,0 +1,72 @@
+.services {
+
+	&_wrapper {
+		display: flex;
+		flex-direction: column;
+	}
+
+	&_slogan {
+		display: inline-block;
+		font-size: 16px;
+		margin-bottom: 20px;
+		font-family: $text-bold-font;
+		text-transform: capitalize;
+	}
+
+	&_content{
+		margin-bottom: 50px;
+		p {
+			font-size: 14px;
+			margin-bottom: 25px;
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+
+	&_image{
+		width: 100%;
+		max-width: 530px;
+		margin: 0 auto;
+		
+		img{
+			display: block;
+			width: 100%;
+		}
+	}
+
+	@include min834{
+
+		&_slogan {
+			font-size: 18px;
+		}
+
+		&_content{
+			margin-bottom: 80px;
+
+			P{
+				font-size: 16px;
+				margin-bottom: 30px;
+			}
+		}
+	}
+
+	@include min1200{
+		&_wrapper {
+			flex-direction: row;
+			align-items: center;
+			justify-content: space-between;
+		}
+
+		&_content{
+			width: 100%;
+			max-width: 530px;
+			margin-bottom: 0;
+		}
+
+		&_image{
+			margin: 0;
+		}
+	}
+}

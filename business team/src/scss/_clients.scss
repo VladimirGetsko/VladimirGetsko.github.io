@@ -1,0 +1,150 @@
+.clients{
+	background-color: $dark-blue-color;
+	padding: 50px 0;
+
+	&-title{
+		color: $white-color;
+		margin-bottom: 32px;
+	}
+
+	&_slider{
+		margin-bottom: 38px;
+	}
+
+	&_slider-items {
+		overflow: hidden;
+	}
+
+	&_slider-item{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		flex-wrap: wrap;
+	}
+
+	&_slider-inner{
+		width: 49%;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		min-height: 135px;
+		padding: 12px 10px;
+
+		img{
+			display: block;
+			max-width: 100%;
+		}
+	}
+
+	&_navigation{
+		display: flex;
+		align-items: center;
+		justify-content: space-between;
+
+		&-num{
+			width: 60px;
+			color: $white-color;
+			display: flex;
+			justify-content: space-between;
+			align-items: baseline;
+
+			span{
+				display: block;
+			}
+		}
+
+		&-progress{
+			margin: 0 10px;
+			width: 100%;
+		}
+
+		&-bar{
+			background-color: #113D7B;
+			display: block;
+			height: 2px;
+			width: 100%;
+			border-radius: 6px;
+			overflow: hidden;
+
+			span{
+				height: 2px;
+				float: left;
+				border-radius: 6px;
+				background-color: $accent-color;
+			}
+		}
+
+		&-arrows{
+			max-width: 60px;
+			width: 100%;
+			height: 20px;
+			display: flex;
+			align-items: center;
+			justify-content: space-between;
+
+			span{
+				display: inline-block;
+				width: 20px;
+				height: 20px;
+				cursor: pointer;
+			}
+		}
+
+		.progressbar{
+			width: 20%;
+			transition: all 1s ease;
+		}
+
+		#number-slider{
+			display: inline-block;
+			font-size: 24px;
+			width: 30px;
+		}
+
+		.total-slider,
+		#total-slider{
+			display: inline-block;
+			font-size: 12px;
+			text-align: end;
+		}
+
+		.total-slider{
+			width: 30px;
+		}
+	}
+
+	@include min834{
+		padding: 100px 0;
+
+		&-title{
+			margin-bottom: 56px;
+		}
+
+		&_slider{
+			margin-bottom: 61px;
+		}
+
+		&_slider-item{
+			flex-wrap: nowrap;
+		}
+
+		&_slider-inner{
+			width: 100%;
+			padding: 0;
+		}
+
+		&_navigation-progress{
+			margin: 0 50px;
+		}
+	}
+
+	@include min1200{
+		&-title{
+			margin-bottom: 102px;
+		}
+
+		&_slider{
+			margin-bottom: 63px;
+		}
+	}
+}
