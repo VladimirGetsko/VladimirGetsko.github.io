@@ -23,7 +23,7 @@
 				<ol class="sub-menu">
 					<li class="menu-item"><a href="rosa/app/index.html">Rosa</a></li>
 					<li class="menu-item"><a href="mini_shop/app/index.html">Mini Shop</a></li>
-					<li class="menu-item"><a href="Timeline/app/index.html">Timeline</a></li>
+					<li class="menu-item"><a href="Blog/app/index.html">Blog</a></li>
 					<li class="menu-item"><a href="Organical/app/index.html">Organical</a></li>
 					<li class="menu-item"><a href="MDB project/index.html">MDB project</a></li>
 					<li class="menu-item"><a href="yoga/index.html">Yoga</a></li>
@@ -79,11 +79,11 @@
 	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
 
 	<script>
-		var $els = $('.menu a, .menu header');
-		var count = $els.length;
-		var grouplength = Math.ceil(count / 3);
-		var groupNumber = 0;
-		var i = 1;
+		const $els = $('.menu a, .menu header');
+		const count = $els.length;
+		const grouplength = Math.ceil(count / 3);
+		const groupNumber = 0;
+		const i = 1;
 		$('.menu').css('--count', count + '');
 		$els.each(function (j) {
 			if (i > grouplength) {
