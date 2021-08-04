@@ -1,2 +1,1 @@
-"use strict";
-//# sourceMappingURL=data:application/json;charset=utf8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsInNvdXJjZXNDb250ZW50IjpbXSwiZmlsZSI6InNjcmlwdC5qcyJ9
+"use strict";window.addEventListener("DOMContentLoaded",function(){var e=document.querySelector(".menu__icon"),t=document.querySelector(".menu__body"),c=!1;e.addEventListener("click",function(){c=c?(e.classList.remove("active"),t.classList.remove("active"),!1):(e.classList.add("active"),t.classList.add("active"),!0)})});

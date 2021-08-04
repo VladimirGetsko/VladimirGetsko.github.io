@@ -1,16 +1,34 @@
-$img-path: '../img/';
-
 $white-color: #ffffff;
-$black-color: #000000;
-$grey-color: #aaaaaa;
+$dark-color: #21243D;
+$secondary-color: #00A8CC;
+$light-color: #8695A4;
+$primary-color: #FF6464;
+$bg-color: #ffffff;
 
-$light-font: 'RobotoLight', sans-serif;
-$main-font: 'RobotoRegular', sans-serif;
-$bold-font: 'RobotoBold', sans-serif;
+$main-font: 'HeeboRegular', sans-serif;
 
-$base-size: 100%;
-$baze-line: 2;
+$base-size: 16px;
+$basis-line: 1.5;
 
-$weight-light: 300;
-$weight-regular: 400;
-$weight-bold: 700;
+$minWidth: 320px;
+$maxWidth: 1152px;
+
+%HeeboRegular {
+	font-family: 'HeeboRegular';
+	font-weight: 400;
+}
+
+%HeeboMedium {
+	font-family: 'HeeboMedium';
+	font-weight: 500;
+}
+
+%HeeboBold {
+	font-family: 'HeeboBold';
+	font-weight: 700;
+}
+
+%HeeboBlack {
+	font-family: 'HeeboBlack';
+	font-weight: 900;
+}

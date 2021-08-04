@@ -4,7 +4,6 @@ const gulp = require('gulp'),
 $ = require('gulp-load-plugins')(),
 browserSync = require('browser-sync').create();
 
-
 gulp.task('sass:dev', () => {
   return setTimeout(() => {
     return gulp.src('src/scss/**/*.scss')
@@ -34,13 +33,13 @@ gulp.task('sass:prod', () => {
 });
 
 gulp.task('html:dev', () => {
- return gulp.src('src/index.html')
+ return gulp.src('src/*.html')
  .pipe(gulp.dest('app/'))
  .pipe(browserSync.stream());
 });
 
 gulp.task('html:prod', () => {
- return gulp.src('src/index.html')
+ return gulp.src('src/*.html')
  .pipe($.htmlmin({ collapseWhitespace: true }))
  .pipe(gulp.dest('app/'))
  .pipe(browserSync.stream());

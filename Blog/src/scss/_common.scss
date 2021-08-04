@@ -1,6 +1,146 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	box-sizing: border-box;
+}
+
 body {
+	min-width: $minWidth;
 	font-family: $main-font;
 	font-size: $base-size;
-	color: $white-color;
-	background-color: $grey-color;
+	color: $dark-color;
+	line-height: $basis-line;
+	background-color: $bg-color;
+	overflow-x: hidden;
+	margin: 0;
+	padding: 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+}
+
+ul, li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+p {
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.container{
+	padding: 0 15px;
+	max-width: 856px;
+	margin: 0 auto;
+
+	// @include min768{
+	// 	margin: 0 auto;
+	// 	max-width: 717px;
+	// }
+
+	// @include min1201{
+	// 	max-width: 934px;
+	// 	padding: 0 50px;
+	// }
+}
+
+.page {
+	padding: 90px 0 0 0;
+	flex: 1 1 auto;
+
+	@include max767{
+		padding: 30px 0 0 0;
+	}
+}
+
+.title {
+	font-size: 44px;
+	line-height: 60 / 44 * 100%;
+	font-weight: 700;
+
+	@include max767 {
+		font-size: 32px;
+	}
+}
+
+.text {
+	line-height: 23 / 16 * 100%;
+}
+
+.btn {
+	background-color: #FF6464;
+	color: #FFFFFF;
+	border-radius: 2px;
+	height: 47px;
+	font-size: 500px;
+	font-size: 20px;
+	line-height: 29 / 20 * 100%;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	text-align: center;
+	padding: 0 20px;
+	transition: background-color 0.3s ease 0s;
+
+	@media (min-width: 992px) {
+		&:hover {
+			background-color: darken(#FF6464, 10%);
+		}
+	}
+}
+
+.title-posts {
+	font-size: 22px;
+
+	@include max767 {
+		text-align: center;
+		font-size: 18px;
+	}
+}
+
+.ibg {
+	position: relative;
+	img {
+		position: absolute;
+		width: 100%;
+		height: 100%;
+		top: 0;
+		left: 0;
+		object-fit: cover;
+	}
+}
+
+.social {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+
+	&__item {
+		font-size: 30px;
+		margin: 0 17px;
+		color: inherit;
+		transition: color 0.3s ease 0s;
+
+		@include min992 {
+			&:hover {
+				color: $primary-color;
+			}
+		}
+		
+	}
+
 }
