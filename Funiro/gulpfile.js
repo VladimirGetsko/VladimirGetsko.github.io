@@ -42,7 +42,7 @@ let path = {
 	src: {
 		favicon: src_folder + "/img/favicon.{jpg,png,svg,gif,ico,webp}",
 		html: [src_folder + "/**/*.html", "!" + src_folder + "/_*.html"],
-		js: [src_folder + "/js/app.js", src_folder + "/js/vendors.js"],
+		js: [src_folder + "/js/app.js"],
 		css: src_folder + "/scss/style.scss",
 		images: [src_folder + "/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}", "!**/favicon.*"],
 		fonts: src_folder + "/fonts/*.ttf",
@@ -122,7 +122,7 @@ function js() {
 function images() {
 	return src(path.src.images)
 		.pipe(newer(path.build.images))
-		.pipe(dest(path.build.images))
+		.pipe(dest(path.build.images));
 }
 function favicon() {
 	return src(path.src.favicon)
@@ -132,7 +132,7 @@ function favicon() {
 				extname: ".ico"
 			})
 		)
-		.pipe(dest(path.build.html))
+		.pipe(dest(path.build.html));
 }
 function fonts_otf() {
 	return src('./' + src_folder + '/fonts/*.otf')
@@ -236,9 +236,7 @@ function cssBuild() {
 }
 function jsBuild() {
 	let appPath = path.build.js + 'app.min.js';
-	let vendorsPath = path.build.js + 'vendors.min.js';
 	del(appPath);
-	del(vendorsPath);
 	return src(path.src.js, {})
 		.pipe(plumber())
 		.pipe(fileinclude())
@@ -305,7 +303,7 @@ function htmlBuild() {
 						'key': '_v',
 						'value': '%DT%',
 						'cover': 1,
-						'files': ['app.min.js', 'vendors.min.js'] // Array [{String|Regex}] of explicit files to append to
+						'files': ['app.min.js'] // Array [{String|Regex}] of explicit files to append to
 					}
 				]
 			},
