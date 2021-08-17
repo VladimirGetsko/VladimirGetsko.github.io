@@ -19,14 +19,12 @@
 //<BUTTONS (a.btn+tab)>====================================================================================================
 .button {
 	display: inline-flex;
-	padding: 0px 0px;
-	@media (any-hover: hover) {
-		&:hover {
-		}
-	}
-	&._fw {
-		width: 100%;
-	}
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	padding: 0px 15px;
+	transition: all 0.3s ease 0s;
+	min-height: 48px;
 }
 //</BUTTONS>====================================================================================================
 
