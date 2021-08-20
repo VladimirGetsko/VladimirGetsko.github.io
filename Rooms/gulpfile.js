@@ -131,7 +131,7 @@ function favicon() {
 				extname: ".ico"
 			})
 		)
-		.pipe(dest(path.build.html));
+		.pipe(dest(path.build.html))
 }
 function fonts_otf() {
 	return src('./' + src_folder + '/fonts/*.otf')
@@ -167,7 +167,7 @@ function fontstyle() {
 					c_fontname = fontname;
 				}
 			}
-		});
+		})
 	}
 	return src(path.src.html).pipe(browsersync.stream());
 }
