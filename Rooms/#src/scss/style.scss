@@ -75,7 +75,7 @@ body {
 
 //<ПОДКЛЮЧЕНИЕ ФАЙЛОВ СТИЛЕЙ СТРАНИЦ И ЭЛЕМЕНТОВ>====================================================================================================
 //@import "datepicker";
-//@import "lightgallery";
+@import "lightgallery";
 //@import "pagging";
 @import "popup";
 @import "header";
@@ -91,8 +91,9 @@ body {
 	&__products {}
 	&__rooms {}
 	&__tips {}
+	&__furniture {}
 }
-//===================================================================================================================================
+// main-slider ===================================================================================================================================
 .main-slider {
 	background-color: #fcf8f3;
 
@@ -863,6 +864,111 @@ body {
 		}
 	}
 }
+
+// furniture  ====================================================================================================
+
+.furniture {
+	@include adaptiv-value('padding-bottom', 85,40,1);
+
+	&__container {}
+
+	&__label {
+		text-align: center;
+		color: $darkGrey-color;
+		line-height: 150%;
+		@include adaptiv-value('font-size', 20,16,1);
+		&:not(:last-child) {
+			margin-bottom: math.div(8, 20)*1em;
+		}
+	}
+
+	&__title {
+		margin-bottom: math.div(32, 40)*1em;
+	}
+
+	&__body {
+		position: relative;
+		@media (any-hover: none) {
+			overflow: auto;
+			-webkit-overflow-scrolling: touch;
+		}
+	}
+	
+	&__items {
+		display: grid;
+		grid-template-columns: auto;
+		grid-auto-flow: column;
+		align-items: center;
+		gap: 16px;
+
+		@media (any-hover: hover) {
+			justify-content: center;
+		}
+	}
+
+	&__column {
+		display: flex;
+		flex-wrap: wrap;
+		align-items: center;
+		margin: 0 -8px;
+
+		&:first-child {
+			justify-content: flex-end;
+		}
+	}
+
+	&__row {
+		display: inline-grid;
+		padding: 0 8px;
+		gap: 16px;
+		grid-template-columns: auto;
+		grid-auto-flow: column;
+
+		&:not(:last-child) {
+			margin-bottom: 16px;
+		}
+	}
+}
+
+.row-furniture {
+	&_left-top {
+		justify-content: end;
+		align-items: end;
+	}
+
+	&_left-bottom {
+		justify-content: end;
+		align-items: start;
+	}
+
+	&_center {
+		display: block;
+	}
+
+	&_right-top {
+		align-items: end;
+	}
+
+	&_right-bottom {
+		align-items: start;
+	}
+
+	&__item  {
+		@media(any-hover: hover) {
+			img {
+				transition: all 0.3s ease 0s;
+				filter: grayscale(1);
+			}
+
+			&:hover {
+				img {
+					filter: grayscale(0);
+				}
+			}
+		}
+	}
+}
+
 
 //====================================================================================================
 

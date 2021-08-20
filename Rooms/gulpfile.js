@@ -16,7 +16,6 @@ let clean_css = require("gulp-clean-css");
 let newer = require('gulp-newer');
 
 let version = require('gulp-version-number');
-let watchFilesItem = require('gulp-watch');
 
 let webp = require('imagemin-webp');
 let webpcss = require("gulp-webpcss");
@@ -42,7 +41,7 @@ let path = {
 	src: {
 		favicon: src_folder + "/img/favicon.{jpg,png,svg,gif,ico,webp}",
 		html: [src_folder + "/**/*.html", "!" + src_folder + "/_*.html"],
-		js: [src_folder + "/js/app.js"],
+		js: [src_folder + "/js/app.js", src_folder + "/js/vendors.js"],
 		css: src_folder + "/scss/style.scss",
 		images: [src_folder + "/img/**/*.{jpg,jpeg,png,svg,gif,ico,webp}", "!**/favicon.*"],
 		fonts: src_folder + "/fonts/*.ttf",
@@ -122,7 +121,7 @@ function js() {
 function images() {
 	return src(path.src.images)
 		.pipe(newer(path.build.images))
-		.pipe(dest(path.build.images));
+		.pipe(dest(path.build.images))
 }
 function favicon() {
 	return src(path.src.favicon)
@@ -168,7 +167,7 @@ function fontstyle() {
 					c_fontname = fontname;
 				}
 			}
-		})
+		});
 	}
 	return src(path.src.html).pipe(browsersync.stream());
 }
@@ -181,23 +180,6 @@ function clean() {
 	return del(path.clean);
 }
 function watchFiles() {
-	/*
-	watchFilesItem([path.watch.css], function () {
-		css();
-	});
-	watchFilesItem([path.watch.html], function () {
-		html();
-	});
-	watchFilesItem([path.watch.js], function () {
-		js();
-	});
-	watchFilesItem([path.watch.images], function () {
-		images();
-	});
-	watchFilesItem([path.watch.json], function () {
-		json();
-	});
-	*/
 	gulp.watch([path.watch.html], html);
 	gulp.watch([path.watch.css], css);
 	gulp.watch([path.watch.js], js);
@@ -236,7 +218,9 @@ function cssBuild() {
 }
 function jsBuild() {
 	let appPath = path.build.js + 'app.min.js';
+	let vendorsPath = path.build.js + 'vendors.min.js';
 	del(appPath);
+	del(vendorsPath);
 	return src(path.src.js, {})
 		.pipe(plumber())
 		.pipe(fileinclude())
@@ -303,7 +287,7 @@ function htmlBuild() {
 						'key': '_v',
 						'value': '%DT%',
 						'cover': 1,
-						'files': ['app.min.js'] // Array [{String|Regex}] of explicit files to append to
+						'files': ['app.min.js', 'vendors.min.js'] // Array [{String|Regex}] of explicit files to append to
 					}
 				]
 			},
