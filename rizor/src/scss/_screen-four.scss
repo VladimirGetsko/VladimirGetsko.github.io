@@ -1,0 +1,139 @@
+.screen-four {
+  position: relative;
+  height: 100%;
+  overflow: hidden;
+  
+  @include min1400 {
+    padding-top: 190px;
+  }
+
+  &__wrapper {
+    height: 100%;
+    position: relative;
+    
+    @include min1400 {
+      background-color: $secondary-color;
+    }
+  }
+
+  &__container {
+    display: flex;
+    height: 100%;
+    align-items: center;
+
+    @include min992 {
+      justify-content: start;
+      text-align: center;
+    }
+
+    @include min1400 {
+      color: $white-color;
+    }
+  }
+
+  &__content {
+    text-align: center;
+    padding: 60px 0;
+
+    @include min768 {
+      text-align: left;
+      max-width: 370px;
+      margin-right: 15px;
+    }
+  }
+
+  &__title {
+    font-size: 20px;
+    margin-bottom: 15px;
+
+    @include min768 {
+      margin-bottom: 25px;
+    }
+
+    @include min1400 {
+      margin-bottom: 50px;
+    }
+  }
+
+  &__text {
+    font-size: 18px;
+
+    &:not(:last-child) {
+      margin-bottom: 10px;
+
+      @include min768 {
+        margin-bottom: 25px;
+      }
+    }
+  }
+
+  &__button {
+    @include min1400 {
+      color:  $secondary-color;
+	    background-color: $white-color;
+      margin-top: 50px;
+
+      @media (any-hover: hover) {
+        &:hover {
+          background-color: darken($white-color, 10%);
+        }
+      }
+    }
+  }
+
+  &__image {
+    display: none;
+
+    @include min768 {
+      display: block;
+    }
+
+    @include min1400 {
+      position: absolute;
+      content: '';
+      top: -60px;
+      right: 0;
+      width: 60%;
+      overflow: hidden;
+    }
+
+    img {
+      margin-left: auto;
+    }
+
+    &-text {
+      display: none;
+
+      @include min1400 {
+        display: block;
+        position: absolute;
+        max-width: 815px;
+        width: 100%;
+        padding: 0 15px;
+        text-align: right;
+        font-size: 186px;
+        left: 0;
+        bottom: 0px;
+        font-family: RubikMonoOneRegular;
+        line-height: 1;
+        opacity: 0.6;
+        color: $white-color;
+      }
+
+      @media (min-width: 1600px) {
+        bottom: -45px;
+      }
+    }
+  }
+}
+
+.footer {
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #292929;
+  color: #605f5f;
+  text-align: center;
+  padding: 8px 0;
+}
