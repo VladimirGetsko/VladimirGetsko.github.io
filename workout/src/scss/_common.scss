@@ -43,7 +43,7 @@ a {
 
 .container{
 	padding: 0 15px;
-	max-width: 1230px;
+	max-width: $maxWidthContainer;
 	width: 100%;
 	margin: 0 auto;
 
@@ -58,25 +58,29 @@ a {
 	// }
 }
 
-// .page {
-// 	padding: 90px 0 0 0;
-// 	flex: 1 1 auto;
-// }
+.page {
+	flex: 1 1 auto;
+}
 
 .title {
-
+	font-weight: 600;
+	letter-spacing: -2px;
+	color: #FFFFFF;
 }
 
 .text {
-
+	letter-spacing: 0.5px;
+	color: rgba($white-color, 0.7);
 }
 
 .btn {
 	color: $white-color;
 	border-radius: 10px;
-	min-height: 70px;
+	max-width: 130px;
+	width: 100%;
+	min-height: 50px;
 	font-weight: 600;
-	font-size: 18px;
+	font-size: 14px;
 	line-height: 22 / 18 * 100%;
 	display: inline-flex;
 	align-items: center;
@@ -86,12 +90,31 @@ a {
 	padding: 0 10px;
 	transition: background-color 0.3s ease 0s;
 
-	@media (min-width: 992px) {
+	@include min768 {
+		font-size: 18px;
+		max-width: 200px;
+		min-height: 70px;
+	}
+}
+
+.get-btn {
+	background-color: $secondary-color;
+
+	@include min992 {
 		&:hover {
-			background-color: darken(#FF6464, 10%);
+			background-color: darken($secondary-color, 10%);
 		}
 	}
+}
 
+.prev-btn {
+	background-color: rgba($white-color, 0.1);
+
+	@include min992 {
+		&:hover {
+			background-color: rgba($white-color, 0.2);
+		}
+	}
 }
 
 .ibg {
