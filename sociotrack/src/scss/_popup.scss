@@ -1,0 +1,142 @@
+.popup {
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.5);
+  top: 0;
+  left: 0;
+  opacity: 0;
+  visibility: hidden;
+  overflow-y: auto;
+  transition: all 0.8s ease 0s;
+  z-index: 100;
+
+  &__body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px;
+
+    @include min768 {
+      padding: 116px 10px 10px ;
+      align-items: flex-start;
+    }
+    
+  }
+
+  &__content {
+    position: relative;
+    background-color: #FFFFFF;
+    border-radius: 4px;
+    width: 100%;
+    max-width: 600px;
+    min-height: 260px;
+    padding: 22px 26px 26px 26px;
+  }
+
+  &__form {
+    display: flex;
+    flex-direction: column;
+    color: #4F4F4F;
+  }
+
+  &__title {
+    font-family: RobotoBold;
+    font-weight: 700;
+    font-size: 18px;
+    line-height: 17px;
+    text-transform: capitalize;
+    margin-bottom: 30px;
+  }
+
+  &__text {
+    font-size: 14px;
+    line-height: 17px;
+    margin-bottom: 20px;
+  }
+
+  &__label {
+    font-family: RobotoBold;
+    font-weight: 700;
+    font-size: 13px;
+    line-height: 17px;
+    text-transform: uppercase;
+    margin-bottom: 8px;
+  }
+
+  &__input {
+    background: #FFFFFF;
+    border: 1px solid #C5CFC9;
+    border-radius: 6px;
+    margin-bottom: 20px;
+    padding: 10px 16px;
+
+    &::placeholder {
+      font-size: 14px;
+      line-height: 16px;
+      color: #B6B6B6;
+    }
+  }
+}
+
+.popup.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.popup__close {
+  position: absolute;
+	border: none;
+	background-color: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 12px;
+  height: 12px;
+  right: 26px;
+  top: 23px;
+  z-index: 100;
+  transition: background-color 0.3s ease 0s;
+	cursor: pointer;
+
+  span {
+    display: block;
+    position: absolute;
+    height: 2px;
+    width: 15px;
+    background: #4F4F4F;;
+
+    &:first-child {
+      transform: rotate(45deg);
+    }
+
+    &:last-child {
+      transform: rotate(-45deg);
+    }
+  }
+}
+
+.popup__button {
+	width: 100%;
+	max-width: 117px;
+	min-height: 40px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+  align-self: flex-end;
+	background: linear-gradient(180deg, #53CD72 0%, #1CAF5E 100%);
+	border-radius: 6px;
+	padding: 5px;
+	font-size: 14px;
+	line-height: 16px;
+	color: #fff;
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+
+  &:hover,
+  &:active {
+    background: linear-gradient(180deg, #49bd66 0%, #16a155 100%);
+  }
+}

@@ -1,0 +1,129 @@
+.header {
+  position: fixed;
+  width: 100%;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 5;
+
+  &__logo {
+    width: 100%;
+    max-width: 240px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #45c48b;
+
+    @include min768 {
+      background-color: rgba(#ffffff, 0.1);
+    }
+    
+    a {
+      display: inline-block;
+    }
+  }
+
+  &__action {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 10px 30px 10px 5px;
+    background-color: #ffffff;
+    width: 100%;
+    height: 100%;  
+  }
+}
+
+.notification {
+  margin-right: 30px;
+  position: relative;
+  width: 15px;
+  height: 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  
+  &__btn {
+    color: #2C3E51;
+    width: 15px;
+    height: 20px;
+    padding: 0;
+    font-size: 20px;
+  }
+
+  &__quantity {
+    position: absolute;
+    width: 17px;
+    height: 17px;
+    border-radius: 50%;
+    color: #ffffff;
+    font-weight: bold;
+    font-size: 10px;
+    line-height: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: #1DCE6C;
+    top: -5px;
+    right: -11px;
+  }
+}
+
+.search-form {
+  width: 22px;
+  height: 22px;
+  position: relative;
+
+  &__icon {
+    color: #2C3E51;
+    width: 22px;
+    height: 22px;
+    padding: 0;
+    font-size: 22px;
+  }
+
+  &__item {
+    position: absolute;
+    right: -30px;
+    top: -300%;
+    height: 35px;
+    width: 320px;
+    background-color: #fff;
+    display: flex;
+    align-items: center;
+    box-shadow: 0 0 5px rgba(212, 209, 205, 0.302);
+    z-index: 10;
+    opacity: 0;
+    visibility: hidden;
+    transition: all .3s ease 0s;
+  }
+
+  &__input {
+    font-size: 14px;
+    width: 100%;
+    padding: 7px 20px 7px 10px;
+    color: #2C3E51;
+    border: transparent;
+
+    &:focus-visible {
+      outline: transparent;
+    }
+  }
+
+  &__btn {
+    flex: 0 0 35px;
+    min-height: 35px;
+    font-size: 20px;
+    color: #2C3E51;
+  }
+}
+
+
+.search-form__item.active {
+  opacity: 1;
+  top: 46px;
+  visibility: visible;
+}
+
