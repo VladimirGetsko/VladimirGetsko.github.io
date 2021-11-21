@@ -49,9 +49,14 @@ body {
 .features__list li{
   list-style: none;
   margin-bottom: 15px;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 5px;
 }
 
 .features__list a {
+  display: block;
   font-size: 20px;
   color:rgb(163, 174, 236);
   text-decoration: none;
