@@ -28,9 +28,9 @@ body {
   min-height: 500px;
   padding: 30px;
   border: 1px solid rgb(170, 170, 170);
-  margin: 10px;
   background-color: rgba(0, 0, 0, 0.7);
   box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0, 0, 0, 0.23);
+  border-radius: 5px;;
 }
 
 .features__title {
