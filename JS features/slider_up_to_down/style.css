@@ -20,11 +20,23 @@ body {
 
 .sidebar {
   height: 100%;
-  width: 35%;
+  width: 65%;
   position: absolute;
   top: 0;
   left: 0;
   transition: transform 0.5s ease-in-out;
+}
+
+@media ( min-width: 576px) {
+    .sidebar {
+        width: 50%;
+    }
+}
+
+@media ( min-width: 768px) {
+    .sidebar {
+        width: 35%;
+    }
 }
 
 .sidebar > div {
@@ -38,18 +50,39 @@ body {
 }
 
 .sidebar h1 {
-  font-size: 40px;
-  margin-bottom: 10px;
-  margin-top: -30px;
+  font-size: 25px;
+  margin: 90px 35px 10px 7px;
+}
+
+@media ( min-width: 576px) {
+    .sidebar h1 {
+        font-size: 40px;
+        margin: -30px 45px 10px 15px;
+        text-align: center;
+    }
 }
 
 .main-slide {
   height: 100%;
   position: absolute;
   top: 0;
-  left: 35%;
-  width: 65%;
+  left: 65%;
+  width: 35%;
   transition: transform 0.5s ease-in-out;
+}
+
+@media ( min-width: 576px) {
+    .main-slide {
+        left: 50%;
+        width: 50%;
+    }
+}
+
+@media ( min-width: 768px) {
+    .main-slide {
+        left: 35%;
+        width: 65%;
+    }
 }
 
 .main-slide > div {
@@ -65,8 +98,15 @@ button {
   border: none;
   color: #aaa;
   cursor: pointer;
-  font-size: 16px;
-  padding: 15px;
+  font-size: 14px;
+  padding: 10px;
+}
+
+@media ( min-width: 576px) {
+    button {
+        font-size: 16px;
+        padding: 15px;
+    }
 }
 
 button:hover {
@@ -79,9 +119,21 @@ button:focus {
 
 .container .controls button {
   position: absolute;
-  left: 35%;
+  left: 65%;
   top: 50%;
   z-index: 100;
+}
+
+@media ( min-width: 576px) {
+    .container .controls button {
+        left: 50%;
+    }
+}
+
+@media ( min-width: 768px) {
+    .container .controls button {
+        left: 35%;
+    }
 }
 
 .container .controls .down-button {
