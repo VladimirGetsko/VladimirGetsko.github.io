@@ -13,6 +13,7 @@ body {
   justify-content: center;
   margin: 0;
   overflow-x: hidden;
+  padding: 20px 15px;
 }
 
 h1 {
@@ -31,16 +32,20 @@ h1 {
   margin: 10px;
   border-radius: 10px;
   box-shadow: 2px 4px 5px rgba(0, 0, 0, 0.3);
-  transform: translateX(400%);
+  transform: translateX(200%);
   transition: transform 0.4s ease;
+  opacity: 0;
+  visibility: hidden;
 }
 
 .box:nth-of-type(even) {
-  transform: translateX(-400%);
+  transform: translateX(-200%);
 }
 
 .box.show {
   transform: translateX(0);
+  opacity: 1;
+  visibility: visible;
 }
 
 .box h2 {
