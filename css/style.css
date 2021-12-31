@@ -59,9 +59,15 @@ body {
 .main-page_content h2{
 	color: #fed136;
 	text-transform: uppercase;
-	font-size: 50px;
+	font-size: 35px;
 	font-weight: 700;
 	margin-bottom: 25px;
+}
+
+@media (min-width: 576px) {
+    .main-page_content h2{
+        font-size: 50px;
+    }
 }
 
 .main-page_content p{
@@ -77,11 +83,10 @@ body {
 
 .main-page_item{
 	list-style: none;
-	margin-right: 40px;
 }
 
-.main-page_item:last-child{
-	margin-right: 0;
+.main-page_item:not(:last-child){
+	margin-right: 40px;
 }
 
 .main-page_link{
@@ -113,9 +118,85 @@ body {
 	color: #000000;
 }
 
+.menu {
+    overflow: hidden;
+}
+
+.menu header {
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    z-index: 5;
+}
+
+.menu_btn {
+    width: 25px;
+    height: 25px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 3px;
+    transition: background-color 0.3s ease;
+}
+
+.menu_btn:hover {
+    background-color: rgba(255, 255, 255, 0.3s);
+} 
+.menu_btn span {
+    position: relative;
+    width: 15px;
+    height: 2px;
+    background-color: #333333;
+    transition: all 0.3s ease;
+}
+
+.open .menu_btn span {
+    background-color: transparent;
+}
+
+.menu_btn span::before,
+.menu_btn span::after {
+    position: absolute;
+    content: '';
+    width: 15px;
+    height: 2px;
+    background-color: #333333;
+    transition: all 0.3s ease;
+}
+
+.menu_btn span::before {
+    top: -5px;
+    transform: rotate(0);
+}
+
+.open .menu_btn span::before {
+    top: 0;
+    transform: rotate(45deg);
+}
+
+.menu_btn span::after {
+    top: 5px;
+    transform: rotate(0);
+}
+
+.open .menu_btn span::after {
+    top: 0;
+    transform: rotate(-45deg);
+}
+
+.menu_body {
+    height: calc(100vh - 80px);
+    overflow-y: auto;
+    transition: all 0.8s ease 0s;
+    transform: translateY(-150%);
+}
+
+.open .menu_body {
+    transform: translateY(0);
+}
+
 nav {
-	--duration: .5s;
-	--easing: ease-in-out;
 	position: absolute;
 	width: 220px;
 	margin: 20px;
@@ -136,9 +217,6 @@ nav a {
 	display: block;
 	text-decoration: none;
 	background: #fff;
-	transform-origin: 0 0;
-	transition: transform var(--duration) var(--easing), color var(--duration) var(--easing);
-	transition-delay: var(--delay-out);
 	border-radius: 4px;
 	padding: .7em 1.52em;
 }
@@ -150,7 +228,7 @@ nav a:hover {
 nav .sub-menu a {
 	font-size: .9em;
 	color: #666666;
-	border-left: 2em solid white;
+	border-left: 2em solid #fff;
 	padding: .5em;
 	background: linear-gradient(to right, #dddddd 2px, #ffffff 2px);
 }
@@ -161,11 +239,8 @@ nav .sub-menu a:hover {
 
 nav header {
 	font-weight: 600;
-	display: block;
 	background: rgba(255, 255, 255, 0.5);
 	transform-origin: 0 0;
-	transition: transform var(--duration) var(--easing), color var(--duration) var(--easing);
-	transition-delay: var(--delay-out);
 	border-radius: 4px;
 	padding: 1em 1.52em;
 }
@@ -177,33 +252,4 @@ nav header span {
 	padding: 0;
 	cursor: pointer;
 	line-height: 1;
-	float: right;
-}
-
-nav footer button {
-	position: absolute;
-	top: 0;
-	left: 0;
-	border: none;
-	padding: calc(1em - 2px);
-	width: 100%;
-	transform-origin: 0 0;
-	transition: transform var(--duration) var(--easing);
-	transition-delay: calc(var(--duration) + (.1s * (var(--count) / 2)));
-	cursor: pointer;
-	outline: none;
-	background: #cdcdcd;
-	opacity: 0;
-}
-
-nav.closed a,
-nav.closed header {
-	transform: translateY(calc(var(--top) * -1)) scaleY(0.1) scaleX(0.2);
-	transition-delay: var(--delay-in);
-	color: transparent;
-}
-
-nav.closed footer button {
-	transition-delay: 0s;
-	transform: scaleY(0.7) scaleX(0.2);
 }

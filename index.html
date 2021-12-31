@@ -8,16 +8,21 @@
 	<title>Title page - Vladimir Getsko</title>
 	<link rel="icon" href="img/favicon.png">
 	<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
-	<link href="https://fonts.googleapis.com/css?family=Lobster" rel="stylesheet">
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">    
 	<link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
 
 	<nav class="menu">
-		<header>Menu <span>×</span></header>
-		<ol>
+		<header>
+            <div class="menu_title">Menu</div>
+            <span class="menu_btn">
+                <span></span>
+            </span>
+        </header>
+		<ol class="menu_body">
 			<li class="menu-item">
 				<a href="#0">Educational workshop</a>
 				<ol class="sub-menu">
@@ -38,7 +43,7 @@
 					<li class="menu-item"><a href="mini_shop/app/index.html">Mini Shop</a></li>
 					<li class="menu-item"><a href="rizor/app/index.html">Rizor</a></li>
 					<!-- <li class="menu-item"><a href="workout/app/index.html">Workcout</a></li> -->
-					<li class="menu-item"><a href="sociotrack/app/index.html">sociotrack</a></li>
+					<li class="menu-item"><a href="sociotrack/app/index.html">Sociotrack</a></li>
 				</ol>
 			</li>
 			<li class="menu-item">
@@ -48,13 +53,12 @@
 				</ol>
 			</li>
 		</ol>
-		<footer><button aria-label="Toggle Menu">Toggle</button></footer>
 	</nav>
 
 	<div class="main-page">
 		<div class="main-page_content">
 			<h2>Welcome to my page!</h2>
-			<p>Hello. My name is Vladimir. I am Front End Developer. On this page you can see my work.</p>
+			<p>Hello. My name is Volodymyr. I'm Front End Developer. On this page you can see my work.</p>
 			<ul class="main-page_list">
 				<li class="main-page_item">
 					<a href="https://www.facebook.com/profile.php?id=100000495779199" target="_blank"
@@ -63,7 +67,7 @@
 					</a>
 				</li>
 				<li class="main-page_item">
-					<a href="https://www.linkedin.com/in/vladimir-getsko-74b971123/" target="_blank"
+					<a href="https://www.linkedin.com/in/volodymyr-hetsko-74b971123/" target="_blank"
 						class="main-page_link">
 						<i class="fab fa-linkedin-in"></i>
 					</a>
@@ -77,43 +81,20 @@
 			</ul>
 		</div>
 	</div>
-
-	<script type="text/javascript" src="https://code.jquery.com/jquery-3.3.1.js"></script>
-
 	<script>
-		const $els = $('.menu a, .menu header');
-		const count = $els.length;
-		const grouplength = Math.ceil(count / 3);
-		const groupNumber = 0;
-		const i = 1;
-		$('.menu').css('--count', count + '');
-		$els.each(function (j) {
-			if (i > grouplength) {
-				groupNumber++;
-				i = 1;
-			}
-			$(this).attr('data-group', groupNumber);
-			i++;
-		});
+        const menu = document.querySelector('.menu');
+        const menuBtn = document.querySelector('.menu_btn');
+        let menuOpen = false;
 
-		$('.menu footer button').on('click', function (e) {
-			e.preventDefault();
-			$els.each(function (j) {
-				$(this).css('--top', $(this)[0].getBoundingClientRect().top + ($(this).attr('data-group') * -15) - 20);
-				$(this).css('--delay-in', j * .1 + 's');
-				$(this).css('--delay-out', (count - j) * .1 + 's');
-			});
-			$('.menu').toggleClass('closed');
-			e.stopPropagation();
-		});
-
-		// run animation once at beginning for demo
-		setTimeout(function () {
-			$('.menu footer button').click();
-			setTimeout(function () {
-				$('.menu footer button').click();
-			}, (count * 100) + 500);
-		}, 1000);
+        menuBtn.addEventListener('click', () => {
+            if (!menuOpen) {
+                menu.classList.add('open');
+                menuOpen = true;
+            } else {
+                menu.classList.remove('open');
+                menuOpen = false;
+            }
+        });
 	</script>
 
 </body>
