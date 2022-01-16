@@ -1,11 +1,11 @@
-@mixin min1367 {
-	@media all and (min-width: 1367px) {
+@mixin min1400 {
+	@media all and (min-width: 1400px) {
 		@content;
 	}
 }
 
-@mixin max1366 {
-	@media all and (max-width: 1366px) {
+@mixin max1399 {
+	@media all and (max-width: 1399px) {
 		@content;
 	}
 }

@@ -1,6 +1,6 @@
 $accent-color: #cc8869;
 $white-color: #ffffff;
-$black-color: #000000;
+$black-color: #333;
 $grey-color: #aaaaaa;
 
 $light-font: 'Oswald-Light', sans-serif;
@@ -8,7 +8,10 @@ $main-font: 'Oswald-Regular', sans-serif;
 $bold-font: 'Oswald-Bold', sans-serif;
 
 $base-size: 100%;
-$baze-line: 1.5;
+$baze-line: 1.65;
+
+$padding: 120px;
+$transition: cubic-bezier(.4, 0, 0, 1);
 
 $weight-light: 300;
 $weight-regular: 400;

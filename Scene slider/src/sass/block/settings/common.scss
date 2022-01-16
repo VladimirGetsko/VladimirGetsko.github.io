@@ -14,7 +14,7 @@ body {
 	font-family: $main-font;
 	font-size: $base-size;
 	color: $white-color;
-	background-color: $grey-color;
+	background-color: $black-color;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -37,14 +37,6 @@ a {
 	color: inherit;
 }
 
-.container{
-	padding: 0 15px;
-	max-width: $maxWidthContainer;
-	width: 100%;
-	margin: 0 auto;
-
-	// @include min768{
-	// 	margin: 0 auto;
-	// 	max-width: 717px;
-	// }
+body, html {
+	height: 100%;
 }
