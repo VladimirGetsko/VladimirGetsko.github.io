@@ -156,6 +156,9 @@ html {
   -webkit-transform: scale(0.75);
   -ms-transform: scale(0.75);
   transform: scale(0.75);
+  -webkit-transition: all 1.8s cubic-bezier(0.4, 0, 0, 1);
+  -o-transition: all 1.8s cubic-bezier(0.4, 0, 0, 1);
+  transition: all 1.8s cubic-bezier(0.4, 0, 0, 1);
 }
 
 .showcase-carousel__item::after {

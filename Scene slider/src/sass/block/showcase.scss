@@ -60,7 +60,6 @@
     animation: k-glow 1.8s ease-in-out infinite;
 }
 
-
 .showcase__content {
 
     @include max1399 {
@@ -94,7 +93,7 @@
     text-align: center;
     opacity: 0.25;
     transform: scale(.75);
-    transition: opacity 1.8s $transition, transform 1.8s $transition;
+    transition: all 1.8s $transition;
 }
 
 .showcase-carousel__item::after {
