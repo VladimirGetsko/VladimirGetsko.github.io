@@ -94,7 +94,7 @@
     text-align: center;
     opacity: 0.25;
     transform: scale(.75);
-    $transition: opacity 1.8s $transition, transform 1.8s $transition;
+    transition: opacity 1.8s $transition, transform 1.8s $transition;
 }
 
 .showcase-carousel__item::after {
