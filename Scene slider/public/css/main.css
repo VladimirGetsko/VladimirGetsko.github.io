@@ -223,13 +223,15 @@ html {
 .showcase-carousel__img-left .showcase-carousel__image {
   -webkit-animation: k-left-side 2s ease-in-out infinite;
   animation: k-left-side 2s ease-in-out infinite;
-  -webkit-animation-direction: alternate;
-  animation-direction: alternate;
 }
 
 .showcase-carousel__img-right .showcase-carousel__image {
   -webkit-animation: k-right-side 2s ease-in-out infinite;
   animation: k-right-side 2s ease-in-out infinite;
+}
+
+.showcase-carousel__img-left .showcase-carousel__image,
+.showcase-carousel__img-right .showcase-carousel__image {
   -webkit-animation-direction: alternate;
   animation-direction: alternate;
 }
