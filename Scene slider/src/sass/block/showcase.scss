@@ -113,12 +113,20 @@
 
 .showcase-carousel__item p {
     position: absolute;
-    bottom: -20%;
+    bottom: -7%;
     width: 100%;
     font-family: assassin-st, sans-serif;
     font-size: 32px;
     color: rgba(255, 255, 255, .5);
     text-shadow: rgb(58, 78, 94) 0 0 10px;
+
+    @include min576 {
+        bottom: -12%;
+    }
+
+    @include min768 {
+        bottom: -20%;
+    }
 }
 
 .showcase-carousel__img-wrapper > * {
@@ -171,6 +179,11 @@
     left: 0;
     bottom: 0;
     right: 0;
+    display: none;
+
+    @include min768 {
+        display: block;
+    }
 }
 
 .showcase-navigation > * {

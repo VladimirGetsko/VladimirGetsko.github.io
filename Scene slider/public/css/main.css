@@ -184,7 +184,7 @@ html {
 .showcase-carousel__item p {
   font: 32px assassin-st, sans-serif;
   position: absolute;
-  bottom: -20%;
+  bottom: -7%;
   width: 100%;
   color: rgba(255, 255, 255, 0.5);
   text-shadow: #3a4e5e 0 0 10px;
@@ -247,6 +247,7 @@ html {
   left: 0;
   bottom: 0;
   right: 0;
+  display: none;
 }
 
 .showcase-navigation > * {
@@ -405,6 +406,30 @@ html {
   .showcase__content-wrapper::before {
     background-image: url("../img/glow.webp");
   }
+}
+
+@media all and (min-width: 576px) {
+  .showcase-carousel__item p {
+    bottom: -12%;
+  }
+
+@supports (-webkit-appearance:none) {
+
+}
+}
+
+@media all and (min-width: 768px) {
+  .showcase-carousel__item p {
+    bottom: -20%;
+  }
+
+  .showcase-navigation {
+    display: block;
+  }
+
+@supports (-webkit-appearance:none) {
+
+}
 }
 
 @media all and (max-width: 1399px) {
