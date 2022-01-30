@@ -1,0 +1,153 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 100%;
+}
+
+body {
+	font-family: $main-font;
+	font-size: $base-size;
+	color: $white-color;
+	background-color: $white-color;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+}
+
+ul, li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+p {
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.main {
+	overflow: hidden;
+}
+
+.container{
+	padding: 0 29px;
+	max-width: $maxWidthContainer;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.section-title {
+	position: relative;
+	font-family: $black-font;
+	font-size: 30px;
+	line-height: 37px;
+	letter-spacing: 0.9px;
+	text-transform: uppercase;
+	width: 100%;
+	max-width: 480px;
+	padding-top: 46px;
+
+	@include min1232 {
+		font-size: 48px;
+		line-height: 58px;
+		letter-spacing: 1.44px;
+	}
+
+	&::before {
+		position: absolute;
+		content: '';
+		width: 19px;
+		height: 20px;
+		background-image: url('../img/serif.svg');
+		background-repeat: no-repeat;
+		background-size: cover;
+		background-position: center;
+		top: 0;
+		left: 0;
+
+		@include min1232 {
+			width: 28px;
+			height: 29px;
+		}
+	}
+}
+
+.item-title {
+	font-family: $bold-font;
+	font-size: 22px;
+	line-height: 27px;
+	letter-spacing: 0.44px;
+
+	@include min1232 {
+		font-size: 32px;
+		line-height: 39px;
+		letter-spacing: 0.64px;
+	}
+}
+
+.item-text {
+	font-family: $light-font;
+	font-size: 16px;
+	line-height: 24px;
+	letter-spacing: 0.32px;
+	color: #8796AE;
+
+	@include min1232 {
+		font-size: 18px;
+		line-height: 28px;
+		letter-spacing: 0.36px;
+	}
+
+	&:not(:last-child) {
+		margin-bottom: 10px;
+	}
+}
+
+.button {
+	border: none;
+	font-family: $bold-font;
+	font-size: 16px;
+	line-height: 19px;
+	text-transform: uppercase;
+	color: #233148;
+	background-color: $yellow-color;
+	width: 100%;
+	max-width: 280px;
+	height: 54px;
+	cursor: pointer;
+
+	&:hover {
+		background-color: darken($yellow-color, 7%)
+	}
+
+	@include min1232 {
+		max-width: 390px;
+		height: 74px;
+		font-size: 22px;
+		line-height: 27px;
+		letter-spacing: 0.457143px;
+	}
+}
+
+.default-animation {
+	opacity: 0;
+	transform: translateY(100px);
+	transition: all 0.5s ease;
+}
+
+.default-animation.show {
+	opacity: 1;
+	transform: translateY(0);
+}

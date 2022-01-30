@@ -1,0 +1,1 @@
+!function(){function n(){const n=document.querySelectorAll(".default-animation"),t=window.innerHeight/5*4;n.forEach((n=>{n.getBoundingClientRect().top<t?n.classList.add("show"):n.classList.remove("show")}))}window.addEventListener("scroll",n),n()}();
