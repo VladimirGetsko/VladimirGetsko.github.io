@@ -15,16 +15,21 @@
 
 <body>
 
-	<nav class="menu">
+	<nav class="menu open">
 		<header>
-            <div class="menu_title">Menu</div>
-            <span class="menu_btn">
-                <span></span>
-            </span>
-        </header>
+				<div class="menu_title">Menu</div>
+				<span class="menu_btn">
+						<span></span>
+				</span>
+		</header>
 		<ol class="menu_body">
 			<li class="menu-item">
-				<a href="#0">Educational workshop</a>
+				<a class="menu-item__subtitle" href="#0">
+					Educational workshop
+					<span class="menu-item__icon">
+						<img src="img/down-arrow.svg" alt="down arrow">
+					</span>
+				</a>
 				<ol class="sub-menu">
 					<li class="menu-item"><a href="rosa/app/index.html">Rosa</a></li>
 					<li class="menu-item"><a href="Blog/app/index.html">Blog</a></li>
@@ -35,7 +40,12 @@
 				</ol>
 			</li>
 			<li class="menu-item">
-				<a href="#0">Work projects</a>
+				<a class="menu-item__subtitle" href="#0">
+					Work projects
+					<span class="menu-item__icon">
+						<img src="img/down-arrow.svg" alt="down arrow">
+					</span>
+				</a>
 				<ol class="sub-menu">
 					<li class="menu-item"><a href="Gazodizel/app/index.html">Gazodizel</a></li>
 					<li class="menu-item"><a href="Final_project/app/index.html">Final project</a></li>
@@ -49,7 +59,12 @@
 				</ol>
 			</li>
 			<li class="menu-item">
-				<a href="#0">Different</a>
+				<a class="menu-item__subtitle" href="#0">
+					Different
+					<span class="menu-item__icon">
+						<img src="img/down-arrow.svg" alt="down arrow">
+					</span>
+				</a>
 				<ol class="sub-menu">
 					<li class="menu-item"><a href="JS features/index.html">JS features</a></li>
 				</ol>
@@ -97,6 +112,18 @@
                 menuOpen = false;
             }
         });
+
+				const subMenu = document.querySelectorAll('.menu-item__subtitle');
+				let menuSubOpen = false;
+
+				subMenu.forEach(item => {
+					item.addEventListener('click', () => {
+						item.classList.toggle('active');
+					})
+				})
+				
+				
+
 	</script>
 
 </body>
