@@ -1,0 +1,247 @@
+*,
+*::after,
+*::before {
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 100%;
+}
+
+body {
+  font: 100% "Oswald-Regular", sans-serif;
+  background: #ffffff;
+  color: #747887;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+}
+
+ul,
+li {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+p {
+  padding: 0;
+  margin: 0;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.container {
+  padding: 0 15px;
+  max-width: 1230px;
+  width: 100%;
+  margin: 0 auto;
+}
+
+.btn {
+  background: #EB3D35;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  color: #ffffff;
+  font-size: 22px;
+  line-height: 24px;
+  min-height: 60px;
+  width: 100%;
+  -webkit-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+  transition: background-color 0.3s ease;
+}
+
+.btn:hover {
+  background: #d81e15;
+}
+
+.icons {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+.section__title {
+  color: #051655;
+  font-size: 50px;
+  line-height: 56px;
+}
+
+.section__text {
+  color: #747887;
+  font-size: 20px;
+  line-height: 22px;
+}
+
+@font-face {
+  font-family: "Oswald-Regular";
+  src: url(../font/Oswald-Regular.ttf) format("truetype"), url(../font/Oswald-Regular.eot) format("eot"), url(../font/Oswald-Regular.woff) format("woff"), url(../font/Oswald-Regular.woff2) format("woff2");
+}
+
+@font-face {
+  font-family: "Oswald-Medium";
+  src: url(../font/Oswald-Medium.ttf) format("truetype"), url(../font/Oswald-Medium.eot) format("eot"), url(../font/Oswald-Medium.woff) format("woff"), url(../font/Oswald-Medium.woff) format("woff");
+}
+
+@font-face {
+  font-family: "icons";
+  font-display: swap;
+  src: url("../font/icons.ttf") format("truetype"), url("../font/icons.eot") format("eot"), url("../fonts/icons.woff") format("woff"), url("../fonts/icons.woff2") format("woff2");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+[class^=_icon-]:before,
+[class*=" _icon-"]:before {
+  font-family: "icons";
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+[class^=_icon-]:before,
+[class*=" _icon-"]:before {
+  display: block;
+}
+
+._icon-arrow-right:before {
+  content: "\e900";
+}
+
+.header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: 100vh;
+  width: 100%;
+  overflow: hidden;
+}
+
+.header__item {
+  -webkit-box-flex: 0;
+  -ms-flex: 0 1 50%;
+  flex: 0 1 50%;
+}
+
+.header__item.info__item {
+  padding: 65px 100px;
+}
+
+.header__img {
+  max-width: 100%;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
+}
+
+.header__title {
+  margin-bottom: 10px;
+}
+
+.header__text {
+  margin-bottom: 40px;
+}
+
+.header__btn {
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  padding: 18px 20px 18px 30px;
+  max-width: 250px;
+}
+
+.header__btn span {
+  color: #ffffff;
+  -webkit-transition: all 0.3s ease;
+  -o-transition: all 0.3s ease;
+  transition: all 0.3s ease;
+}
+
+.header__btn span:hover {
+  -webkit-transform: translateX(10px);
+  -ms-transform: translateX(10px);
+  transform: translateX(10px);
+}
+
+.header__link {
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+}
+
+.header__link span {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 18px;
+  color: #747887;
+  line-height: 20px;
+  margin-right: 5px;
+}
+
+.header__link a {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  font-size: 20px;
+  line-height: 22px;
+  color: #C35B48;
+}
+
+.logo {
+  padding-bottom: 90px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.info__item {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+}
+
+@supports (-webkit-appearance:none) {
+
+}

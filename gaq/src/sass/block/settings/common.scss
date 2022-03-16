@@ -1,0 +1,82 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 100%;
+}
+
+body {
+	font-family: $main-font;
+	font-size: $base-size;
+	color: $grey;
+	background-color: $white;
+}
+
+h1, h2, h3, h4, h5, h6 {
+	margin: 0;
+}
+
+ul, li {
+	margin: 0;
+	padding: 0;
+	list-style: none;
+}
+
+p {
+	padding: 0;
+	margin: 0;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.container{
+	padding: 0 15px;
+	max-width: $maxWidthContainer;
+	width: 100%;
+	margin: 0 auto;
+}
+
+.btn {
+	display: flex;
+	color: $white;
+	background-color: $red;
+	font-size: 22px;
+	line-height: 24px;
+	min-height: 60px;
+	width: 100%;
+	transition: background-color 0.3s ease;
+
+	&:hover {
+		background-color: darken($red, 10%)
+	}
+}
+
+.icons {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 24px;
+	height: 24px;
+}
+
+.section {
+	&__title {
+		color: $blue;
+		font-size: 50px;
+		line-height: 56px;
+	}
+
+	&__text {
+		color: $grey;
+		font-size: 20px;
+		line-height: 22px;
+	}
+}
