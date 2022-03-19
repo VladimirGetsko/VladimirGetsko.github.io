@@ -1,14 +1,28 @@
 .header {
   display: flex;
-  height: 100vh;
+  min-height: 100vh;
   width: 100%;
-  overflow: hidden;
+  flex-direction: column;
+
+  @include min768 {
+    height: 100vh;
+    flex-direction: row;
+    overflow: hidden;
+  }
+
+  &__wrap {
+    margin-bottom: 20px;
+  }
 
   &__item {
     flex: 0 1 50%;
 
     &.info__item {
-        padding: 65px 100px;
+        padding: 30px 50px;
+
+        @include min992 {
+            padding: 65px 100px;
+        }
     }
   }
 
