@@ -161,6 +161,11 @@ main {
   display: block;
 }
 
+._icon-checket:before {
+  content: "\e90a";
+  color: #fff;
+}
+
 ._icon-arrow-right:before {
   content: "\e900";
 }
