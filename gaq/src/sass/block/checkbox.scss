@@ -1,0 +1,98 @@
+.checkboxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.checkbox__item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    max-width: 360px;
+    width: 100%;
+    padding: 10px;
+    background-color: $light-blue;
+}
+
+.checkbox__input {
+    display: none;
+
+    &:checked ~ .chackbox__fake {
+        &::before {
+            opacity: 1;
+        }
+
+        .chackbox__fake-icon {
+            opacity: 1;
+        }
+    }
+
+    &:checked ~ .chackbox__border {
+        opacity: 1;
+    }
+}
+
+.chackbox__fake {
+    position: relative;
+    width: 30px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid $light-grey;
+    background-color: $white;
+    margin-left: auto;
+    margin-right: 25px;
+    
+    &::before {
+        position: absolute;
+        content: '';
+        border-radius: 5px;
+        background-color: $red;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        left: 0;
+        opacity: 0;
+        z-index: 1;
+    }
+
+    &-icon {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        color: $white;
+        font-size: 14px;
+        z-index: 2;
+        opacity: 0;
+    }
+}
+
+.chackbox__img {
+    width: 60px;
+    height: 60px;
+    padding: 10px;
+    margin-right: 30px;
+    background-color: $white;
+
+    img {
+        object-fit: cover;
+        width: 100%;
+        height: 100%;
+    }
+}
+
+.chackbox__text {
+    font-size: 20px;
+    line-height: 22px;
+    color: $blue;  
+}
+
+.chackbox__border {
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    border: 1px solid $red;
+    opacity: 0;
+}

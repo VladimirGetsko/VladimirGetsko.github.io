@@ -13,10 +13,11 @@
     padding: 10px;
     background-color: $light-blue;
 }
+
 .radio__input {
     display: none;
 
-    &:checked +.radio__fake {
+    &:checked ~ .radio__fake {
         border: 1px solid $red;
 
         &::before {
@@ -30,15 +31,14 @@
 }
 
 .radio__fake {
+    position: relative;
     width: 30px;
     height: 30px;
     border-radius: 50%;
     border: 1px solid $light-grey;
     background-color: $white;
-    position: absolute;
-    top: 50%;
-    right: 25px;
-    transform: translateY(-50%);
+    margin-left: auto;
+    margin-right: 25px;
 
     &::before {
         position: absolute;
@@ -53,6 +53,7 @@
         opacity: 0;
     }
 }
+
 .radio__img {
     width: 60px;
     height: 60px;
