@@ -1,3 +1,12 @@
+.search__input {
+    input::placeholder {
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 20px;
+        color: $grey;
+    }
+}
+
 .radio__buttons {
     display: flex;
     flex-wrap: wrap;
