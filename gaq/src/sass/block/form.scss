@@ -2,8 +2,17 @@
     position: relative;
     display: flex;
     align-items: center;
-    max-width: 650px;
-    margin-bottom: 60px;
+    max-width: 280px;
+    margin-bottom: 40px;
+
+    @include min576 {
+        max-width: 450px;
+        margin-bottom: 60px;
+    }
+
+    @include min992 {
+        max-width: 650px;
+    }
 }
 
 .progress {
@@ -15,6 +24,15 @@
     height: 2px;
     background-color: $light-grey;
     z-index: -1;
+
+    &__success {
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 2px;
+        background-color: $red;
+        transition: all 0.5s ease;
+    }
 }
 
 .steps__number {
@@ -22,13 +40,37 @@
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    width: 50px;
-    height: 50px;
+    width: 40px;
+    height: 40px;
     border: 2px solid $light-grey;
     background-color: $white;
 
     &:not(:last-child) {
-        margin-right: 100px;
+        margin-right: 20px;
+
+        @include min576 {
+            margin-right: 50px;
+        }
+
+        @include min992 {
+            margin-right: 100px;
+        }
+    }
+
+    @include min576 {
+        width: 50px;
+        height: 50px;
+    }
+
+    &.active__number {
+        background-color: $red;
+        border-color: $red;
+        transition: all 0.35s ease;
+
+        .icons {
+            color: $white;
+            transition: all 0.35s ease;
+        }
     }
 }
 
@@ -41,9 +83,6 @@
         margin-bottom: 40px;
         max-width: 600px;
     }
-}
-
-.form__step {
 }
 
 .step__buttons {
@@ -61,6 +100,15 @@
     text-transform: capitalize;
 }
 
+.form__step {
+    display: none;
+
+    &.active {
+        display: flex;
+        flex-direction: column;
+    }
+}
+
 .form__input {
     position: relative;
     display: flex;
@@ -76,6 +124,7 @@
     font-size: 18px;
     line-height: 20px;
     color: $grey;
+    font-family: $main-font;
     outline: none;
 
     &:focus {
@@ -101,4 +150,47 @@
     line-height: 28px;
     color: $blue;
     margin-bottom: 20px;
+}
+
+.form__inputs-wrap {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    max-width: 930px;
+    width: 100%;
+
+    .form__input {
+        margin-bottom: 0;
+        max-width: 460px;
+        width: 100%;
+    }
+}
+
+.form__textarea {
+    width: 100%;
+    
+    textarea {
+        width: 100%;
+        min-height: 240px;
+        border: 1px solid $light-grey;
+        padding: 20px 30px;
+        outline: none;
+        font-family: $main-font;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 20px;
+        color: $grey;
+
+        &:focus {
+            outline: 1px solid #eb3d35;
+        }
+
+        &::placeholder {
+            font-family: $main-font;
+            font-weight: 400;
+            font-size: 18px;
+            line-height: 20px;
+            color: $grey;
+        }
+    }
 }

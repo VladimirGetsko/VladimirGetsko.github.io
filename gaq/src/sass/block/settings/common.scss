@@ -96,13 +96,30 @@ a {
 		line-height: 56px;
 	}
 
-	&__text {
+	&__text,
+	&__text p {
 		color: $grey;
 		font-size: 20px;
 		line-height: 22px;
 	}
+
+	&__text p:not(:last-child) {
+		margin-bottom: 10px;
+	}
 }
 
 main {
-    padding: 50px 200px;
+    padding: 15px;
+
+	@include min576 {
+		padding: 25px;
+	}
+
+	@include min992 {
+		padding: 25px 100px;
+	}
+
+	@include min1367 {
+		padding: 50px 200px;
+	}
 }

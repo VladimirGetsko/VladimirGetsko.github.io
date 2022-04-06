@@ -59,14 +59,19 @@
 
   &__link {
     display: inline-flex;
+    flex-direction: column;
     align-items: center;
+    gap: 10px;
+
+    @include min576 {
+      flex-direction: row;
+    }
     
     span {
       display: flex;
       font-size: 18px;
       color: #747887;
       line-height: 20px;
-      margin-right: 5px;
     }
 
     a {
@@ -79,8 +84,12 @@
 }
 
 .logo {
-  padding-bottom: 90px;
+  padding-bottom: 50px;
   display: flex;
+
+  @include min576 {
+    padding-bottom: 90px;
+  }
 }
 
 .info__item {

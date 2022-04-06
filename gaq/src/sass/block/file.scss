@@ -1,12 +1,24 @@
 .file__uploader {
     display: flex;
+    flex-direction: column;
     gap: 40px;
     max-width: 1120px;
     width: 100%;
 
+    @include min768 {
+        flex-direction: row;
+    }
+
     &-item {
         &:first-child {
-            flex: 0 1 360px
+            flex: 0 1 290px;
+            margin: 0 auto;
+        }
+
+        @include min768 {
+            &:first-child {
+                flex: 0 1 360px;
+            }
         }
 
         &:last-child {
@@ -20,11 +32,16 @@
     align-items: center;
     justify-content: center;
     position: relative;
-    width: 360px;
-    height: 360px;
+    width: 290px;
+    height: 290px;
     background: $light-blue;
     border: 2px dashed $blue;
     cursor: pointer;
+
+    @include min576 {
+        width: 360px;
+        height: 360px;
+    }
 
     .file__input {
         display: none;

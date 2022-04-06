@@ -13,54 +13,20 @@
 /*!************************!*\
   !*** ./src/js/main.js ***!
   \************************/
-/***/ (function(__unused_webpack_module, __unused_webpack_exports, __webpack_require__) {
+/***/ (function() {
 
-eval("const sum = __webpack_require__(/*! ./module/sum.js */ \"./src/js/module/sum.js\");\nconsole.log(sum(2,10));\nconsole.log(sum(12,10));\n\n//# sourceURL=webpack://gulp-codequest/./src/js/main.js?");
-
-/***/ }),
-
-/***/ "./src/js/module/sum.js":
-/*!******************************!*\
-  !*** ./src/js/module/sum.js ***!
-  \******************************/
-/***/ (function(module) {
-
-eval("module.exports  = (a, b) => a + b;\n\n//# sourceURL=webpack://gulp-codequest/./src/js/module/sum.js?");
+eval("function stepForm() {\n    const steps = document.querySelectorAll('.form__step');\n    const prevBtn = document.querySelector('.prev__step');\n    const nextBtn = document.querySelector('.next__step');\n    const form = document.querySelector('.steps__form');\n    const stepsNumbers = document.querySelectorAll('.steps__number');\n    const progress = document.querySelector('.progress__success');\n    const finishBlock = document.querySelector('.finish');\n\n    form.addEventListener('submit', e => e.preventDefault());\n\n    let formStepIndex = 0;\n\n    prevBtn.addEventListener('click', () => {\n        formStepIndex--;\n        stepsNumbers[formStepIndex + 1].classList.remove('active__number');\n        updateFormSteps();\n    });\n\n    nextBtn.addEventListener('click', () => {\n        if(formStepIndex < steps.length) {\n            formStepIndex++;\n            updateFormSteps();\n        }\n    });\n\n    function updateFormSteps() {\n        steps.forEach(step => {\n            step.classList.contains('active') && step.classList.remove('active');\n        });\n\n        if(formStepIndex < steps.length) {\n            steps[formStepIndex].classList.add('active');\n            stepsNumbers[formStepIndex].classList.add('active__number');\n        }\n\n        if(formStepIndex === 0) {\n            prevBtn.style.display = 'none';\n        } else {\n            prevBtn.style.display = 'block';\n        }\n\n        if(formStepIndex === steps.length) {\n            finishBlock.style.display = 'block';\n            form.style.display = 'none';\n        }\n\n        const actives = document.querySelectorAll('.active__number');\n        const percent = (((actives.length - 1) / (stepsNumbers.length - 1)) * 100).toFixed(2) + '%';\n\n        progress.style.width = percent;\n    }\n\n\n    updateFormSteps();\n}\n\nif(document.querySelector('.form__step')) {\n    stepForm();\n}\n\n\n//# sourceURL=webpack://gulp-codequest/./src/js/main.js?");
 
 /***/ })
 
 /******/ 	});
 /************************************************************************/
-/******/ 	// The module cache
-/******/ 	var __webpack_module_cache__ = {};
-/******/ 	
-/******/ 	// The require function
-/******/ 	function __webpack_require__(moduleId) {
-/******/ 		// Check if module is in cache
-/******/ 		var cachedModule = __webpack_module_cache__[moduleId];
-/******/ 		if (cachedModule !== undefined) {
-/******/ 			return cachedModule.exports;
-/******/ 		}
-/******/ 		// Create a new module (and put it into the cache)
-/******/ 		var module = __webpack_module_cache__[moduleId] = {
-/******/ 			// no module.id needed
-/******/ 			// no module.loaded needed
-/******/ 			exports: {}
-/******/ 		};
-/******/ 	
-/******/ 		// Execute the module function
-/******/ 		__webpack_modules__[moduleId](module, module.exports, __webpack_require__);
-/******/ 	
-/******/ 		// Return the exports of the module
-/******/ 		return module.exports;
-/******/ 	}
-/******/ 	
-/************************************************************************/
 /******/ 	
 /******/ 	// startup
 /******/ 	// Load entry module and return exports
 /******/ 	// This entry module can't be inlined because the eval devtool is used.
-/******/ 	var __webpack_exports__ = __webpack_require__("./src/js/main.js");
+/******/ 	var __webpack_exports__ = {};
+/******/ 	__webpack_modules__["./src/js/main.js"]();
 /******/ 	
 /******/ })()
 ;
