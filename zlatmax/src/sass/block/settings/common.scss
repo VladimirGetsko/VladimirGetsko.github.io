@@ -1,0 +1,99 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 100%;
+}
+
+body {
+	font-family: $main-font;
+	font-size: $base-size;
+	font-weight: $weight-medium;
+	color: $black-color;
+	background-color: $white-color;
+}
+
+ul, li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.container{
+	padding: 0 15px;
+	max-width: $maxWidthContainer;
+	width: 100%;
+	margin: 0 auto;
+
+	// @include min768{
+	// 	margin: 0 auto;
+	// 	max-width: 717px;
+	// }
+}
+
+button {
+	background-color: transparent;
+	border: none;
+}
+
+.icon-menu {
+	display: none;
+
+	@include max767 {
+		display: block;
+		position: relative;
+		flex: 0 0 30px;
+		height: 18px;
+		cursor: pointer;
+		z-index: 5;
+
+		span,
+		&::after,
+		&::before {
+			content: '';
+			position: absolute;
+			left: 0;
+			width: 100%;
+			height: 2px;
+			transition: all 0.3s ease 0s;
+			background-color: $white-color;
+		}
+
+		&::before {
+			top: 0;
+		}
+
+		&::after {
+			bottom: 0;
+		}
+
+		span {
+			top: calc(50% - 1px);
+		}
+
+		.menu-open & {
+			span {
+				transform: scale(0);
+			}
+
+			&::after {
+				transform: rotate(-45deg);
+				top: calc(50% - 1px);
+			}
+
+			&::before {
+				transform: rotate(45deg);
+				bottom: calc(50% - 1px);
+			}
+		}
+	}
+	
+}
