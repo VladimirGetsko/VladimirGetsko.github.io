@@ -1,18 +1,23 @@
 .header {
     &__top {
-        background-color: $dark-color;
-        color: $white-color;
+        
     }
 }
 
 .top-header{
     padding: 10px 0;
+    background-color: $dark-color;
+    color: $white-color;
 
     &__container{ 
         display: flex;
         align-items: center;
         gap: 20px;
         min-height: 50px;
+
+        @include max991 {
+            gap: 30px;
+        }
     }
 
     &__menu {
@@ -20,28 +25,49 @@
     }
 
     &__user {
+        position: relative;
+        z-index: 5;
         display: inline-flex;
         align-items: center;
         font-weight: 600;
         line-height: 22px;
+        gap: 15px;
 
         &::before {
             font-size: 28px;
-            margin-right: 15px;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                span {
+                    text-decoration: underline;
+                }
+            }
+        }
+
+        @include max991 {
+            &::before {
+                font-size: 35px;
+            }
+            
+            span {
+                display: none;
+            }
         }
 
     }
 }
 
-.menu {
-    
+.menu-top-header {
     &__list {
         display: flex;
-        row-gap: 5px;
-        column-gap: 30px;
+        row-gap: 25px;
+        flex-direction: column;
 
         @include min992 {
             column-gap: 40px;
+            row-gap: 5px;
+            flex-direction: row;
         }
 
         @include min1367 {
@@ -49,9 +75,90 @@
         }
     }
 
+    &__item_catalog {
+        @include min992 {
+            display: none;
+        }
+    }
+
     &__link {
-        font-size: 16px;
+        font-size: 20px;
         line-height: 20px;
+
+        @media (any-hover: hover) {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        @include min768 {
+            font-size: 18px;
+        }
+
+        @include min992 {
+            font-size: 16px;
+        }
+
+        &_catalog {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            justify-content: space-between;
+
+            &::before {
+                flex: 0 0 14px;
+                height: 14px;
+                font-size: 10px;
+                transform: rotate(-90deg);
+            }
+        }
+
+    }
+
+    @include max991 {
+        display: none;
+    }
+}
+
+.menu {
+    @include max991 {
+        flex: 1 1 auto; 
+        display: flex;
+        justify-content: flex-end;
+    }
+
+    &__body {
+        @include max991 {
+            position: fixed;
+            width: 100%;
+            height: 100%;
+            top: 0;
+            left: -100%;
+            overflow: auto;
+            background-color: $dark-color;
+            padding: 100px 15px 50px 15px;
+            transition: left 0.3s ease 0s;
+            z-index: 4;
+
+            &::before {
+                content: '';
+                position: fixed;
+                width: 100%;
+                height: 70px;
+                left: -100%;
+                top: 0;
+                background-color: $dark-color;
+            }
+
+            &.menu-open {
+                left: 0;
+                &::before {
+                    left: 0;
+                }
+            }
+        }
+
+
     }
 }
 
@@ -63,6 +170,14 @@
         display: flex;
         align-items: center;
         min-height: 70px;
+
+        // @include max479 {
+        //     justify-content: center;
+        // }
+
+        @include max991 {
+            justify-content: space-between;
+        }
     }
 
     &__logo {
@@ -74,21 +189,34 @@
 
     &__search {
         flex: 1 1 auto;
-        margin-right: 20px;
-    }
 
-    &__actions {
-
+        @include min992 {
+            margin-right: 20px;
+        }
     }
 }
 
 .search-header {
-    max-width: 377px;
+    
     position: relative;
     background-color: rgba(7,7,7,.03);
     border-radius: 3px;
     border: 1px solid rgba(4,4,4,.5);
-    margin-left: 158px;
+    margin-left: 20px;
+
+    @include max479 {
+        background-color: $white-color;
+        margin-left: 0;
+    }
+
+    @include min992 {
+        margin-left: 50px;
+        max-width: 377px;
+    }
+
+    @include min1367 {
+        margin-left: 158px;
+    }
 
     &__button {
         position: absolute;
@@ -127,7 +255,15 @@
 .actions-header {
     display: flex;
     align-items: center;
-    column-gap: 30px;
+    column-gap: 20px;
+
+    @include max991 {
+        display: none;
+    }
+
+    @include min1367 {
+        column-gap: 30px;
+    }
 
     &__location {
         display: inline-flex;
@@ -135,16 +271,30 @@
         font-weight: 600;
         font-size: 18px;
         line-height: 22px;
-        margin-right: 25px;
+        margin-right: 10px;
+
+        @include min1367 {
+            margin-right: 25px;
+        }
 
         &::before {
             font-size: 24px;
             margin-right: 10px;
         }
+
+        @media (any-hover: hover) {
+            &:hover {
+                span {
+                    text-decoration: underline;
+                }
+            }
+        }
     }
 
     &__favorite {
-        font-size: rem(27px);
+        position: relative;
+        z-index: 5;
+        font-size: 27px;
     }
 
     &__cart {
@@ -153,6 +303,8 @@
 }
 
 .phones-header {
+    position: relative;
+    z-index: 5;
 
     &__item {
         position: relative;
@@ -166,6 +318,27 @@
         line-height: 22px;
         margin-bottom: 3px;
         white-space: nowrap;
+
+        &::before {
+            @extend %ic;
+            @extend ._icon-footer-phone;
+            display: none;
+        }
+
+        @include max479 {
+            &::before {
+                display: block;
+                font-size: 32px;
+            }
+
+            span {
+                display: none;
+            }
+        }
+
+        @include max991 {
+            font-size: 20px;
+        }
     }
 
     &__arrow {
@@ -178,6 +351,10 @@
         &._active {
             transform: rotate(-180deg);
         }
+
+        @include max991 {
+            display: none;
+        }
     }
 
     &__list {
@@ -189,11 +366,16 @@
         padding: 15px;
         border-radius: 10px;
         box-shadow: 0 0 5px rgba($black-color, 0.2);
+        z-index: 2;
 
         li {
             &:not(:last-child) {
                 margin-bottom: 7px;
             }
+        }
+
+        @include max991 {
+            display: none;
         }
     }
 
@@ -203,6 +385,17 @@
         font-size: 18px;
         line-height: 22px;
         color: $orabge-color;
+        cursor: pointer;
+
+        @media (any-hover: hover) {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        @include max991 {
+            display: none;
+        }
     }
 }
 
@@ -210,6 +403,8 @@
     display: flex;
     align-items: center;
     column-gap: 15px;
+    position: relative;
+    z-index: 5;
 
     &__icon {
         flex: 0 0 37px;
@@ -239,6 +434,10 @@
         font-size: 16px;
         font-weight: 500;
         line-height: 20px;
+
+        @media (max-width: 1250px) {
+            display: none;
+        }
     }
 
     &__summ:not(:last-child) {
@@ -247,5 +446,337 @@
 
     &__link {
         color: $orabge-color;
+
+        @media (any-hover: hover) {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
     }
 }
+
+// Header caralogy
+.catalog-header {
+    position: relative;
+    background-color: $dark-color;
+    color: $white-color;
+
+    @include max479 {
+        padding: 20px 0;
+    }
+}
+
+.menu-catalog {
+
+    @include max991 {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: $dark-color;
+        padding: 25px 15px 50px 15px;
+        transition: left 0.3s ease 0s;
+
+        .catalog-open & {
+            left: 0;
+            z-index: 6;
+        }
+    }
+
+    &__list {
+        display: flex;
+        column-gap: 10px;
+        justify-content: space-between;
+
+        @include max991 {
+            flex-direction: column;
+            row-gap: 25px;
+        }
+    }
+
+    &__link {
+        position: relative;
+        display: flex;
+        transition: color 0.3s ease;
+        font-weight: 500;
+        font-size: 20px;
+        line-height: 20px;
+        color: $white-color;
+        cursor: pointer;
+
+        &[data-parent] {
+            
+            &::before {
+                @extend %ic;
+                @extend ._icon-arrow-bottom;
+                display: none;
+
+                @include max991 {
+                    transform: rotate(-90deg);
+                    display: block;
+                    font-size: 10px;
+                }
+            }
+
+            @include max991 {
+                display: flex;
+                width: 100%;
+                flex-direction: row-reverse;
+                justify-content: space-between;
+                align-items: center;
+            }
+        }
+
+        @include min768 {
+            font-size: 18px;
+        }
+
+        @include min992 {
+            min-height: rem(70px);
+            align-items: center;
+            text-align: center;
+            justify-content: center;
+            padding: 0 10px;
+            font-size: 16px;
+        }
+
+        &::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 10px;
+            height: 2px;
+            width: calc(100% - 20px);
+            background-color: $orabge-color;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: $orabge-color;
+                &::after {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+
+        @include min992 {
+            &.sub-menu-active {
+                color: $orabge-color;
+                &::after {
+                    opacity: 1;
+                    visibility: visible;
+                }
+            }
+        }
+        
+    }
+
+    &__sub-menu {
+        position: absolute;
+        width: 100%;
+        left: 0;
+        top: 100%;
+        background-color: $dark-color;
+    }
+
+    &__back {
+        display: none;
+
+        @include max767 {
+            font-size: 20px;
+        }
+
+        @include max991 {
+            display: inline-flex;
+            align-items: center;
+            color: $white-color;
+            font-size: 18px;
+        }
+
+        &:not(:last-child) {
+            @include max767 {
+                margin-bottom: 50px;
+            }
+
+            @include max991 {
+                margin-bottom: 52px;
+            }
+        }
+
+        &::before {
+            margin-right: 13px;
+        }
+    }
+}
+
+.sub-menu-catalog {
+
+    @include max991 {
+        position: fixed;
+        top: 0;
+        left: -100%;
+        width: 100%;
+        height: 100%;
+        overflow: auto;
+        background-color: $dark-color;
+        padding: 25px 15px 50px 15px;
+        transition: left 0.3s ease 0s;
+        
+        .sub-menu-open & {
+            display: block;
+            left: 0;
+            z-index: 6;
+        }
+    }
+
+    &__back {
+        display: none;
+
+        @include max767 {
+            font-size: 20px;
+        }
+
+        @include max991 {
+            display: inline-flex;
+            align-items: center;
+            color: $white-color;
+            font-size: 18px;
+        }
+
+        &:not(:last-child) {
+            @include max767 {
+                margin-bottom: 65px;
+            }
+
+            @include max991 {
+                margin-bottom: 67px;
+            }
+        }
+
+        &::before {
+            margin-right: 13px;
+        }
+    }
+
+    &__block {
+        display: none;
+
+        // Через for перебираем колличество колонок в подменю
+        @for $var from 1 to 6 {
+            &_#{$var} {
+                grid-template-columns: repeat($var, minmax(auto, 320px));
+                // justify-content: start;
+            }
+        }
+
+        &.sub-menu-open {
+            display: grid;
+
+            @include max991 {
+                display: block;
+            }
+        }
+    }
+
+    &__container {
+        padding: 0 10px;
+    }
+
+    &__category {
+        font-size: 16px;
+        line-height: 20px;
+        
+        
+
+        @media (any-hover: hover) {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+
+        @include min992 {
+            font-weight: 700;
+            padding: 30px 15px 30px 0;
+
+            
+        }
+
+        @include max767 {
+            &:not(:last-child) {
+                margin-bottom: 16px;
+            }
+        }
+
+        @include max991 {
+            &:not(:last-child) {
+                margin-bottom: 25px;
+            }
+        }
+    }
+
+    &__list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        padding: 30px 15px 30px 0;
+        border-top: 1px solid rgba($white-color, 0.3);
+        border-bottom: 1px solid rgba($white-color, 0.3);
+
+        @include max991 {
+            display: none;
+        }
+    }
+
+    &__link {
+        font-size: 16px;
+        line-height: 20px;
+
+        @media (any-hover: hover) {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+    &__link-category {
+        font-size: 20px;
+        line-height: 20px;
+
+        @include min768 {
+            font-size: 18px;
+        }
+
+        @include min992 {
+            font-size: 16px;
+        }
+    }
+
+    &__footer {
+        padding: 30px 15px 30px 0;
+
+        @include max991 {
+            display: none;
+        }
+    }
+
+    &__all {
+        font-size: 16px;
+        line-height: 20px;
+        color: $orabge-color;
+
+        @media (any-hover: hover) {
+            &:hover {
+                text-decoration: underline;
+            }
+        }
+    }
+
+   
+}
+    

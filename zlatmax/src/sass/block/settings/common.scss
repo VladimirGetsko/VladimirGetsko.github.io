@@ -32,11 +32,6 @@ a {
 	max-width: $maxWidthContainer;
 	width: 100%;
 	margin: 0 auto;
-
-	// @include min768{
-	// 	margin: 0 auto;
-	// 	max-width: 717px;
-	// }
 }
 
 button {
@@ -45,15 +40,14 @@ button {
 }
 
 .icon-menu {
-	display: none;
 
-	@include max767 {
+	@include max991 {
 		display: block;
 		position: relative;
-		flex: 0 0 30px;
-		height: 18px;
+		width: 40px;
+		height: 22.5px;
 		cursor: pointer;
-		z-index: 5;
+		z-index: 10;
 
 		span,
 		&::after,
@@ -79,19 +73,19 @@ button {
 			top: calc(50% - 1px);
 		}
 
-		.menu-open & {
+		&.menu-open {
 			span {
 				transform: scale(0);
 			}
 
 			&::after {
 				transform: rotate(-45deg);
-				top: calc(50% - 1px);
+				top: 9px;
 			}
 
 			&::before {
 				transform: rotate(45deg);
-				bottom: calc(50% - 1px);
+				top: 9px;
 			}
 		}
 	}

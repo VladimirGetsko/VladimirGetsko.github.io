@@ -16,6 +16,18 @@
 	}
 }
 
+@mixin min1200 {
+	@media all and (min-width: 1200px) {
+		@content;
+	}
+}
+
+@mixin max1199 {
+	@media all and (max-width: 1199px) {
+		@content;
+	}
+}
+
 @mixin min992 {
 	@media all and (min-width: 992px) {
 		@content;
@@ -48,6 +60,18 @@
 
 @mixin max575 {
 	@media all and (max-width: 575px) {
+		@content;
+	}
+}
+
+@mixin min480 {
+	@media all and (min-width: 480px) {
+		@content;
+	}
+}
+
+@mixin max479 {
+	@media all and (max-width: 479px) {
 		@content;
 	}
 }
