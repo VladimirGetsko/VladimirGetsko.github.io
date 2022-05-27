@@ -1,0 +1,107 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 100%;
+}
+
+body {
+	font-family: $main-font;
+	font-weight: 400;
+	font-size: $base-size;
+	color: $black-color;
+	background-color: $white-color;
+}
+
+ul, li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+	position: relative;
+}
+
+.page {
+    flex: 1 1 auto;
+	padding: rem(100px) 0;
+}
+
+section:not(:last-child) {
+	padding-bottom: rem(75px);
+
+	@include min768 {
+		padding-bottom: rem(150px);
+	}
+}
+
+[class*="__container"] {
+    max-width: $maxWidthContainer;
+    margin: 0 auto;
+    padding: 0px 10px;
+
+	@include min768 {
+		padding: 0px 15px;
+	}
+}
+
+.button {
+	border: none;
+	background-color: $black-color;
+	color: $white-color;
+	font-size: rem(18px);
+	line-height: math.div(24, 20);
+	letter-spacing: 0.9em;
+	text-align: center;
+	text-transform: uppercase;
+	padding: 7px;
+	min-height: 80px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	max-width: rem(480px);
+	transition: background-color 0.3s ease 0s;
+	cursor: pointer;
+
+	@media (any-hover: hover) {
+		&:hover {
+			background-color: $acent-color;
+		}
+	}
+
+	@include min1200 {
+		letter-spacing: 1.1em;
+	}
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+	animation-duration: 1s;
+    animation-fill-mode: both
+}
+
+
+@keyframes fadeIn {
+    from {
+        opacity: 0
+    }
+
+    to {
+        opacity: 1
+    }
+}
+

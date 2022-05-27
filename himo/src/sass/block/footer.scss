@@ -1,0 +1,75 @@
+.footer {
+    background-color: $black-color;
+    color: $white-color;
+
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: rem(20px);
+        align-items: center;
+        justify-content: space-between;
+        min-height: rem(100px);
+        padding: rem(15px) 0;
+
+        @include min576 {
+            flex-direction: row;
+        }
+    }
+
+    &__link {
+        font-size: rem(12px);
+        line-height: math.div(15,12);
+        text-transform: lowercase;
+        text-decoration: underline;
+        transition: color 0.3s ease;
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: $acent-color;
+            }
+        }
+    }
+}
+
+.social-footer {
+    display: flex;
+    gap: 28px;
+
+    &__link {
+        display: inline-flex;
+        font-size: rem(28px);
+        transition: color 0.3s ease;
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: $acent-color;
+            }
+        }
+    }
+}
+
+.contacts-footer {
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(10px);
+
+    &__link {
+        display: inline-flex;
+        align-items: center;
+        gap: rem(10px);
+        font-size: rem(12px);
+        line-height: math.div(15,12);
+        text-transform: lowercase;
+        transition: color 0.3s ease;
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: $acent-color;
+            }
+        }
+
+        &::before {
+            font-size: rem(24px);
+        }
+    }
+}

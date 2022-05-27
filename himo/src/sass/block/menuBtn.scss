@@ -1,0 +1,180 @@
+.menu__btn {
+    width: 40px;
+    height: 40px;
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-right: rem(15px);
+    z-index: 10;
+
+    @include min768 {
+        display: none;
+    }
+}
+
+.stick {
+    width: 40px;
+    height: 4px;
+    border-radius: 2px;
+    background-color: #131313;
+    display: inline-block;
+}
+
+.stick:not(:last-child) {
+    margin-bottom: 7.5px;
+}
+
+.menu__btn.open .stick-1 {
+    animation: stick-1-open .6s ease-out forwards;
+}
+
+.menu__btn.open .stick-2 {
+    animation: stick-2-open .6s linear forwards;
+}
+
+.menu__btn.open .stick-3 {
+    animation: stick-3-open .6s linear forwards;
+}
+
+@keyframes stick-1-open {
+    0% {
+        width: 20px;
+    }
+
+    40% {
+        background-color: #FF4040;
+        width: 4px;
+        transform: translate(20px, 0px);
+    }
+
+    75%,
+    80% {
+        width: 4px;
+        transform: translate(20px, -25px);
+        animation-timing-function: cubic-bezier(0, 1, 1, 1);
+    }
+
+    100% {
+        background-color: #FF4040;
+        width: 4px;
+        transform: translate(17.5px, 23px);
+    }
+}
+
+@keyframes stick-2-open {
+    80% {
+        background-color: #131313;
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+
+    100% {
+        background-color: #FF4040;
+        transform: translate(4px, 0px) rotate(40deg);
+    }
+}
+
+@keyframes stick-3-open {
+    80% {
+        background-color: #131313;
+        transform: translate(0px, 0px) rotate(0deg);
+    }
+
+    100% {
+        background-color: #FF4040;
+        transform: translate(4px, -11.5px) rotate(-40deg);
+    }
+}
+
+.menu__btn.close .stick-1 {
+    width: 8px;
+    transform: translate(13.5px, 13px);
+    animation: stick-1-close .6s ease-out forwards;
+}
+
+.menu__btn.close .stick-2 {
+    transform: translate(0px, 0px) rotate(40deg);
+    animation: stick-2-close .6s ease-out forwards;
+}
+
+.menu__btn.close .stick-3 {
+    transform: translate(0px, -11.5px) rotate(-40deg);
+    animation: stick-3-close .6s ease-out forwards;
+}
+
+@keyframes stick-1-close {
+
+    0%,
+    70% {
+        width: 0px;
+    }
+
+    100% {
+        width: 40px;
+        transform: translate(0, 0);
+    }
+}
+
+@keyframes stick-2-close {
+    0% {
+        background-color: #FF4040;
+        width: 40px;
+    }
+
+    20% {
+        background-color: #FF4040;
+        width: 4px;
+        transform: translate(0, 0px) rotate(40deg);
+    }
+
+    40% {
+        background-color: #131313;
+        width: 0px;
+    }
+
+    65% {
+        transform: translate(0, -35px);
+        animation-timing-function: cubic-bezier(0, 1, 1, 1);
+    }
+
+    80% {
+        width: 0px;
+    }
+
+    100% {
+        width: 40px;
+        transform: translate(0, 0px);
+    }
+}
+
+@keyframes stick-3-close {
+    0% {
+        background-color: #FF4040;
+        width: 40px;
+    }
+
+    20% {
+        background-color: #FF4040;
+        width: 4px;
+        transform: translate(0, -11.5px) rotate(-40deg);
+    }
+
+    40% {
+        background-color: #131313;
+    }
+
+    65% {
+        transform: translate(0, -46.5px);
+        animation-timing-function: cubic-bezier(0, 1, 1, 1);
+    }
+
+    90% {
+        width: 4px;
+    }
+
+    100% {
+        width: 40px;
+        transform: translate(0, 0px);
+    }
+}

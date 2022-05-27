@@ -1,0 +1,192 @@
+.order {
+    &__inner {
+        display: flex;
+        flex-direction: column;
+        gap: rem(30px);
+
+        @include min768 {
+            display: grid;
+            grid-template-columns: auto minmax(auto, rem(630px));
+        }
+    
+        @include min992 {
+            gap: rem(60px);
+        }
+    }
+}
+
+.form-order {
+    max-width: rem(420px);
+    width: 100%;
+    margin: 0 auto;
+
+    @include min768 {
+        margin: 0;
+    }
+
+    &__title {
+        font-family: $bold-font;
+        font-weight: 700;
+        font-size: rem(16px);
+        line-height: math.div(19,16);
+        text-transform: uppercase;
+        margin-bottom: rem(40px);
+    }
+
+    &__subtitle {
+        width: 100%;
+        max-width: rem(300px);
+        font-size: 14px;
+        line-height: 120%;
+        margin-bottom: rem(20px);
+    }
+
+    &__input-action {
+        width: 100%;
+        font-size: 14px;
+        line-height: 120%;
+        color: $grey-color;
+        opacity: 0.5;
+        padding: rem(10px) 0;
+        margin-bottom: rem(10px);
+        border: 1px solid transparent;
+        border-bottom: 1px solid $black-color;
+        transition: all 0.3s ease;
+
+        &:focus {
+            outline: transparent;
+            border-top: 1px solid $acent-color;
+            border-bottom: 1px solid $acent-color;
+        }
+    }
+
+    &__text {
+        font-size: 14px;
+        line-height: 120%;
+        color: $grey-color;
+        opacity: 0.5;
+        margin-bottom: rem(10px);
+    }
+}
+
+.labels-form {
+    display: flex;
+    gap: rem(23px);
+    margin-bottom: rem(50px);
+}
+
+
+.labels-btn {
+    position: relative;
+    &__radio {
+        position: absolute;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
+        clip: rect(0,0,0,0);
+        left: 50%;
+        top: 50%;
+        z-index: -1;
+    }
+
+    &__radio-style {
+        display: block;
+        width: rem(80px);
+        height: rem(12px);
+        border-radius: 30px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+        z-index: 1;
+    }
+
+    .radio-style__grey {
+        background-color: $grey-color;
+    }
+
+    .radio-style__red {
+        background-color: $acent-color;
+    }
+
+    .radio-style__white {
+        border: 1px solid $grey-color;
+        background-color: $white-color;
+    }
+}
+
+.labels-btn__radio:checked + .labels-btn__radio-style {
+    animation: checked 1.5s infinite;
+    transform: scale(1.15);
+}
+
+@keyframes checked {
+    0%, 100% {
+        transform: scale(1);
+    }
+    50% {
+        transform: scale(1.15);
+    }
+}
+
+.bike-colors {
+   
+    &__item {
+        position: relative;
+        width: 100%;
+        
+        img {
+            display: block;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+    }
+
+    &__item-price {
+        position: absolute;
+        top: 0;
+        left: 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: rem(14px);
+        line-height: math.div(39,32);
+        font-family: $bold-font;
+
+        @include min576 {
+            width: 145px;
+            height: 75px;
+            font-size: rem(16px);
+            border-radius: 50%;
+            font-family: $main-font;
+            border: 1px solid $acent-color;
+
+            &::before {
+                position: absolute;
+                content: '';
+                width: 145px;
+                height: 75px;
+                border-radius: 50%;
+                border: 1px solid $acent-color;
+                top: rem(9px);
+            }
+        }
+
+        @include min768 {
+            left: rem(-75px);
+        }
+
+        @include min1200 {
+            width: 220px;
+            height: 112px;
+            font-size: rem(32px);
+
+            &::before {
+                width: 220px;
+                height: 112px;
+                top: rem(12px);
+            }
+        }
+    }
+}
+

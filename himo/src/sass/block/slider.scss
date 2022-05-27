@@ -1,0 +1,54 @@
+.page__slider.slider {
+    padding-bottom: rem(40px);
+}
+
+.body-slider {
+    padding-left: rem(20px);
+    // max-width: rem(1200px);
+    width: 100%;
+
+    @include min768 {
+        padding-left: rem(50px);
+    }
+
+    &__item {
+        width: 100%;
+        height: 100%;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+}
+
+.slider .slick-dots {
+    position: absolute;
+    top: 0;
+    left: rem(10px);
+
+    @include min992 {
+        top: 0;
+        left: 0;
+    }
+}
+
+.slider .slick-dots button {
+    width: 2px;
+    height: 25px;
+    font-size: 0;
+    border: none;
+    background-color: $black-color;
+    transition: background-color 0.3s ease;
+    border-radius: 7px;
+    cursor: pointer;
+}
+
+.slider .slick-dots li:not(:last-child) {
+    margin-bottom: rem(10px);
+}
+
+.slider .slick-dots .slick-active button {
+    background-color: $acent-color;
+}

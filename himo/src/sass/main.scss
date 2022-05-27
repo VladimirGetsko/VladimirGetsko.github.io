@@ -1,0 +1,14 @@
+@use 'sass:math';
+
+@import 'libs/slick.scss';
+
+
+@import 'block/settings/mixins.scss';
+@import 'block/settings/variables.scss';
+@import 'block/settings/common.scss';
+@import 'block/settings/fonts.scss';
+@import 'block/settings/icons.scss';
+
+
+
+@import 'block/*.scss';
