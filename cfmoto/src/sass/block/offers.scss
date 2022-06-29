@@ -1,0 +1,185 @@
+.offers {
+    position: relative;
+    padding-top: rem(25px);
+    padding-bottom: rem(60px);
+
+    @include min768 {
+        padding-top: rem(64px);
+        padding-bottom: rem(75px);
+    }
+
+    @include min992 {
+        &::before,
+        &::after {
+            position: absolute;
+            content: '';
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            width: 100%;
+        }
+
+        &::before {
+            background-image: url('../img/decorations/buggy-left.png');
+            max-width: rem(355px);
+            height: rem(275px);
+            top: rem(55px);
+            left: 0;
+        }
+
+        &::after {
+            background-image: url('../img/decorations/detail.png');
+            max-width: rem(426px);
+            height: rem(268px);
+            bottom: 0;
+            right: 0;
+        }
+    }
+
+    &__title {
+        margin-bottom: rem(27px);
+
+        @include min768 {
+            margin-bottom: rem(45px);
+        }
+    }
+
+    &__wrap {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        gap: rem(15px);
+        justify-items: center;
+
+        @include min768 {
+            gap: rem(30px);
+        }
+
+        @include min1367 {
+            grid-template-columns: repeat(2, 1fr);
+        }
+    }
+}
+
+.box-offers {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    
+    flex: 0 0 50%;
+    max-width: rem(900px);
+    width: 100%;
+    background-color: $grey-color;
+    border-radius: rem(9px);
+    overflow: hidden;
+    z-index: 2;
+
+    @include min576 {
+        flex-direction: row;
+    }
+
+    @include min768 {
+        gap: rem(30px);
+    }
+
+    &__img {
+        width: 100%;
+        height: rem(190px);
+        border-radius: rem(9px);
+        overflow: hidden;
+
+        @include min768 {
+            flex: 0 0 rem(300px);
+            height: rem(310px);
+        }
+
+        img {
+            height: 100%;
+            width: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__contant {
+        position: relative;
+        padding: rem(10px) rem(35px) rem(10px) rem(20px);
+        width: 100%;
+
+        @include min768 {
+            padding: rem(26px) rem(15px) rem(26px) 0;
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-image: url('../img/decorations/mountains.png');
+            width: 100%;
+            max-width: rem(190px);
+            height: rem(120px);
+            bottom: rem(-24px);
+            right: 0;
+            overflow: visible;
+           
+
+            @include min768 {
+                max-width: rem(304px);
+                height: rem(158px);
+                bottom: 0;
+            }
+        }
+    }
+
+    &__discount {
+        font-family: $extraBold-font;
+        font-weight: 800;
+        font-size: rem(24px);
+        line-height: 139%;
+        color: $accent-color;
+
+        &:not(:last-child) {
+            margin-bottom: rem(7px);
+        }
+
+        span {
+            display: block;
+            font-weight: 700;
+            font-family: $bold-font;
+            font-size: rem(24px);
+        }
+
+        @include min768 {
+            font-size: rem(36px);
+
+            &:not(:last-child) {
+                margin-bottom: rem(15px);
+            }
+
+            span {
+                font-size: rem(16px);
+            }
+        }
+    }
+
+    &__description {
+        font-size: rem(18px);
+        line-height: 130%;
+        width: 100%;
+        max-width: rem(280px);
+
+        &:not(:last-child) {
+            margin-bottom: rem(15px);
+        }
+    }
+   
+
+    &__btn {
+        max-width: rem(147px);
+        min-height: rem(35px);
+
+        @include min768 {
+            max-width: rem(175px);
+        }
+    }
+}

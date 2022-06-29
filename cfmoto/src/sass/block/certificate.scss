@@ -1,0 +1,104 @@
+.certificate {
+    padding-top: rem(36px);
+    padding-bottom: rem(46px);
+    background-image: url('../img/bg-terms.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+
+    @include min768 {
+        padding-top: rem(50px);
+        padding-bottom: rem(90px);
+    }
+
+    &__title {
+        margin-bottom: 7px;
+
+        @include min768 {
+            margin-bottom: rem(13px);
+        }
+    }
+
+    &__subtitle {
+        font-family: $medium-font;
+        font-weight: 500;
+        font-size: rem(16px);
+        line-height: 130%;
+        color: $accent-color;
+        text-align: center;
+
+        &:not(:last-child) {
+            margin-bottom: rem(25px);
+        }
+
+        @include min768 {
+            font-size: rem(20px);
+            line-height: 140%;
+
+            &:not(:last-child) {
+                margin-bottom: rem(45px);
+            }
+        }
+    }
+
+    &__wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: rem(24px);
+
+        @include min768 {
+            flex-direction: row;
+            justify-content: space-between;
+        }
+    }
+
+    &__img {
+        width: 100%;
+        max-width: rem(636px);
+        border-radius: 9px;
+        overflow: hidden;
+        order: -1;
+
+        @include min768 {
+            order: 1;
+        }
+
+        img {
+            width: 100%;
+            height: 100%;
+
+        }
+    }
+
+    &__content {
+        width: 100%;
+
+        @include min768 {
+            max-width: rem(525px);
+        }
+
+        p {
+            font-size: rem(14px);
+            line-height: 150%;
+            color: #151515;
+
+            &:not(:last-child) {
+                margin-bottom: rem(14px);
+
+                @include min768 {
+                    margin-bottom: rem(30px);
+                }
+            }
+
+            @include min768 {
+                font-size: rem(18px);
+                line-height: 172.5%;
+            }
+        }
+    }
+
+    &__btn {
+        max-width: rem(277px);
+    }
+}

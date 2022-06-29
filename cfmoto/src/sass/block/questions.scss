@@ -1,0 +1,201 @@
+.questions {
+    position: relative;
+    padding-top: rem(30px);
+    padding-bottom: rem(20px);
+
+    @include min768 {
+        padding-top: rem(70px);
+        padding-bottom: rem(40px);
+    }
+
+    @include min992 {
+        &::before,
+        &::after {
+            position: absolute;
+            content: '';
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+        }
+
+        &::before {
+            background-image: url('../img/decorations/buggy-right.png');
+            width: 100%;
+            max-width: rem(168px);
+            height: rem(274px);
+            top: rem(30px);
+            right: 0;
+        }
+
+        &::after {
+            background-image: url('../img/decorations/prezhina.png');
+            width: 100%;
+            max-width: rem(323px);
+            height: rem(261px);
+            left: 0;
+            bottom: rem(-125px);
+        }
+    }
+
+    &__title {
+        margin-bottom: rem(14px);
+
+        @include min768 {
+            margin-bottom: rem(48px);
+        }
+    }
+
+    &__wrap {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: rem(23px);
+
+        @include min768 {
+            flex-direction: row;
+            align-items: flex-start;
+            justify-content: space-between;
+        }
+
+        @include min1200 {
+            padding: 0 rem(60px);
+        }
+        
+        @include min1367 {
+            padding: 0 rem(110px);
+        }
+    }
+}
+
+.accordion-itmes {
+    width: 100%;
+    max-width: rem(540px);
+    display: flex;
+    flex-direction: column;
+    row-gap: rem(8px);
+
+    &__box {
+        border-radius: 2px;
+        border: 0.5px solid #848484;
+        padding: rem(16px) rem(14px) 0 rem(25px);
+        transition: border 0.3s ease;
+        width: 100%;
+    }
+
+    &__question {
+        display: flex;
+        flex-direction: row-reverse;
+        justify-content: space-between;
+        font-family: $bold-font;
+        font-weight: 600;
+        font-size: rem(16px);
+        line-height: math.div(20,16);
+        cursor: pointer;
+
+        &::before {
+            width: rem(18px);
+            height: rem(18px);
+            font-size: rem(10px);
+            transform: rotate(90deg);
+            transition: all 0.3s ease;
+
+            @include min576 {
+                width: rem(22px);
+                height: rem(22px);
+                font-size: rem(12px);
+            }
+        }
+
+        &:not(:last-child) {
+            margin-bottom: rem(19px);
+        }
+    }
+
+    &__answer {
+        opacity: 0;
+        font-size: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+    }
+
+}
+
+.accordion-itmes__box.active {
+    border: 0.5px solid $accent-color;
+
+    .accordion-itmes__question {
+        &::before {
+            color: $accent-color;
+            transform: rotate(0);
+        }
+    }
+
+    .accordion-itmes__answer {
+        opacity: 1;
+        visibility: visible;
+        font-size: rem(13px);
+        line-height: math.div(20,13);
+        padding-bottom: rem(16px);
+
+        @include min576 {
+            font-size: rem(14px);
+        }
+    }
+}
+
+.content-questions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    width: 100%;
+    max-width: rem(380px);
+
+    &__img {
+        width: rem(94px);
+        height: rem(94px);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain;
+        }
+
+        @include min768 {
+            margin-bottom: rem(14px);
+        }
+    }
+
+    &__title {
+        font-size: rem(20px);
+        line-height: math.div(24,20);
+        margin-bottom: rem(10px);
+
+        @include min768 {
+            font-weight: 600;
+            font-size: rem(24px);
+            margin-bottom: rem(14px);
+        }
+    }
+
+    &__text {
+        font-size: 14px;
+        line-height: math.div(17,14);
+        &:not(:last-child) {
+            margin-bottom: rem(23px);
+        }
+
+        @include min768 {
+            &:not(:last-child) {
+                margin-bottom: rem(30px);
+            }
+        }
+    }
+
+    &__btn {
+        max-width: rem(175px);
+    }
+}

@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="img/favicon.ico" type="image/x-icon">
+    
+    <link rel="stylesheet" href="https://unpkg.com/swiper@8/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="css/main.min.css">
+    <title>CFMOTO Experience Kuban</title>
+</head>
+<body>
+    <div class="wrapper">
+
+        @@include('chunk/header.html')
+
+        <main class="page">
+            <section class="page__main-slider main-slider">
+
+                <div class="main-slider swiper">
+                    <div class="main-slider__wrapper swiper-wrapper">
+                        <div class="main-slider__item main-slider__item_1 swiper-slide">
+                            <div class="main-slider__container">
+                                <div class="main-slider__content">
+                                    <div class="main-slider__body body-slide">
+                                        <h1 class="body-slide__title">Экскурсии на квадроциклах в Карпатах</h1>
+                                        <p class="body-slide__subtitle">приезжайте за новыми ощущениями и эмоциями!</p>
+                                        <a href="#routes" class="button-green body-slide__btn _icon-arrow">Подобрать маршрут</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-slider__item main-slider__item_2 swiper-slide">
+                            <div class="main-slider__container">
+                                <div class="main-slider__content">
+                                    <div class="main-slider__body body-slide">
+                                        <h1 class="body-slide__title">Экскурсии на квадроциклах в Карпатах</h1>
+                                        <p class="body-slide__subtitle">приезжайте за новыми ощущениями и эмоциями!</p>
+                                        <a href="#" class="button-green body-slide__btn _icon-arrow">Подобрать маршрут</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="main-slider__item main-slider__item_3 swiper-slide">
+                            <div class="main-slider__container">
+                                <div class="main-slider__content">
+                                    <div class="main-slider__body body-slide">
+                                        <h1 class="body-slide__title">Экскурсии на квадроциклах в Карпатах</h1>
+                                        <p class="body-slide__subtitle">приезжайте за новыми ощущениями и эмоциями!</p>
+                                        <a href="#" class="button-green body-slide__btn _icon-arrow">Подобрать маршрут</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                    </div>
+                    <div class="swiper-pagination pagination-decoration"></div>
+                </div>
+            </section>
+
+            <section class="page-benefits benefits">
+                <div class="benefits__container">
+                    <div class="benefits__wrap">
+                        <div class="benefits__item">
+                            <div class="benefits__item-icon">
+                                <img src="./img/benefits/01.svg" alt="benefits icon">
+                            </div>
+                            <h4 class="benefits__item-title">Увлекательные экскурсии</h4>
+                            <p class="benefits__item-text">Маршруты от лесных дорожек до полного бездорожья!</p>
+                        </div>
+                        <div class="benefits__item">
+                            <div class="benefits__item-icon">
+                                <img src="./img/benefits/02.svg" alt="benefits icon">
+                            </div>
+                            <h4 class="benefits__item-title">Надежная техника</h4>
+                            <p class="benefits__item-text">18 квадроциклов всех японских брендов</p>
+                        </div>
+                        <div class="benefits__item">
+                            <div class="benefits__item-icon">
+                                <img src="./img/benefits/03.svg" alt="benefits icon">
+                            </div>
+                            <h4 class="benefits__item-title">Экипировка бесплатно</h4>
+                            <p class="benefits__item-text">Необходимая экипировка выдается бесплатно</p>
+                        </div>
+                        <div class="benefits__item">
+                            <div class="benefits__item-icon">
+                                <img src="./img/benefits/04.svg" alt="benefits icon">
+                            </div>
+                            <h4 class="benefits__item-title">Опытные инструктора</h4>
+                            <p class="benefits__item-text">Обеспечат полную безопасность Вашего отдыха</p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="page-routes routes">
+                
+                <h2 id="routes" class="routes__title section-title">Наши маршруты</h2>
+                <div class="routes__wrap">
+                    <div class="routes__block routes-base">
+                        <div class="routes__box routes__options options-routes">
+                            <h4 class="options-routes__title">Базовый</h4>
+                            <span class="options-routes__price">от 1000 ₴</span>
+                            <ul class="options-routes__list">
+                                <li class="_icon-time">Время в пути: <span>1,5 - 2 часа</span></li>
+                                <li class="_icon-lacation">Расстояние: <span>20 - 25 км</span></li>
+                                <li class="_icon-star">Сложность: <span>5***</span></li>
+                            </ul>
+                            <div class="options-routes__subtitle _icon-route">маршрут</div>
+                            <p class="options-routes__places">Смотровая - Родник - Камень Джигита - Адербиевка - Гора Нексис - 
+                                -Грозовые Ворота - Шашлыки - Цыгельский водопад (чаша любви) -
+                                -Форсаж
+                            </p>
+                            <div class="options-routes__btns">
+                                <button class="button-outline options-routes__btn">Подробнее</button>
+                                <button class="button-green options-routes__btn booking-btn">Забронировать</button>
+                            </div>
+                        </div>
+
+                        @@include('chunk/routes-base-slide.html')
+                    </div>
+
+                    <div class="routes__block routes-experience">
+                        @@include('chunk/routes-experience-slide.html')
+                        
+                        <div class="routes__box routes__options options-routes">
+                            <h4 class="options-routes__title">Расширенный</h4>
+                            <span class="options-routes__price">от 4000 ₴</span>
+                            <ul class="options-routes__list">
+                                <li class="_icon-time">Время в пути: <span>6 - 8 часа</span></li>
+                                <li class="_icon-lacation">Расстояние: <span>60 - 70 км</span></li>
+                                <li class="_icon-star">Сложность: <span>5***</span></li>
+                            </ul>
+                            <div class="options-routes__subtitle _icon-route">маршрут</div>
+                            <p class="options-routes__places">Смотровая - Родник - Камень Джигита - Адербиевка - Гора Нексис - 
+                                -Грозовые Ворота - Шашлыки - Цыгельский водопад (чаша любви) -
+                                -Форсаж
+                            </p>
+                            <div class="options-routes__btns">
+                                <button class="button-outline options-routes__btn">Подробнее</button>
+                                <button class="button-green options-routes__btn booking-btn">Забронировать</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="routes__block routes-experience-plus">
+                        <div class="routes__box routes__options options-routes">
+                            <h4 class="options-routes__title">Experience</h4>
+                            <span class="options-routes__price">от 1750 ₴</span>
+                            <ul class="options-routes__list">
+                                <li class="_icon-time">Время в пути: <span>4 часа</span></li>
+                                <li class="_icon-lacation">Расстояние: <span>40 - 50 км</span></li>
+                                <li class="_icon-star">Сложность: <span>5***</span></li>
+                            </ul>
+                            <div class="options-routes__subtitle _icon-route">маршрут</div>
+                            <p class="options-routes__places">Форсаж - Голубая бухта – Заброшенная Тур База – Сухогруз Рио –
+                                - Форсаж
+                            </p>
+                            <div class="options-routes__btns">
+                                <button class="button-outline options-routes__btn">Подробнее</button>
+                                <button class="button-green options-routes__btn booking-btn">Забронировать</button>
+                            </div>
+                        </div>
+
+                        @@include('chunk/routes-experience-plus-slide.html')
+                        
+                    </div>
+                </div>
+
+                
+            </section>
+
+            <section class="page-test test">
+                <div class="text__container">
+                    <div class="test__wrap">
+                        <h4 class="test__question">Затрудняетесь выбрать маршрут?</h4>
+                        <p class="test__subquestion">Пройдите тест и мы поможем вам подобрать оптимальную под вас экскурсию</p>
+                        <a href="#" class="button-green test__button">Начать тест</a>
+                    </div>
+                </div>
+            </section>
+
+            <section id="photos" class="page-photos photos">
+                <div class="photos__container">
+                    <h2 class="photos__title section-title">Фото</h2>
+                    <div class="photos__slider slider-photos swiper">
+                        <div class="slider-photos__wrap swiper-wrapper">
+                            <div class="slider-photos__item swiper-slide">
+                                <img src="./img/photos/1.jpg" alt="photo quad bike">
+                            </div>
+                            <div class="slider-photos__item swiper-slide">
+                                <img src="./img/photos/2.jpg" alt="photo quad bike">
+                            </div>
+                            <div class="slider-photos__item swiper-slide">
+                                <img src="./img/photos/3.jpg" alt="photo quad bike">
+                            </div>
+                            <div class="slider-photos__item swiper-slide">
+                                <img src="./img/photos/1.jpg" alt="photo quad bike">
+                            </div>
+                            <div class="slider-photos__item swiper-slide">
+                                <img src="./img/photos/2.jpg" alt="photo quad bike">
+                            </div>
+                            <div class="slider-photos__item swiper-slide">
+                                <img src="./img/photos/3.jpg" alt="photo quad bike">
+                            </div>
+                            <div class="slider-photos__item swiper-slide">
+                                <img src="./img/photos/1.jpg" alt="photo quad bike">
+                            </div>
+                            <div class="slider-photos__item swiper-slide">
+                                <img src="./img/photos/2.jpg" alt="photo quad bike">
+                            </div>
+                            <div class="slider-photos__item swiper-slide">
+                                <img src="./img/photos/3.jpg" alt="photo quad bike">
+                            </div>
+                        </div>
+                        <div class="swiper-pagination slider-photos__pagination routes-pagination"></div>
+                    </div>
+                </div>
+            </section>
+
+            <section class="page-video video">
+                <div class="video__block">
+                    <div id="frame"></div>
+                    <div class="video__play" data-url="7Pb8OzCKpss">
+                        <img src="./img/play-btn.svg" alt="play button">
+                    </div>
+                </div>
+            </section>
+
+            @@include('chunk/team.html')
+            @@include('chunk/terms.html')
+            @@include('chunk/offers.html')
+            @@include('chunk/certificate.html')
+            @@include('chunk/questions.html')
+            @@include('chunk/services.html')
+            @@include('chunk/contacts.html')
+        </main>
+
+        @@include('chunk/footer.html')
+
+        @@include('chunk/popup-callback.html')
+        @@include('chunk/popup-booking.html')
+
+
+    </div>
+   
+    <script src="js/main.js"></script>
+</body>
+</html>

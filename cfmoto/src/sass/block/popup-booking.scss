@@ -1,0 +1,168 @@
+.popup-booking {
+    
+}
+
+.popup-booking .popup__body {
+    background-image: url('../img/booking-bg.jpg');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+.form-booking {
+    text-align: left;
+
+    &__title {
+        font-family: $semiBold-font;
+        font-weight: 600;
+        font-size: rem(24px);
+        line-height: math.div(29,24);
+        margin-bottom: rem(32px);
+    }
+
+    &__inner {
+        margin-bottom: rem(32px);
+        max-width: rem(720px);
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+        row-gap: rem(10px);
+
+        @include min576 {
+            grid-template-columns: repeat(2, 1fr);
+            row-gap: rem(10px);
+            column-gap: rem(20px);
+        }
+    }
+
+    &__label {
+        position: relative;
+        display: block;
+        width: 100%;
+
+        span {
+            display: block;
+            text-align: left;
+            font-family: $semiBold-font;
+            font-weight: 500;
+            font-size: rem(14px);
+            line-height: math.div(17,14);
+            margin-bottom: rem(10px);
+        }
+
+        &::before {
+            position: absolute;
+            width: rem(20px);
+            height: rem(20px);
+            font-size: rem(18px);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            left: rem(10px);
+            bottom: rem(12px);
+            color: $accent-color;
+        }
+    }
+
+    &__control {
+        display: flex;
+        width: 100%;
+        font-size: rem(14px);
+        line-height: 1.42857143;
+        color: $black-color;
+        height: rem(46px);
+        padding: 5px rem(10px) 5px rem(40px);
+        background-color: #fff;
+        background-image: none;
+        border: 0.5px solid #787878;
+        border-radius: 8px;
+        box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08);
+        transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+
+        &:focus {
+            box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08), 0 0 8px rgba($accent-color, 0.6);
+            border-color: $accent-color;
+            outline: 0;
+        }
+
+        &::before {
+            flex: 0 0 rem(20px);
+            height: 20px;
+            color: $accent-color;
+        }
+    }
+
+    &__button {
+        max-width: rem(175px);
+    }
+}
+
+input[type=date]::-webkit-calendar-picker-indicator {
+    opacity: 0;
+}
+
+.form-booking__label .icon-arrow {
+    &::after {
+        position: absolute;
+        content: '';
+        width: 15px;
+        height: 15px;
+        background-image: url('../img/arrow_right.svg');
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        right: rem(12px);
+        bottom: rem(16px);
+        transition: all 0.3s ease;
+    }
+}
+
+.quantity__inner {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    font-size: rem(14px);
+    line-height: 1.42857143;
+    color: $black-color;
+    height: rem(46px);
+    padding: 8px;
+    background-color: #fff;
+    background-image: none;
+    border: 0.5px solid #787878;
+    border-radius: 8px;
+    box-shadow: inset 0 1px 1px rgba(0, 0, 0, 0.08);
+    transition: border-color ease-in-out .15s, box-shadow ease-in-out .15s;
+   
+}
+
+.quantity-input {
+    width: rem(78px);
+    height: rem(30px);
+    font-family: $medium-font;
+    font-weight: 500;
+    font-size: rem(18px);
+    line-height: math.div(22,18);
+    border: 0.5px solid $accent-color;
+    border-radius: 4px;
+    text-align: center;
+    margin: 0 rem(10px);
+
+    &:focus {
+        border: 0.5px solid $accent-color;
+        outline: transparent;
+    }
+}
+
+.quantity-btn {
+    width: rem(30px);
+    height: rem(30px);
+    border: 0.5px solid $accent-color;
+    border-radius: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: $medium-font;
+    font-weight: 500;
+    font-size: rem(24px);
+    line-height: math.div(29,24);
+}

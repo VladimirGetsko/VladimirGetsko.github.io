@@ -1,0 +1,35 @@
+<div class="popup popup-booking" data-modal>
+    <div class="popup__wrap">
+        <div class="popup__body">
+            <button type="button" class="popup__close"><strong>&times;</strong></button>
+            <div class="popup__booking">
+                <form class="popup-booking__form form-booking" action="#">
+                    <h2 class="form-booking__title">Бронирование онлайн</h2>
+                    <div class="form-booking__inner">
+                        <label class="form-booking__label  _icon-date" for="user_date">
+                            <span class="icon-arrow">Желаемая дата</span>
+                            <input class="form-booking__control" id="user_date" name="user_date" type="date">
+                        </label>
+                        <label class="form-booking__label quantity" for="user_amount">
+                            <span>Количество человек</span>
+                            <div class="quantity__inner">
+                                <button class="quantity-btn btn-plus" data-direction="plus">&plus;</button>
+                                <input class="quantity-input" id="user_amount" name="user_amount" value="1" type="text">
+                                <button class="quantity-btn btn-minus" data-direction="minus">&minus;</button>
+                            </div>
+                        </label>
+                        <label class="form-booking__label  _icon-phone-header" for="user_phone">
+                            <span>Телефон или WhatsApp</span>
+                            <input class="form-booking__control" id="user_phone" name="user_phone" required type="text">
+                        </label>
+                        <label class="form-booking__label _icon-user-filled" for="user_name">
+                            <span>Как к Вам обращаться?</span>
+                            <input class="form-booking__control" id="user_name" name="user_name" required type="text">
+                        </label>
+                    </div>
+                    <button class="form-booking__button button-green" name="submit" type="submit">Забронировать</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

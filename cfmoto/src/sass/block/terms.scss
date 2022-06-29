@@ -1,0 +1,84 @@
+.terms {
+    padding-top: rem(34px);
+    padding-bottom: rem(42px);
+    background-image: url('../img/bg-terms.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+
+    @include min768 {
+        padding-top: rem(50px);
+        padding-bottom: rem(82px);
+    }
+
+    &__title {
+        width: 100%;
+        max-width: rem(500px);
+        margin: 0 auto rem(17px) auto;
+
+        @include min768 {
+            margin: 0 auto rem(43px) auto;
+        }
+    }
+
+    &__items {
+        display: grid;
+        gap: rem(7px);
+        grid-template-columns: repeat(1, 1fr);
+
+        @include min576 {
+            grid-template-columns: repeat(2, 1fr);
+            gap: rem(30px);
+        }
+
+        @include min992 {
+            grid-template-columns: repeat(3, 1fr);
+        }
+    }
+
+    &__item {
+        background-color: $white-color;
+        border-radius: 9px;
+        padding: rem(9px) rem(27px) rem(9px) 5px;
+        display: flex;
+        gap: rem(10px);
+        min-height: rem(91px);
+
+        @include min768 {
+            gap: rem(18px);
+            min-height: rem(112px);
+        }
+    }
+
+    &__item span {
+        &::before {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: rem(27px);
+            height: rem(27px);
+            border-radius: 50%;
+            background-color: $accent-color;
+            color: $white-color;
+            font-size: rem(10px);
+
+            @include min768 {
+                width: rem(42px);
+                height: rem(42px);
+                font-size: rem(15px);
+            }
+        }
+    }
+
+    &__item p {
+        font-size: rem(14px);
+        line-height: 150%;
+
+        span {
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        
+    }
+}

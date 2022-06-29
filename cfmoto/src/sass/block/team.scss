@@ -1,0 +1,121 @@
+.team {
+    position: relative;
+    padding-top: rem(30px);
+    padding-bottom: rem(30px);
+
+    @include min768 {
+        padding-top: rem(64px);
+        padding-bottom: rem(64px);
+    }
+
+    @include min992 {
+        &::before {
+            position: absolute;
+            content: '';
+            bottom: rem(15px);
+            left: 0;
+            background-image: url('../img/decorations/canister.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            max-width: rem(379px);
+            height: rem(323px);
+            width: 100%;
+        }
+
+        &::after {
+            position: absolute;
+            content: '';
+            top: 0;
+            right: 0;
+            background-image: url('../img/decorations/bumper.png');
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            max-width: rem(424px);
+            height: rem(402px);
+            width: 100%;
+        }
+    }
+
+    &__title {
+        margin-bottom: rem(24px);
+
+        @include min768 {
+            margin-bottom: rem(40px);
+        }
+    }
+
+    &__cards {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        justify-items: center;
+        gap: rem(20px);
+        z-index: 2;
+
+        @include min768 {
+            gap: rem(30px);
+        }
+
+        @include min992 {
+            grid-template-columns: repeat(4, 1fr);
+        }
+    }
+}
+
+.card-team {
+    border-radius: 9px;
+    overflow: hidden;
+    max-width: rem(305px);
+    width: 100%;
+
+    &__photo {
+        background-color: #696969;
+        padding-top: 101.54321%;
+        position: relative;
+
+        img {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+
+    &__inner {
+        background-color: $grey-color;
+        padding: rem(10px);
+
+        @include min768 {
+            padding: rem(15px);
+        }
+
+        @include min1200 {
+            padding: rem(18px) rem(18px) rem(18px) rem(26px);
+        }
+    }
+    
+    &__name {
+        font-weight: 700;
+        font-size: rem(18px);
+        line-height: 130%;
+        color: $accent-color;
+
+        @include min768 {
+            font-size: rem(24px);
+        }
+    }
+
+    &__position {
+        font-size: rem(14px);
+        line-height: 130%;
+        text-transform: lowercase;
+
+        @include min768 {
+            font-size: rem(18px);
+        }
+    }
+}

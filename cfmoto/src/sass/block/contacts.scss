@@ -1,0 +1,125 @@
+.contacts {
+    display: flex;
+    gap: rem(30px);
+    padding-bottom: rem(30px);
+
+    @include min768 {
+        margin-bottom: rem(75px);
+    }
+}
+
+.content-contacts {
+    border-top: 3px solid $accent-color;
+
+    &__title {
+        text-align: left;
+        margin-bottom: rem(17px);
+
+        @include min768 {
+            margin-bottom: rem(45px);
+        }
+    }
+
+    &__wrap {
+        display: flex;
+        justify-content: space-between;
+        flex-direction: column;
+        gap: rem(24px);
+
+        @include min768 {
+            flex-direction: row;
+        }
+    }
+
+    &__block {
+        display: grid;
+        grid-template-columns: repeat(1, auto);
+        gap: rem(15px);
+        
+
+        @include min576 {
+            grid-template-columns: repeat(2, auto);
+            max-width: 630px;
+            width: 100%;
+        }
+    }
+
+    &__social-title {
+        font-family: $bold-font;
+        font-weight: 600;
+        font-size: rem(24px);
+        line-height: 151.19%;
+        margin-bottom: rem(16px);
+    }
+
+    &__item {
+        display: flex;
+        gap: rem(14px);
+        font-size: rem(16px);
+        line-height: 124.19%;
+
+        @include min768 {
+            font-size: rem(18px);
+            gap: rem(16px);
+        }
+
+        &::before {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex: 0 0 rem(39px);
+            height: rem(39px);
+            font-size: rem(20px);
+            background-color: $accent-color;
+            border-radius: 50%;
+            color: $white-color;
+
+            @include min768 {
+                flex: 0 0 rem(45px);
+                height: rem(45px);
+                font-size: rem(23px);
+            }
+        }
+    }
+
+    &__social {
+        display: flex;
+        flex-direction: row;
+        column-gap: rem(16px);
+
+        @include min768 {
+            flex-direction: column;
+        }
+
+        @include min992 {
+            margin-right: rem(60px);
+        }
+
+        @include min1200 {
+            margin-right: rem(120px);
+        }
+    }
+
+    &__social-list {
+        display: flex;
+        gap: rem(20px);
+    }
+
+    &__social-link {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 41px;
+        height: 41px;
+        background-color: $black-color;
+        color: $white-color;
+        font-size: rem(33px);
+        border-radius: 50%;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+            background-color: $accent-color;
+        }
+    }
+}
+

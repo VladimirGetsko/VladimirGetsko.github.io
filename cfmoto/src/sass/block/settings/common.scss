@@ -1,0 +1,186 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+}
+
+html {
+	font-size: 100%;
+}
+
+body {
+	font-family: $main-font;
+	font-size: $base-size;
+	color: $black-color;
+	background-color: $white-color;
+	// background-color: grey;
+}
+
+ul, li {
+	list-style: none;
+}
+
+a {
+	text-decoration: none;
+	color: inherit;
+}
+
+.wrapper {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.page {
+    flex: 1 1 auto;
+}
+
+[class*="__container"] {
+    max-width: $maxWidthContainer;
+	width: 100%;
+    margin: 0 auto;
+    padding: 0px 15px;
+}
+
+button {
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+}
+
+.button-grey {
+	background-color: rgba(255, 255, 255, 0.4);;
+	color: $white-color;
+	font-family: $semiBold-font;
+	font-weight: 600;
+	font-size: 14px;
+	line-height: 104.7%;
+	padding: 7px;
+	min-height: 40px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	border-radius: 9px;
+	transition: background-color 0.3s ease 0s;
+
+	&:hover {
+		background-color: rgba(255, 255, 255, 0.5); ;
+	}
+}
+
+.button-green {
+	background-color: $accent-color;
+	color: $white-color;
+	font-family: $semiBold-font;
+	font-weight: 600;
+	font-size: rem(14px);
+	line-height: 130%;
+	padding: 7px;
+	min-height: 40px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	border-radius: 9px;
+	transition: background-color 0.3s ease 0s;
+
+	&:hover {
+		background-color: darken($accent-color, 5%) ;
+	}
+
+	@include min768 {
+		min-height: 45px;
+	}
+}
+
+.button-outline {
+	border: 1.5px solid $accent-color;
+	background-color: transparent;
+	color: $accent-color;
+	font-family: $semiBold-font;
+	font-weight: 600;
+	font-size: rem(14px);
+	line-height: 130%;
+	padding: 7px;
+	min-height: 40px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+	border-radius: 9px;
+	transition: background-color 0.3s ease 0s, color 0.3s ease 0s;
+
+	&:hover {
+		background-color: $accent-color;
+		color: $white-color;
+	}
+
+	@include min768 {
+		min-height: 45px;
+	}
+}
+
+.section-title {
+	font-family: $bold-font;
+	font-weight: 700;
+	font-size: rem(24px);
+	line-height: 130%;
+	text-align: center;
+
+	@include min768 {
+		font-size: rem(36px);
+	}
+}
+
+.fadeIn {
+    animation-name: fadeIn;
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+.fadeInDown {
+    animation-name: fadeInDown;
+	animation-duration: 0.8s;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeInDown {
+    from {
+        opacity: 0;
+        transform: translate3d(0, -100%, 0)
+    }
+
+    to {
+        opacity: 1;
+        transform: none
+    }
+}
+
+.fadeOut {
+    animation-name: fadeOut;
+    animation-duration: 0.8s;
+    animation-fill-mode: both;
+}
+
+@keyframes fadeOut {
+    0% {
+        opacity: 1;
+    }
+    100% {
+        opacity: 0;
+    }
+}
+

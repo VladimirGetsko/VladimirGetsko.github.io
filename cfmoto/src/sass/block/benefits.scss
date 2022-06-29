@@ -1,0 +1,87 @@
+.benefits {
+    padding-top: rem(30px);
+    padding-bottom: rem(30px);
+
+    @include min768 {
+        padding-top: rem(50px);
+        padding-bottom: rem(25px);
+    }
+
+    &__wrap {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: rem(20px);
+
+        @include min768 {
+            grid-template-columns: repeat(4, 1fr);
+            gap: rem(30px);
+        }
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+
+        &-icon {
+            position: relative;
+            display: block;
+            margin-bottom: rem(20px);
+            width: rem(39px);
+            height: rem(39px);
+
+            @include min768 {
+                width: rem(45px);
+                height: rem(45px);
+            }
+            
+            img {
+                position: relative;
+                z-index: 2;
+                height: 100%;
+                width: 100%;
+                object-fit: contain;
+            }
+
+            &::before {
+                position: absolute;
+                content: '';
+                width: rem(39px);
+                height: rem(39px);
+                border-radius: 50%;
+                top: 0;
+                left: rem(11px);
+                background-color: $accent-color;
+                z-index: 1;
+
+                @include min768 {
+                    width: rem(45px);
+                    height: rem(45px);
+                    left: rem(13px);
+                }
+            }
+        }
+
+        &-title {
+            font-family: $bold-font;
+            font-weight: 600;
+            font-size: rem(16px);
+            line-height: 120%;
+            margin-bottom: rem(15px);
+
+            @include min768 {
+                font-size: rem(18px);
+                line-height: 108.7%;
+                margin-bottom: rem(30px);
+            }
+        }
+
+        &-text {
+            font-size: rem(14px);
+            line-height: 130%;
+
+            @include min768 {
+                font-size: rem(16px);
+            }
+        }
+    }
+}

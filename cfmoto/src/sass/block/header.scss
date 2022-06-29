@@ -1,0 +1,196 @@
+.header {
+    position: fixed;
+    width: 100%;
+    z-index: 3;
+
+    &__wrapper {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        padding: rem(12px) 0;
+        min-height: rem(100px);
+
+        @include min992 {
+            min-height: rem(180px);
+        }
+    }
+
+    &__logo {
+        position: relative;
+        display: block;
+        margin-right: rem(15px);
+        width: 100%;
+        max-width: rem(50px);
+        transition: all 0.3s ease;
+        z-index: 10;
+
+        @include min768 {
+            max-width: rem(65px);
+        }
+
+        @include min1367 {
+            max-width: rem(111px);
+        }
+
+        img {
+            display: block;
+            width: 100%;
+        }
+    }
+}
+
+.header.header-scroll {
+    background-color: rgba($black-color, 0.7);
+
+    .header__wrapper {
+        min-height: rem(100px);
+    }
+
+    @include min992 {
+        .header__wrapper {
+            min-height: rem(107px);
+        }
+
+        .header__logo {
+            max-width: rem(75px);
+        }
+    }
+}
+
+.menu-header {
+    @include max767 {
+        padding: rem(104px) rem(20px) rem(20px) rem(20px);
+    }
+
+    @include max991 {
+        position: absolute;
+        flex-direction: column;
+        background-color: rgba($black-color, 0.95);
+        padding: rem(104px) rem(50px) rem(50px) rem(50px);
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        transition: all 0.8s ease;
+        transform: translateX(-100%);
+        z-index: 9;
+    }
+
+    @include min992 {
+        padding-top: rem(24px);
+        display: flex;
+        gap: rem(20px);
+    }
+
+    @include min1200 {
+        gap: rem(58px);
+    }
+
+    &__list {
+        display: flex;
+        gap: rem(20px);
+
+        @include max767 {
+            margin-bottom: rem(20px);
+        }
+
+        @include max991 {
+            flex-direction: column;
+            width: 100%;
+            margin-bottom: rem(60px);
+        }
+
+        @include min1200 {
+            gap: rem(50px);
+        }
+    }
+
+    &__item {
+        @include max991 {
+            border-bottom: 0.5px solid rgba($white-color, 0.3);
+        }
+    }
+
+    &__link {
+        font-family: $medium-font;
+        font-weight: 500;
+        font-size: rem(16px);
+        line-height: 245.4%;
+        letter-spacing: 0.015em;
+        text-transform: uppercase;
+        color: $white-color;
+        transition: color 0.3s ease;
+
+        @include min992 {
+            font-size: rem(14px);
+            line-height: 104.7%;
+            font-weight: 600;
+            letter-spacing: 0;
+        }
+
+        @media (any-hover: hover) {
+            &:hover {
+                color: $accent-color;
+            }
+        }
+    }
+
+    &__callback {
+        display: flex;
+        flex-direction: column;
+
+        @include max991 {
+            width: 100%;
+            max-width: rem(207px);
+            align-self: flex-start;
+
+        }
+
+        &-link {
+            font-family: $semiBold-font;
+            font-weight: 600;
+            font-size: rem(18px);
+            line-height: 104.7%;
+            letter-spacing: 0.02em;
+            color: $white-color;
+            display: flex;
+            align-items: center;
+            gap: rem(13px);
+
+            @include min1200 {
+                font-size: rem(20px);
+            }
+
+            &:not(:last-child) {
+                margin-bottom: rem(10px);
+            }
+
+            &::before {
+                font-size: rem(17px);
+            }
+        }
+
+        &-btn {
+            max-width: rem(177px);
+
+            @include max991 {
+                margin-left: 30px;
+            }
+
+            @include min1200 {
+                margin-left: 30px;
+            }
+        }
+    }
+}
+
+.menu-header.open {
+    transform: translateX(0%);
+}
+
+.menu-header__link.active {
+    color: $accent-color;
+}
