@@ -725,7 +725,6 @@ button {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
-  gap: 1.25rem;
 }
 
 .menu-header__link {
@@ -907,6 +906,8 @@ button {
   -ms-flex-direction: row;
   flex-direction: row;
   gap: 0.9375rem;
+  bottom: 11.7%;
+  left: 0.9375rem;
 }
 
 .main-slider .swiper-pagination-bullet {
@@ -2312,7 +2313,21 @@ input[type=date]::-webkit-calendar-picker-indicator {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    gap: 0.1875rem;
+    bottom: 0;
+    left: 0;
+  }
+
+  .swiper-horizontal > .swiper-pagination-bullets,
+  .swiper-pagination-bullets.swiper-pagination-horizontal,
+  .swiper-pagination-custom,
+  .swiper-pagination-fraction {
+    right: 0.9375rem;
+    top: 50%;
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
+    left: initial;
+    bottom: initial;
+    width: auto;
   }
 
   .main-slider .pagination-decoration::before {
@@ -3259,21 +3274,8 @@ input[type=date]::-webkit-calendar-picker-indicator {
   }
 
   .menu-header__list {
+    gap: 1.25rem;
     margin-bottom: 1.25rem;
-  }
-
-@supports (-webkit-appearance:none) {
-
-}
-}
-
-@media all and (max-width: 575px) {
-  .main-slider .swiper-pagination-vertical.swiper-pagination-bullets,
-  .swiper-vertical > .swiper-pagination-bullets {
-    left: 0.9375rem;
-    top: calc(100% - 82px);
-    -webkit-transform: translate3d(0px, -50%, 0);
-    transform: translate3d(0px, -50%, 0);
   }
 
 @supports (-webkit-appearance:none) {

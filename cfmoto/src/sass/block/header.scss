@@ -91,9 +91,9 @@
 
     &__list {
         display: flex;
-        gap: rem(20px);
-
+        
         @include max767 {
+            gap: rem(20px);
             margin-bottom: rem(20px);
         }
 

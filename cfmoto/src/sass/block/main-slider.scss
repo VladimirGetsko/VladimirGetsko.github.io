@@ -145,10 +145,13 @@
     display: flex;
     flex-direction: row;
     gap: rem(15px);
+    bottom: 11.7%;
+    left: rem(15px);
 
     @include min576 {
         flex-direction: column;
-        gap: rem(3px);
+        bottom: 0;
+        left: 0;
     }
 
     @media (min-width: 1345px) {
@@ -156,12 +159,14 @@
     }
 }
 
-.main-slider .swiper-pagination-vertical.swiper-pagination-bullets, .swiper-vertical>.swiper-pagination-bullets {
-    
-    @include max575 {
-        left: rem(15px);
-        top: calc(100% - 82px);
-        transform: translate3d(0px,-50%,0);
+.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+    @include min576 {
+        right: rem(15px);
+        top: 50%;
+        transform: translate3d(-50%,0,0);
+        left: initial;
+        bottom: initial;
+        width: auto;
     }
 }
 

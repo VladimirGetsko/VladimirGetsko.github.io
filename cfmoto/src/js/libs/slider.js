@@ -4,7 +4,7 @@ import Swiper, { Pagination, Autoplay, EffectFade } from 'swiper';
 new Swiper('.swiper.main-slider', {
     modules: [Pagination, Autoplay, EffectFade],
     loop: true,
-    direction: 'vertical',
+    // direction: 'vertical',
 
     autoplay: {
         delay: 5000,
