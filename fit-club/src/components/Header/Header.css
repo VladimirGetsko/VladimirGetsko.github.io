@@ -1,0 +1,40 @@
+.header {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.header__logo {
+    width: 10rem;
+    height: 3rem;
+}
+
+.header__menu {
+    list-style: none;
+    display: flex;
+    gap: 2rem;
+    color: white;
+}
+
+.header__menu-item {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+.header__menu-item:hover {
+    color: var(--orange);
+}
+
+@media screen and (max-width: 768px) {
+    .header>:nth-child(2) {
+        position: fixed;
+        right: 1.5rem;
+        z-index: 100;
+    }
+
+    .header__menu {
+        flex-direction: column;
+        background-color: var(--appColor);
+        padding: 2rem;
+    }
+}

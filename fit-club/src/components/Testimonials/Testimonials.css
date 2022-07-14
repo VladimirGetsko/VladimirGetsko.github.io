@@ -1,0 +1,125 @@
+.testimonials {
+    display: flex;
+    gap: 1rem;
+    padding: 0 2rem;
+}
+
+.testimonials__content {
+    color: #fff;
+    display: flex;
+    flex: 1.1 1;
+    flex-direction: column;
+    gap: 2rem;
+    text-transform: uppercase;
+}
+
+.testimonials__content-subtitle {
+    color: var(--orange);
+    font-weight: 700;
+}
+
+.testimonials__content-title {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+    font-size: 3rem;
+    font-weight: 700;
+}
+
+.testimonials__content-review {
+    text-transform: none;
+    letter-spacing: 2px;
+    line-height: 40px;
+    text-align: justify;
+}
+
+.testimonials__content-name {
+    color: var(--orange);
+}
+
+.testimonials__slide {
+    flex: 1;
+    position: relative;
+}
+
+.testimonials__slide-arrows {
+    bottom: 1rem;
+    display: flex;
+    gap: 1rem;
+    left: 3rem;
+    position: absolute;
+}
+
+.testimonials__slide-img {
+    height: 20rem;
+    position: absolute;
+    width: 17rem;
+    object-fit: cover;
+    right: 8rem;
+    top: 2rem;
+}
+
+.testimonials__slide-arrows img {
+    cursor: pointer;
+    width: 1.5rem;
+}
+
+.testimonials__slide-strock {
+    position: absolute;
+    width: 17rem;
+    height: 20rem;
+    border: 2px solid var(--orange);
+    background-color: transparent;
+    right: 9rem;
+    top: 0.9rem;
+    opacity: 1;
+    transform: none;
+}
+
+.testimonials__slide-bg {
+    background: var(--planCard);
+    height: 19rem;
+    position: absolute;
+    right: 7rem;
+    top: 4rem;
+    width: 17rem;
+    opacity: 1;
+    transform: none;
+}
+
+@media screen and (max-width: 768px) {
+    .testimonials {
+        padding: 0 1rem;
+        flex-direction: column;
+    }
+
+    .testimonials__content {
+        align-items: center;
+        justify-content: center;
+    }
+
+    .testimonials__content-title {
+        font-size: x-large;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .testimonials__slide-strock,
+    .testimonials__slide-bg {
+        position: relative;
+        display: none;
+    }
+
+    .testimonials__slide-img {
+        position: relative;
+        top: 0;
+        right: 0;
+        align-self: center;
+    }
+
+    .testimonials__slide-arrows {
+        bottom: -2rem;
+        left: 0;
+    }
+}
