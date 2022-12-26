@@ -905,7 +905,7 @@ button {
   -webkit-box-direction: normal;
   -ms-flex-direction: row;
   flex-direction: row;
-  gap: 0.9375rem;
+  gap: 0.125rem;
   bottom: 11.7%;
   left: 0.9375rem;
 }
@@ -931,7 +931,7 @@ button {
   display: inline-flex;
   width: 3.375rem;
   height: 1px;
-  left: 6.5625rem;
+  left: 5.625rem;
   top: 50%;
   -webkit-transform: translateY(0%);
   -ms-transform: translateY(0%);
@@ -946,7 +946,7 @@ button {
   display: -ms-inline-flexbox;
   display: inline-flex;
   color: #ffffff;
-  left: 12rem;
+  left: 10rem;
   top: 50%;
   -webkit-transform: translate(0, -50%);
   -ms-transform: translate(0, -50%);
@@ -2313,28 +2313,24 @@ input[type=date]::-webkit-calendar-picker-indicator {
     -webkit-box-direction: normal;
     -ms-flex-direction: column;
     flex-direction: column;
-    bottom: 0;
-    left: 0;
-  }
-
-  .swiper-horizontal > .swiper-pagination-bullets,
-  .swiper-pagination-bullets.swiper-pagination-horizontal,
-  .swiper-pagination-custom,
-  .swiper-pagination-fraction {
-    right: 0.9375rem;
-    top: 50%;
-    -webkit-transform: translate3d(-50%, 0, 0);
-    transform: translate3d(-50%, 0, 0);
+    -webkit-box-align: end;
+    -ms-flex-align: end;
+    align-items: flex-end;
+    gap: 0.9375rem;
     left: initial;
     bottom: initial;
+    right: 0.9375rem;
+    top: 50%;
     width: auto;
+    -webkit-transform: translate3d(-50%, 0, 0);
+    transform: translate3d(-50%, 0, 0);
   }
 
   .main-slider .pagination-decoration::before {
     width: 1px;
     height: 3.375rem;
-    left: 50%;
-    bottom: -30px;
+    left: initial;
+    right: 50%;
     -webkit-transform: translateY(100%);
     -ms-transform: translateY(100%);
     transform: translateY(100%);
@@ -2344,11 +2340,11 @@ input[type=date]::-webkit-calendar-picker-indicator {
     -webkit-writing-mode: vertical-lr;
     -ms-writing-mode: tb-lr;
     writing-mode: vertical-lr;
-    left: 50%;
-    bottom: -6.5625rem;
-    -webkit-transform: translate(-50%, 100%);
-    -ms-transform: translate(-50%, 100%);
-    transform: translate(-50%, 100%);
+    left: initial;
+    top: 160px;
+    -webkit-transform: translate(25%, 0%);
+    -ms-transform: translate(25%, 0%);
+    transform: translate(25%, 0%);
   }
 
   .box-offers {

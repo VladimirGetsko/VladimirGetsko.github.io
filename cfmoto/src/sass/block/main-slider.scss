@@ -144,14 +144,20 @@
 .main-slider .swiper-pagination {
     display: flex;
     flex-direction: row;
-    gap: rem(15px);
+    gap: rem(2px);
     bottom: 11.7%;
     left: rem(15px);
 
     @include min576 {
         flex-direction: column;
-        bottom: 0;
-        left: 0;
+        align-items: flex-end;
+        gap: rem(15px);
+        left: initial;
+        bottom: initial;
+        right: rem(15px);
+        top: 50%;
+        width: auto;
+        transform: translate3d(-50%,0,0);
     }
 
     @media (min-width: 1345px) {
@@ -159,16 +165,16 @@
     }
 }
 
-.swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
-    @include min576 {
-        right: rem(15px);
-        top: 50%;
-        transform: translate3d(-50%,0,0);
-        left: initial;
-        bottom: initial;
-        width: auto;
-    }
-}
+// .swiper-horizontal>.swiper-pagination-bullets, .swiper-pagination-bullets.swiper-pagination-horizontal, .swiper-pagination-custom, .swiper-pagination-fraction {
+//     @include max575 {
+//         right: rem(15px);
+//         top: 50%;
+//         transform: translate3d(-50%,0,0);
+//         left: initial;
+//         bottom: initial;
+//         width: auto;
+//     }
+// }
 
 .main-slider .swiper-pagination-bullet {
     width: 8px;
@@ -192,15 +198,17 @@
         width: rem(54px);
         height: 1px;
         background-color: $white-color;
-        left: rem(105px);
+        left: rem(90px);
         top: 50%;
         transform: translateY(0%);
 
         @include min576 {
             width: 1px;
             height: rem(54px);
-            left: 50%;
-            bottom: -30px;
+            left: initial;
+            right: 50%;
+            // top: initial;
+            // bottom: -30px;
             transform: translateY(100%);
         }
     }
@@ -210,7 +218,7 @@
         content: 'scroll';
         display: inline-flex;
         color: $white-color;
-        left: rem(192px);
+        left: rem(160px);
         top: 50%;
         font-family: $light-font;
         font-weight: 300;
@@ -220,9 +228,9 @@
 
         @include min576 {
             writing-mode: vertical-lr;
-            left: 50%;
-            bottom: rem(-105px);
-            transform: translate(-50%, 100%);
+            left: initial;
+            top: 160px;
+            transform: translate(25%,0%);
         }
     }
 }
