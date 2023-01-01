@@ -262,14 +262,15 @@ img {
   }
 }
 
-.header__logo {
-  max-width: 148px;
-}
-@media (max-width: 767.98px) {
+@media (max-width: 569.98px) {
   .header__logo {
     width: 32px;
     flex: 0 0 32px;
     overflow: hidden;
+  }
+  .header__logo-img {
+    max-width: initial;
+    width: auto;
   }
 }
 
