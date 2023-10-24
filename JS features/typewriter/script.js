@@ -12,7 +12,6 @@ const printTextFunc = () => {
     let count = 0;
     let newText = '';
     
-
     elem.textContent = '';
     
     const addPrint = () => {
