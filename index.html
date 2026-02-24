@@ -4,412 +4,323 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
-	<meta http-equiv="X-UA-Compatible" content="ie=edge">
-	<title>Welcome Page | Volodymyr Hetsko</title>
-	<meta name="description" content="This is a personal website of Volodymyr Hetsko.">
+	<title>Volodymyr Hetsko | Frontend Product Engineer</title>
+	<meta name="description" content="Portfolio of Volodymyr Hetsko — Frontend Product Engineer building scalable, product-driven web applications with React and Next.js.">
 	<link rel="icon" href="img/favicon.png">
 	<link rel="preconnect" href="https://fonts.googleapis.com">
-	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 	<link href="css/style.css" rel="stylesheet">
 </head>
 
 <body>
-	<div class="main-page">
-		
-		<div class="sidebar">
-			<button class="menu-btn" type="button">
-				<span class="menu-btn__wrap menu-btn__arrow">
-					<svg class="menu-btn__arrow-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-left"><path d="m15 18-6-6 6-6"/></svg>
-				</span>
-				<span class="menu-btn__wrap menu-btn__menu">
-					<svg class="menu-btn__menu-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-menu"><line x1="4" x2="20" y1="12" y2="12"/><line x1="4" x2="20" y1="6" y2="6"/><line x1="4" x2="20" y1="18" y2="18"/></svg>
-				</span>
-				<span class="menu-btn__wrap menu-btn__close">
-					<svg class="menu-btn__close-icon" xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>
-				</span>
+
+	<!-- Navigation -->
+	<nav class="navbar" id="navbar">
+		<div class="navbar__inner">
+			<a href="#hero" class="navbar__logo">VH<span class="navbar__logo-dot">.</span></a>
+			<ul class="navbar__links" id="navLinks">
+				<li><a href="#about" class="navbar__link">About</a></li>
+				<li><a href="#skills" class="navbar__link">Skills</a></li>
+				<li><a href="#projects" class="navbar__link">Projects</a></li>
+				<li><a href="#contact" class="navbar__link">Contact</a></li>
+			</ul>
+			<button class="navbar__hamburger" id="hamburger" type="button" aria-label="Toggle menu">
+				<span></span>
+				<span></span>
+				<span></span>
 			</button>
-			<div class="sidebar__head">
-				<div class="sidebar__user-img">
-					<img src="img/user-img.jpg" alt="user img" class="sidebar__user-img-pic">
+		</div>
+	</nav>
+
+	<!-- Hero Section -->
+	<section class="hero" id="hero">
+		<div class="hero__bg"></div>
+		<div class="hero__content">
+			<div class="hero__photo">
+				<img src="img/user-img.jpg" alt="Volodymyr Hetsko" class="hero__photo-img">
+			</div>
+			<h1 class="hero__name">Volodymyr Hetsko</h1>
+			<p class="hero__role">Frontend Product Engineer</p>
+			<p class="hero__tagline">Building scalable, product-driven web applications</p>
+			<div class="hero__socials">
+				<a href="https://github.com/VladimirGetsko" target="_blank" rel="noopener noreferrer" class="hero__social-link" aria-label="GitHub">
+					<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+				</a>
+				<a href="https://www.linkedin.com/in/volodymyr-hetsko-74b971123/" target="_blank" rel="noopener noreferrer" class="hero__social-link" aria-label="LinkedIn">
+					<svg xmlns="http://www.w3.org/2000/svg" width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+				</a>
+			</div>
+			<a href="#about" class="hero__scroll-indicator" aria-label="Scroll down">
+				<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="m6 9 6 6 6-6"/></svg>
+			</a>
+		</div>
+	</section>
+
+	<!-- About Section -->
+	<section class="section about" id="about">
+		<div class="section__inner">
+			<h2 class="section__title fade-in">About Me</h2>
+			<div class="about__content fade-in">
+				<p>I'm a Frontend Product Engineer building scalable, product-driven web applications with a strong focus on UX, business logic and frontend architecture. I specialize in designing and implementing complex interfaces using modern React and Next.js ecosystems — combining clean UI, structured state management and production-grade frontend systems.</p>
+				<p>My expertise spans complex UI flows & form systems, frontend business logic & state orchestration, design systems with theming & accessibility, API integration, and performance-focused maintainable architecture.</p>
+				<p>Explore my work below or connect with me on <a href="https://github.com/VladimirGetsko" target="_blank" rel="noopener noreferrer">GitHub</a> and <a href="https://www.linkedin.com/in/volodymyr-hetsko-74b971123/" target="_blank" rel="noopener noreferrer">LinkedIn</a> for opportunities and collaborations.</p>
+			</div>
+			<div class="expertise fade-in">
+				<div class="expertise__card">
+					<span class="expertise__icon">&#9881;</span>
+					<span class="expertise__label">Product Development</span>
 				</div>
-				<div class="sidebar__user-details">
-					<p class="sidebar__user-details-title">Front End Developer</p>
-					<p class="sidebar__user-details-name">Volodymyr Hetsko</p>
+				<div class="expertise__card">
+					<span class="expertise__icon">&#9638;</span>
+					<span class="expertise__label">Complex UI & Forms</span>
+				</div>
+				<div class="expertise__card">
+					<span class="expertise__icon">&#8644;</span>
+					<span class="expertise__label">State Management</span>
+				</div>
+				<div class="expertise__card">
+					<span class="expertise__icon">&#9672;</span>
+					<span class="expertise__label">Design Systems</span>
+				</div>
+				<div class="expertise__card">
+					<span class="expertise__icon">&#8596;</span>
+					<span class="expertise__label">API Integration</span>
 				</div>
 			</div>
+		</div>
+	</section>
 
-			<div class="sidebar__nav">
-				<div class="sidebar__nav-menu">
-					<p class="sidebar__nav-menu-title">Main</p>
-					<ul class="sidebar__nav-menu-list">
-						<li class="sidebar__nav-menu-item">
-							<a href="#" class="sidebar__nav-menu-link">
-								<span class="sidebar__nav-menu-link-icon">
-									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-book-copy"><path d="M2 16V4a2 2 0 0 1 2-2h11"/><path d="M22 18H11a2 2 0 1 0 0 4h10.5a.5.5 0 0 0 .5-.5v-15a.5.5 0 0 0-.5-.5H11a2 2 0 0 0-2 2v12"/><path d="M5 14H4a2 2 0 1 0 0 4h1"/></svg>
-								</span>
-								<span class="sidebar__nav-menu-link-text">Educational Courses</span>
-								<span class="sidebar__nav-menu-arrow-icon">
-									<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-										xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 330 330"
-										style="enable-background:new 0 0 330 330;" xml:space="preserve">
-										<path id="XMLID_225_"
-											d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z" />
-									</svg>
-								</span>
-							</a>
-
-							<div class="sub-menu">
-								<ul class="sub-menu__list">
-									<li class="sub-menu__item">
-										<a href="./rosa/app/index.html" class="sub-menu__link" target="_blank">
-											<span class="sub-menu__link-text">Rosa</span>
-										</a>
-									</li>
-									<li class="sub-menu__item">
-										<a href="Scene slider/src/html/index.html" class="sub-menu__link" target="_blank">
-											<span class="sub-menu__link-text">Scene slider</span>
-										</a>
-									</li>
-									<li class="sub-menu__item">
-										<a href="Gazodizel/src/index.html" class="sub-menu__link" target="_blank">
-											<span class="sub-menu__link-text">Gazodizel</span>
-										</a>
-									</li>
-									<li class="sub-menu__item">
-										<a href="Rooms/Rooms/index.html" class="sub-menu__link" target="_blank">
-											<span class="sub-menu__link-text">Rooms</span>
-										</a>
-									</li>
-									<li class="sub-menu__item">
-										<a href="yoga/index.html" class="sub-menu__link" target="_blank">
-											<span class="sub-menu__link-text">Yoga</span>
-										</a>
-									</li>
-									<li class="sub-menu__item">
-										<a href="Scene slider/public/index.html" class="sub-menu__link" target="_blank">
-											<span class="sub-menu__link-text">Scene slider</span>
-										</a>
-									</li>
-									<li class="sub-menu__item">
-										<a href="gaq/public/index.html" class="sub-menu__link" target="_blank">
-											<span class="sub-menu__link-text">Gaq</span>
-										</a>
-									</li>
-									<li class="sub-menu__item">
-										<a href="Parallax cursor/index.html" class="sub-menu__link" target="_blank">
-											<span class="sub-menu__link-text">Parallax cursor</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li>
-
-						<li class="sidebar__nav-menu-item">
-							<a href="#" class="sidebar__nav-menu-link">
-								<span class="sidebar__nav-menu-link-icon">
-									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-monitor-cog"><path d="M12 17v4"/><path d="m15.2 4.9-.9-.4"/><path d="m15.2 7.1-.9.4"/><path d="m16.9 3.2-.4-.9"/><path d="m16.9 8.8-.4.9"/><path d="m19.5 2.3-.4.9"/><path d="m19.5 9.7-.4-.9"/><path d="m21.7 4.5-.9.4"/><path d="m21.7 7.5-.9-.4"/><path d="M22 13v2a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h7"/><path d="M8 21h8"/><circle cx="18" cy="6" r="3"/></svg>
-								</span>
-								<span class="sidebar__nav-menu-link-text">Work Projects</span>
-								<span class="sidebar__nav-menu-arrow-icon">
-									<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-										xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 330 330"
-										style="enable-background:new 0 0 330 330;" xml:space="preserve">
-										<path id="XMLID_225_"
-											d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z" />
-									</svg>
-								</span>
-							</a>
-
-							<div class="sub-menu">
-								<ul class="sub-menu__list">
-									<li class="sub-menu__item">
-										<a href="Gazodizel/app/index.html" class="sub-menu__link" target="_blank">
-											<span class="sub-menu__link-text">Gazodizel</span>
-										</a>
-									</li>
-									<li class="sub-menu__item">
-										<a href="Final_project/app/index.html" class="sub-menu__link" target="_blank">
-											<span class="sub-menu__link-text">Final project</span>
-										</a>
-									</li>
-									<li class="sub-menu__item">
-										<a href="growfy/index.html" class="sub-menu__link" target="_blank">
-											<span class="sub-menu__link-text">Growfy</span>
-										</a>
-									</li>
-									<li class="sub-menu__item">
-										<a href="business team/app/index.html" class="sub-menu__link" target="_blank">
-											<span class="sub-menu__link-text">Business Team</span>
-										</a>
-									</li>
-									<li class="sub-menu__item">
-										<a href="mini_shop/app/index.html" class="sub-menu__link" target="_blank">
-											<span class="sub-menu__link-text">Mini Shop</span>
-										</a>
-									</li>
-									<li class="sub-menu__item">
-										<a href="https://waterspace.ua" class="sub-menu__link" target="_blank">
-											<span class="sub-menu__link-text">Water Spase</span>
-										</a>
-									</li>
-									<li class="sub-menu__item">
-										<a href="rizor/app/index.html" class="sub-menu__link" target="_blank">
-											<span class="sub-menu__link-text">Rizor</span>
-										</a>
-									</li>
-									<li class="sub-menu__item">
-										<a href="sociotrack/app/index.html" class="sub-menu__link" target="_blank">
-											<span class="sub-menu__link-text">Sociotrack</span>
-										</a>
-									</li>
-									<li class="sub-menu__item">
-										<a href="himo/public/index.html" class="sub-menu__link" target="_blank">
-											<span class="sub-menu__link-text">Himo</span>
-										</a>
-									</li>
-									<li class="sub-menu__item">
-										<a href="cfmoto/public/" class="sub-menu__link" target="_blank">
-											<span class="sub-menu__link-text">CFMOTO</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li>
-
-						<li class="sidebar__nav-menu-item"></li>
-							<a href="#" class="sidebar__nav-menu-link">
-								<span class="sidebar__nav-menu-link-icon">
-									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-braces"><path d="M8 3H7a2 2 0 0 0-2 2v5a2 2 0 0 1-2 2 2 2 0 0 1 2 2v5c0 1.1.9 2 2 2h1"/><path d="M16 21h1a2 2 0 0 0 2-2v-5c0-1.1.9-2 2-2a2 2 0 0 1-2-2V5a2 2 0 0 0-2-2h-1"/></svg>
-								</span>
-								<span class="sidebar__nav-menu-link-text">JS Projects</span>
-								<span class="sidebar__nav-menu-arrow-icon">
-									<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-										xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 330 330"
-										style="enable-background:new 0 0 330 330;" xml:space="preserve">
-										<path id="XMLID_225_"
-											d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z" />
-									</svg>
-								</span>
-							</a>
-
-							<div class="sub-menu">
-								<ul class="sub-menu__list">
-									<li class="sub-menu__item">
-										<a href="js_projects/background_slider/index.html" class="sub-menu__link" target="_blank">
-											<span class="sub-menu__link-text">Slider Background</span>
-										</a>
-									</li>
-									<li class="sub-menu__item">
-										<a href="js_projects/slider_up_to_down/index.html" class="sub-menu__link" target="_blank">
-											<span class="sub-menu__link-text">Slider Up to Down</span>
-										</a>
-									</li>
-									<li class="sub-menu__item">
-										<a href="js_projects/slider_carousel/index.html" class="sub-menu__link" target="_blank">
-											<span class="sub-menu__link-text">Slider Carousel</span>
-										</a>
-									</li>
-									<li class="sub-menu__item">
-										<a href="js_projects/product_card/index.html" class="sub-menu__link" target="_blank">
-											<span class="sub-menu__link-text">Product card</span>
-										</a>
-									</li>
-									<li class="sub-menu__item">
-										<a href="js_projects/counter_animation/index.html" class="sub-menu__link" target="_blank">
-											<span class="sub-menu__link-text">Counter animation</span>
-										</a>
-									</li>
-									<li class="sub-menu__item">
-										<a href="js_projects/drag_and_drop/index.html" class="sub-menu__link" target="_blank">
-											<span class="sub-menu__link-text">Drag and Drop</span>
-										</a>
-									</li>
-									<li class="sub-menu__item">
-										<a href="js_projects/progress_steps/index.html" class="sub-menu__link" target="_blank">
-											<span class="sub-menu__link-text">Progress Steps</span>
-										</a>
-									</li>
-									<li class="sub-menu__item">
-										<a href="js_projects/typewriter/index.html" class="sub-menu__link" target="_blank">
-											<span class="sub-menu__link-text">Typewriter</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li>
-
-						<li class="sidebar__nav-menu-item">
-							<a href="#" class="sidebar__nav-menu-link">
-								<span class="sidebar__nav-menu-link-icon">
-									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-file-json"><path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z"/><path d="M14 2v4a2 2 0 0 0 2 2h4"/><path d="M10 12a1 1 0 0 0-1 1v1a1 1 0 0 1-1 1 1 1 0 0 1 1 1v1a1 1 0 0 0 1 1"/><path d="M14 18a1 1 0 0 0 1-1v-1a1 1 0 0 1 1-1 1 1 0 0 1-1-1v-1a1 1 0 0 0-1-1"/></svg>
-								</span>
-								<span class="sidebar__nav-menu-link-text">React Projects</span>
-								<span class="sidebar__nav-menu-arrow-icon">
-									<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-										xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 330 330"
-										style="enable-background:new 0 0 330 330;" xml:space="preserve">
-										<path id="XMLID_225_"
-											d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z" />
-									</svg>
-								</span>
-							</a>
-
-							<div class="sub-menu">
-								<ul class="sub-menu__list">
-									<li class="sub-menu__item">
-										<a href="https://vladimirgetsko.github.io/marvel/" class="sub-menu__link" target="_blank">
-											<span class="sub-menu__link-text">Marvel</span>
-										</a>
-									</li>
-									<li class="sub-menu__item">
-										<a href="https://vladimirgetsko.github.io/react-pagination-api/" class="sub-menu__link" target="_blank">
-											<span class="sub-menu__link-text">Pagination</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li>
-
-						<li class="sidebar__nav-menu-item">
-							<a href="#" class="sidebar__nav-menu-link">
-								<span class="sidebar__nav-menu-link-icon">
-									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-album"><rect width="18" height="18" x="3" y="3" rx="2" ry="2"/><polyline points="11 3 11 11 14 8 17 11 17 3"/></svg>
-								</span>
-								<span class="sidebar__nav-menu-link-text">Animation</span>
-								<span class="sidebar__nav-menu-arrow-icon">
-									<svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg"
-										xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 330 330"
-										style="enable-background:new 0 0 330 330;" xml:space="preserve">
-										<path id="XMLID_225_"
-											d="M325.607,79.393c-5.857-5.857-15.355-5.858-21.213,0.001l-139.39,139.393L25.607,79.393 c-5.857-5.857-15.355-5.858-21.213,0.001c-5.858,5.858-5.858,15.355,0,21.213l150.004,150c2.813,2.813,6.628,4.393,10.606,4.393 s7.794-1.581,10.606-4.394l149.996-150C331.465,94.749,331.465,85.251,325.607,79.393z" />
-									</svg>
-								</span>
-							</a>
-
-							<div class="sub-menu">
-								<ul class="sub-menu__list">
-									<li class="sub-menu__item">
-										<a href="Animation/dots_menu/index.html" class="sub-menu__link" target="_blank">
-											<span class="sub-menu__link-text">Dots menu</span>
-										</a>
-									</li>
-									<li class="sub-menu__item">
-										<a href="Animation/animation_road/index.html" class="sub-menu__link" target="_blank">
-											<span class="sub-menu__link-text">Animation road</span>
-										</a>
-									</li>
-									<li class="sub-menu__item">
-										<a href="Animation/taxi_animation/index.html" class="sub-menu__link" target="_blank">
-											<span class="sub-menu__link-text">Taxi animation</span>
-										</a>
-									</li>
-									<li class="sub-menu__item">
-										<a href="Animation/tea_cup/index.html" class="sub-menu__link" target="_blank">
-											<span class="sub-menu__link-text">Tea cup</span>
-										</a>
-									</li>
-								</ul>
-							</div>
-						</li>
-					</ul>
-				</div>
-
-				<div class="sidebar__nav-menu">
-					<p class="sidebar__nav-menu-title">Networks</p>
-					<ul class="sidebar__nav-menu-list">
-						<li class="sidebar__nav-menu-item">
-							<a href="https://www.facebook.com/profile.php?id=100000495779199" class="sidebar__nav-menu-link" target="_blank">
-								<span class="sidebar__nav-menu-link-icon">
-									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-facebook"><path d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"/></svg>
-								</span>
-								<span class="sidebar__nav-menu-link-text">Facebook</span>
-							</a>
-						</li>
-						<li class="sidebar__nav-menu-item">
-							<a href="https://www.linkedin.com/in/volodymyr-hetsko-74b971123/" class="sidebar__nav-menu-link" target="_blank">
-								<span class="sidebar__nav-menu-link-icon">
-									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
-								</span>
-								<span class="sidebar__nav-menu-link-text">LinkedIn</span>
-							</a>
-						</li>
-						<li class="sidebar__nav-menu-item">
-							<a href="https://github.com/VladimirGetsko" class="sidebar__nav-menu-link" target="_blank">
-								<span class="sidebar__nav-menu-link-icon">
-									<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-github"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
-								</span>
-								<span class="sidebar__nav-menu-link-text">GitHub</span>
-							</a>
-						</li>
-					</ul>
-				</div>
+	<!-- Stats Row -->
+	<div class="stats">
+		<div class="stats__inner fade-in">
+			<div class="stats__card">
+				<div class="stats__number">22+</div>
+				<div class="stats__label">Projects</div>
 			</div>
-
+			<div class="stats__card">
+				<div class="stats__number">5+</div>
+				<div class="stats__label">Years Experience</div>
+			</div>
+			<div class="stats__card">
+				<div class="stats__number">10+</div>
+				<div class="stats__label">Technologies</div>
+			</div>
 		</div>
-
-		<div class="main-page__content">
-			<h2 class="main-page__title">Welcome to My Digital Space!</h2>
-			<p class="main-page__text">I’m Volodymyr Hetsko, a passionate Front-End Developer and Markup Specialist with a flair for transforming ideas into stunning web experiences. My journey in web development is driven by an enthusiasm for crafting intuitive and visually striking interfaces that not only capture attention but also create meaningful interactions.</p>
-			<p class="main-page__text">With a keen eye for detail and a dedication to user-centric design, I strive to turn every project into a seamless and engaging digital experience. From sleek, responsive layouts to precise markup, I ensure that every line of code contributes to a polished end result.</p>
-			<p class="main-page__text">Dive into my <a class="main-page__link" target="_blank" href="https://github.com/VladimirGetsko">GitHub</a> to explore a curated collection of my coding projects and contributions. On <a class="main-page__link" target="_blank" href="https://www.linkedin.com/in/volodymyr-hetsko-74b971123/">LinkedIn</a>, you can find more about my professional journey and connect with me for exciting opportunities and collaborations.</p>
-			<p class="main-page__text">Let’s embark on a journey of creativity and innovation—feel free to reach out!</p>
-		</div>
-		
 	</div>
-	
+
+	<!-- Skills Section -->
+	<section class="section skills" id="skills">
+		<div class="section__inner">
+			<h2 class="section__title fade-in">Skills</h2>
+			<div class="skills__grid fade-in">
+				<span class="skills__badge">Next.js</span>
+				<span class="skills__badge">React</span>
+				<span class="skills__badge">TypeScript</span>
+				<span class="skills__badge">JavaScript (ES6+)</span>
+				<span class="skills__badge">TailwindCSS</span>
+				<span class="skills__badge">Radix UI</span>
+				<span class="skills__badge">API Integration</span>
+				<span class="skills__badge">HTML5</span>
+				<span class="skills__badge">CSS3 / SCSS</span>
+				<span class="skills__badge">Git</span>
+			</div>
+		</div>
+	</section>
+
+	<!-- Projects Section -->
+	<section class="section projects" id="projects">
+		<div class="section__inner">
+			<h2 class="section__title fade-in">Projects</h2>
+
+			<!-- Educational Courses -->
+			<div class="projects__group fade-in">
+				<h3 class="projects__group-title">Educational Courses</h3>
+				<div class="projects__grid">
+					<a href="./rosa/app/index.html" target="_blank" class="project-card">
+						<span class="project-card__tag project-card__tag--edu">Course</span>
+						<h4 class="project-card__name">Rosa</h4>
+						<span class="project-card__link">View Project &rarr;</span>
+					</a>
+					<a href="Rooms/Rooms/index.html" target="_blank" class="project-card">
+						<span class="project-card__tag project-card__tag--edu">Course</span>
+						<h4 class="project-card__name">Rooms</h4>
+						<span class="project-card__link">View Project &rarr;</span>
+					</a>
+					<a href="Scene slider/public/index.html" target="_blank" class="project-card">
+						<span class="project-card__tag project-card__tag--edu">Course</span>
+						<h4 class="project-card__name">Scene Slider</h4>
+						<span class="project-card__link">View Project &rarr;</span>
+					</a>
+					<a href="gaq/public/index.html" target="_blank" class="project-card">
+						<span class="project-card__tag project-card__tag--edu">Course</span>
+						<h4 class="project-card__name">Gaq</h4>
+						<span class="project-card__link">View Project &rarr;</span>
+					</a>
+					<a href="Parallax cursor/index.html" target="_blank" class="project-card">
+						<span class="project-card__tag project-card__tag--edu">Course</span>
+						<h4 class="project-card__name">Parallax Cursor</h4>
+						<span class="project-card__link">View Project &rarr;</span>
+					</a>
+				</div>
+			</div>
+
+			<!-- Work Projects -->
+			<div class="projects__group fade-in">
+				<h3 class="projects__group-title">Work Projects</h3>
+				<div class="projects__grid">
+					<a href="Gazodizel/app/index.html" target="_blank" class="project-card">
+						<span class="project-card__tag project-card__tag--work">Work</span>
+						<h4 class="project-card__name">Gazodizel</h4>
+						<span class="project-card__link">View Project &rarr;</span>
+					</a>
+					<a href="Final_project/app/index.html" target="_blank" class="project-card">
+						<span class="project-card__tag project-card__tag--work">Work</span>
+						<h4 class="project-card__name">Final Project</h4>
+						<span class="project-card__link">View Project &rarr;</span>
+					</a>
+					<a href="growfy/index.html" target="_blank" class="project-card">
+						<span class="project-card__tag project-card__tag--work">Work</span>
+						<h4 class="project-card__name">Growfy</h4>
+						<span class="project-card__link">View Project &rarr;</span>
+					</a>
+					<a href="business team/app/index.html" target="_blank" class="project-card">
+						<span class="project-card__tag project-card__tag--work">Work</span>
+						<h4 class="project-card__name">Business Team</h4>
+						<span class="project-card__link">View Project &rarr;</span>
+					</a>
+					<a href="mini_shop/app/index.html" target="_blank" class="project-card">
+						<span class="project-card__tag project-card__tag--work">Work</span>
+						<h4 class="project-card__name">Mini Shop</h4>
+						<span class="project-card__link">View Project &rarr;</span>
+					</a>
+					<a href="sociotrack/app/index.html" target="_blank" class="project-card">
+						<span class="project-card__tag project-card__tag--work">Work</span>
+						<h4 class="project-card__name">Sociotrack</h4>
+						<span class="project-card__link">View Project &rarr;</span>
+					</a>
+					<a href="himo/public/index.html" target="_blank" class="project-card">
+						<span class="project-card__tag project-card__tag--work">Work</span>
+						<h4 class="project-card__name">Himo</h4>
+						<span class="project-card__link">View Project &rarr;</span>
+					</a>
+					<a href="cfmoto/public/index.html" target="_blank" class="project-card">
+						<span class="project-card__tag project-card__tag--work">Work</span>
+						<h4 class="project-card__name">CFMOTO</h4>
+						<span class="project-card__link">View Project &rarr;</span>
+					</a>
+				</div>
+			</div>
+
+			<!-- JS Projects -->
+			<div class="projects__group fade-in">
+				<h3 class="projects__group-title">JS Projects</h3>
+				<div class="projects__grid">
+					<a href="js_projects/background_slider/index.html" target="_blank" class="project-card">
+						<span class="project-card__tag project-card__tag--js">JS</span>
+						<h4 class="project-card__name">Slider Background</h4>
+						<span class="project-card__link">View Project &rarr;</span>
+					</a>
+					<a href="js_projects/slider_up_to_down/index.html" target="_blank" class="project-card">
+						<span class="project-card__tag project-card__tag--js">JS</span>
+						<h4 class="project-card__name">Slider Up to Down</h4>
+						<span class="project-card__link">View Project &rarr;</span>
+					</a>
+					<a href="js_projects/slider_carousel/index.html" target="_blank" class="project-card">
+						<span class="project-card__tag project-card__tag--js">JS</span>
+						<h4 class="project-card__name">Slider Carousel</h4>
+						<span class="project-card__link">View Project &rarr;</span>
+					</a>
+					<a href="js_projects/product_card/index.html" target="_blank" class="project-card">
+						<span class="project-card__tag project-card__tag--js">JS</span>
+						<h4 class="project-card__name">Product Card</h4>
+						<span class="project-card__link">View Project &rarr;</span>
+					</a>
+					<a href="js_projects/counter_animation/index.html" target="_blank" class="project-card">
+						<span class="project-card__tag project-card__tag--js">JS</span>
+						<h4 class="project-card__name">Counter Animation</h4>
+						<span class="project-card__link">View Project &rarr;</span>
+					</a>
+				</div>
+			</div>
+
+
+			<!-- Animation -->
+			<div class="projects__group fade-in">
+				<h3 class="projects__group-title">Animation</h3>
+				<div class="projects__grid">
+					<a href="Animation/dots_menu/index.html" target="_blank" class="project-card">
+						<span class="project-card__tag project-card__tag--anim">Animation</span>
+						<h4 class="project-card__name">Dots Menu</h4>
+						<span class="project-card__link">View Project &rarr;</span>
+					</a>
+						<a href="Animation/taxi_animation/index.html" target="_blank" class="project-card">
+						<span class="project-card__tag project-card__tag--anim">Animation</span>
+						<h4 class="project-card__name">Taxi Animation</h4>
+						<span class="project-card__link">View Project &rarr;</span>
+					</a>
+					<a href="Animation/tea_cup/index.html" target="_blank" class="project-card">
+						<span class="project-card__tag project-card__tag--anim">Animation</span>
+						<h4 class="project-card__name">Tea Cup</h4>
+						<span class="project-card__link">View Project &rarr;</span>
+					</a>
+				</div>
+			</div>
+
+		</div>
+	</section>
+
+	<!-- Footer / Contact -->
+	<footer class="footer" id="contact">
+		<div class="footer__inner">
+			<h2 class="section__title fade-in">Get in Touch</h2>
+			<div class="footer__socials fade-in">
+				<a href="https://github.com/VladimirGetsko" target="_blank" rel="noopener noreferrer" class="footer__social-link">
+					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M15 22v-4a4.8 4.8 0 0 0-1-3.5c3 0 6-2 6-5.5.08-1.25-.27-2.48-1-3.5.28-1.15.28-2.35 0-3.5 0 0-1 0-3 1.5-2.64-.5-5.36-.5-8 0C6 2 5 2 5 2c-.3 1.15-.3 2.35 0 3.5A5.403 5.403 0 0 0 4 9c0 3.5 3 5.5 6 5.5-.39.49-.68 1.05-.85 1.65-.17.6-.22 1.23-.15 1.85v4"/><path d="M9 18c-4.51 2-5-2-7-2"/></svg>
+					<span>GitHub</span>
+				</a>
+				<a href="https://www.linkedin.com/in/volodymyr-hetsko-74b971123/" target="_blank" rel="noopener noreferrer" class="footer__social-link">
+					<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+					<span>LinkedIn</span>
+				</a>
+			</div>
+			<p class="footer__copy">&copy; 2025 Volodymyr Hetsko. All rights reserved.</p>
+		</div>
+	</footer>
+
 	<script>
-		const menuItems = document.querySelectorAll('.sidebar__nav-menu-link');
+		// Navbar background on scroll
+		const navbar = document.getElementById('navbar');
+		window.addEventListener('scroll', () => {
+			navbar.classList.toggle('navbar--scrolled', window.scrollY > 50);
+		});
 
-		menuItems.forEach(link => {
-			link.addEventListener('click', function (e) {
-
-				const isSubMenuOpen = link.nextElementSibling?.classList.contains('sub-menu-open');
-
-				// Знімаємо активний клас з усіх елементів
-				menuItems.forEach(item => item.classList.remove('sidebar__nav-menu-link__active'));
-
-				// Закриваємо всі відкриті підменю
-				document.querySelectorAll('.sub-menu-open').forEach(subMenu => {
-					subMenu.classList.remove('sub-menu-open');
-				});
-
-				// Якщо підменю вже відкрите, просто згортаємо його і виходимо
-				if (isSubMenuOpen) {
-					return;
-				}
-
-				// Додаємо активний клас до поточного елемента
-				link.classList.add('sidebar__nav-menu-link__active');
-
-				// Відкриваємо підменю, якщо воно є
-				const subMenu = link.nextElementSibling;
-				if (subMenu && subMenu.classList.contains('sub-menu')) {
-					subMenu.classList.add('sub-menu-open');
-				}
+		// Mobile hamburger menu
+		const hamburger = document.getElementById('hamburger');
+		const navLinks = document.getElementById('navLinks');
+		hamburger.addEventListener('click', () => {
+			hamburger.classList.toggle('navbar__hamburger--active');
+			navLinks.classList.toggle('navbar__links--open');
+		});
+		navLinks.querySelectorAll('a').forEach(link => {
+			link.addEventListener('click', () => {
+				hamburger.classList.remove('navbar__hamburger--active');
+				navLinks.classList.remove('navbar__links--open');
 			});
 		});
 
-		// Додаємо обробник кліку для елементів підменю
-		const subMenuItems = document.querySelectorAll('.sub-menu__link');
-		subMenuItems.forEach(subLink => {
-			subLink.addEventListener('click', function (e) {
-
-				// Згортаємо все підменю при кліку на елемент підменю
-				// const subMenu = subLink.closest('.sub-menu');
-				// subMenu.classList.remove('sub-menu-open');
-
-				// Знімаємо активний клас з усіх елементів меню
-				menuItems.forEach(item => item.classList.remove('sidebar__nav-menu-link__active'));
+		// Fade-in on scroll with IntersectionObserver
+		const observer = new IntersectionObserver((entries) => {
+			entries.forEach(entry => {
+				if (entry.isIntersecting) {
+					entry.target.classList.add('visible');
+				}
 			});
-		});
-	
-		document.querySelector('.menu-btn').addEventListener('click', () => {
-			document.querySelector('.sidebar').classList.toggle('sidebar-active');
-		});
-		
+		}, { threshold: 0.1 });
+
+		document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
 	</script>
 
-	
 </body>
 
 </html>
