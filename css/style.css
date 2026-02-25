@@ -616,24 +616,14 @@ img {
 	margin-bottom: 16px;
 }
 
-.project-card__tag--edu {
+.project-card__tag--web {
 	background: rgba(102, 126, 234, 0.15);
 	color: #667eea;
 }
 
-.project-card__tag--work {
-	background: rgba(118, 75, 162, 0.15);
-	color: #a78bfa;
-}
-
-.project-card__tag--js {
+.project-card__tag--ui {
 	background: rgba(250, 204, 21, 0.15);
 	color: #facc15;
-}
-
-.project-card__tag--react {
-	background: rgba(34, 211, 238, 0.15);
-	color: #22d3ee;
 }
 
 .project-card__tag--anim {
